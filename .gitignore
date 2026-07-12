@@ -1,0 +1,11 @@
+# Godot generated files
+.godot/
+*.tmp
+*.import
+.editorconfig
+export_presets.cfg
+.DS_Store
+Thumbs.db
+.mono/
+data_*/
+mono_crash.*.json

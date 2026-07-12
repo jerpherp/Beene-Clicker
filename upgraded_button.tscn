@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dd27eulewv0n7"]
+
+[ext_resource type="Script" uid="uid://dft1tr8r5wt35" path="res://upgraded_button.gd" id="1_riabq"]
+
+[node name="UpgradedButton" type="TextureButton" unique_id=1776587354]
+offset_top = -40.0
+offset_right = 40.0
+script = ExtResource("1_riabq")
+hover_scale = null
+scale_duration = null
+title = null
+description = null
+base_price = null
+exponent = null
+multiplier_increase = null
+
+[node name="Tooltip" type="PanelContainer" parent="." unique_id=1550566862]
+z_index = 9
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -40.0
+offset_right = 108.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="UpgradeDesc" type="RichTextLabel" parent="Tooltip" unique_id=1478798439]
+z_index = 10
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1

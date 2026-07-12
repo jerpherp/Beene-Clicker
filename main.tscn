@@ -1,0 +1,1060 @@
+[gd_scene format=3 uid="uid://7xh2kuhyhia0"]
+
+[ext_resource type="Script" uid="uid://hksi7fte4del" path="res://main.gd" id="1_t5kpo"]
+[ext_resource type="Texture2D" uid="uid://bh6d0lk1cp77x" path="res://mainGame/beeneMain/beeneBump/beeneBump0001.png" id="1_w48qg"]
+[ext_resource type="Shader" uid="uid://djp3hcp1og74w" path="res://beeneHoverGlow.gdshader" id="2_82xsv"]
+[ext_resource type="Texture2D" uid="uid://brfbjudckhj6" path="res://mainGame/beeneMain/beeneBump/beeneBump0002.png" id="2_vivmo"]
+[ext_resource type="Texture2D" uid="uid://ci1ws0y7dujih" path="res://mainGame/beeneMain/beeneBump/beeneBump0003.png" id="3_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://x1bpaux834fo" path="res://mainGame/beeneMain/beeneBump/beeneBump0004.png" id="4_yaehf"]
+[ext_resource type="Texture2D" uid="uid://c4uoml8juhshr" path="res://mainGame/beeneMain/beeneBump/beeneBump0005.png" id="5_074og"]
+[ext_resource type="Texture2D" uid="uid://boiknpvhrjslk" path="res://mainGame/beeneMain/beeneBump/beeneBump0006.png" id="6_cegan"]
+[ext_resource type="Texture2D" uid="uid://coh31pje3w124" path="res://mainGame/beeneMain/beeneBump/beeneBump0007.png" id="7_82xsv"]
+[ext_resource type="Texture2D" uid="uid://dxle2uynqlxnv" path="res://mainGame/beeneMain/beeneBump/beeneBump0008.png" id="8_getpj"]
+[ext_resource type="Texture2D" uid="uid://db610pi1covcv" path="res://mainGame/beeneMain/beeneBump/beeneBump0009.png" id="9_ryguw"]
+[ext_resource type="Texture2D" uid="uid://bupayt3tfakaq" path="res://mainGame/beeneMain/beeneBump/beeneBump0010.png" id="10_d13ii"]
+[ext_resource type="Texture2D" uid="uid://bu8gd1br7wayk" path="res://mainGame/beeneMain/beeneBump/beeneBump0011.png" id="11_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://bwpkmyejly0jl" path="res://mainGame/beeneMain/beeneBump/beeneBump0012.png" id="12_0odxb"]
+[ext_resource type="Texture2D" uid="uid://ddy441r25hexr" path="res://mainGame/beeneMain/beeneBump/beeneBump0013.png" id="13_lswn8"]
+[ext_resource type="Texture2D" uid="uid://bywl1ma5u31m7" path="res://mainGame/beeneMain/beeneBump/beeneBump0014.png" id="14_a6jrf"]
+[ext_resource type="Shader" uid="uid://cjyuxa1h868ly" path="res://scroll.gdshader" id="15_2cqfq"]
+[ext_resource type="Script" uid="uid://b2wbs50hvpv1s" path="res://beeneHover.gd" id="15_cegan"]
+[ext_resource type="Texture2D" uid="uid://bc3lr8ef45uj8" path="res://mainGame/backgrounds/beach/beachGround.png" id="15_vivmo"]
+[ext_resource type="AudioStream" uid="uid://crbkky1l0biag" path="res://SFX/denielcz-immersivecontrol-button-click-sound-463065.mp3" id="17_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://bb8ji2i0wn7ur" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0001.png" id="17_ovcoh"]
+[ext_resource type="Texture2D" uid="uid://cta5c8ij7j41e" path="res://mainGame/backgrounds/beach/water.png" id="17_yaehf"]
+[ext_resource type="Texture2D" uid="uid://cklhefk4qpe4b" path="res://mainGame/backgrounds/beach/sky.png" id="18_074og"]
+[ext_resource type="Texture2D" uid="uid://dgusfnsssdy4k" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0002.png" id="18_ppx11"]
+[ext_resource type="Texture2D" uid="uid://bxkucomo15u20" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0003.png" id="19_1yv1y"]
+[ext_resource type="Texture2D" uid="uid://dwo0g6kymm2sa" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0004.png" id="20_5yh34"]
+[ext_resource type="Script" uid="uid://bmdg5dxj3odcw" path="res://click_counter.gd" id="21_getpj"]
+[ext_resource type="Texture2D" uid="uid://c455rurbstk6p" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0005.png" id="21_pjuso"]
+[ext_resource type="Texture2D" uid="uid://bb25j3qjhe2xt" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0006.png" id="22_23xmf"]
+[ext_resource type="Texture2D" uid="uid://c2okohp07a1yu" path="res://mainGame/combo/combo0001.png" id="22_facbu"]
+[ext_resource type="Texture2D" uid="uid://w6bhoq3pf0rh" path="res://mainGame/combo/combo0002.png" id="23_b1qrp"]
+[ext_resource type="Texture2D" uid="uid://cyfvb21n3j48l" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0007.png" id="23_swlj1"]
+[ext_resource type="Texture2D" uid="uid://b2a370p3kk4xr" path="res://mainGame/combo/combo0003.png" id="24_come4"]
+[ext_resource type="Texture2D" uid="uid://cogcm1dw408q6" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0008.png" id="24_yysqy"]
+[ext_resource type="Texture2D" uid="uid://b7qcpkhisyy0w" path="res://mainGame/combo/combo0004.png" id="25_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://dl446q52j3aqp" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0009.png" id="25_n5t1e"]
+[ext_resource type="Texture2D" uid="uid://dh376h00sayd8" path="res://mainGame/combo/combo0005.png" id="26_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://3eriylvt6j8b" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0010.png" id="26_h6isl"]
+[ext_resource type="Texture2D" uid="uid://b02xun2pj1i48" path="res://mainGame/combo/combo0006.png" id="27_0cp0l"]
+[ext_resource type="Texture2D" uid="uid://dla37086k80s5" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0011.png" id="27_53bls"]
+[ext_resource type="Texture2D" uid="uid://cbj3n0l0tkdq1" path="res://mainGame/combo/combo0007.png" id="28_d2t1y"]
+[ext_resource type="Texture2D" uid="uid://c4t1leqe3sfrg" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0012.png" id="28_lwnsi"]
+[ext_resource type="Texture2D" uid="uid://cvwmuwyqy7c4a" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0013.png" id="29_41lik"]
+[ext_resource type="Texture2D" uid="uid://c2oprao44pp8m" path="res://mainGame/combo/combo0008.png" id="29_gngh3"]
+[ext_resource type="Texture2D" uid="uid://bi4byuugbh4c1" path="res://mainGame/combo/combo0009.png" id="30_0n3wm"]
+[ext_resource type="Texture2D" uid="uid://pbjp6x4ke7ab" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0014.png" id="30_jbvwl"]
+[ext_resource type="Texture2D" uid="uid://dexecqg4f65qh" path="res://mainGame/combo/combo0010.png" id="31_qnost"]
+[ext_resource type="Texture2D" uid="uid://crhaarsrynqi6" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0015.png" id="31_sn1fb"]
+[ext_resource type="Texture2D" uid="uid://dw1ve6fmwd42t" path="res://mainGame/combo/combo0011.png" id="32_wnkbs"]
+[ext_resource type="Texture2D" uid="uid://yh4ctjo645kf" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0016.png" id="32_yvsr8"]
+[ext_resource type="Texture2D" uid="uid://dscrttqncaf5y" path="res://mainGame/combo/combo0012.png" id="33_f6a44"]
+[ext_resource type="Texture2D" uid="uid://dxgumh26hg2rh" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0017.png" id="33_vieuh"]
+[ext_resource type="Texture2D" uid="uid://dm8nqcs23fk1e" path="res://mainGame/combo/combo0013.png" id="34_0cbny"]
+[ext_resource type="Texture2D" uid="uid://bxdrihwlr5c0a" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0018.png" id="34_yjja3"]
+[ext_resource type="Texture2D" uid="uid://vs3e7r52enfe" path="res://mainGame/combo/combo0014.png" id="35_hrvbo"]
+[ext_resource type="Texture2D" uid="uid://d0xll0t61v5ax" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0019.png" id="35_l0gw7"]
+[ext_resource type="Texture2D" uid="uid://3v4t8lr0qwji" path="res://mainGame/beeneMain/beeneLevelUp/beeneBumpLvlUp0020.png" id="36_inymm"]
+[ext_resource type="Texture2D" uid="uid://yrys2ojig1w3" path="res://mainGame/combo/combo0015.png" id="36_uypp3"]
+[ext_resource type="Texture2D" uid="uid://dkuhg5gf30b7l" path="res://mainGame/combo/combo0016.png" id="37_blkrb"]
+[ext_resource type="Texture2D" uid="uid://bmliw3cjoj5cc" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0001.png" id="37_jcxqu"]
+[ext_resource type="Texture2D" uid="uid://uibqm31b4vou" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0002.png" id="38_0arob"]
+[ext_resource type="Script" uid="uid://dt2gab0opb0ve" path="res://combo_sprite.gd" id="38_b1qrp"]
+[ext_resource type="AudioStream" uid="uid://bnnedc2hsu4l6" path="res://music/Seaside_Shuffle.mp3" id="39_come4"]
+[ext_resource type="Texture2D" uid="uid://ck8sx2lwg8uiv" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0003.png" id="39_dij0e"]
+[ext_resource type="Texture2D" uid="uid://5y1wt6tvmb0" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0004.png" id="40_k1udn"]
+[ext_resource type="Script" uid="uid://cm3ti5m02f6x6" path="res://panel.gd" id="41_0cp0l"]
+[ext_resource type="Texture2D" uid="uid://ddbo1kryiv70b" path="res://mainGame/leftWoodPanel/inGameLeftBar.png" id="41_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://7p1wtcgie4d" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0005.png" id="41_wat4s"]
+[ext_resource type="Texture2D" uid="uid://3ngyw8its20g" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0006.png" id="42_ywjan"]
+[ext_resource type="AudioStream" uid="uid://cl7u3icx67x6d" path="res://SFX/woodslide.ogg" id="43_d2t1y"]
+[ext_resource type="Texture2D" uid="uid://bvy5d7x3myih5" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0007.png" id="43_m74q3"]
+[ext_resource type="Texture2D" uid="uid://brtkvnrxjdmjq" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0008.png" id="44_tko6h"]
+[ext_resource type="Texture2D" uid="uid://bmlwejgujxygf" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0009.png" id="45_am8a1"]
+[ext_resource type="Texture2D" uid="uid://buh67p8m3bwom" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0010.png" id="46_8dc3g"]
+[ext_resource type="Texture2D" uid="uid://frokoljah3tb" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0011.png" id="47_htgcl"]
+[ext_resource type="Texture2D" uid="uid://cmui2fn7utyg2" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0012.png" id="48_smeu8"]
+[ext_resource type="Texture2D" uid="uid://bjdxoclrs5wuj" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0013.png" id="49_f3y11"]
+[ext_resource type="Texture2D" uid="uid://5rsx5i17ea5t" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0014.png" id="50_cpm2s"]
+[ext_resource type="Texture2D" uid="uid://bvtifqnetrj1u" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0015.png" id="51_u81y6"]
+[ext_resource type="Texture2D" uid="uid://c040yscu2synx" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0016.png" id="52_rt5wr"]
+[ext_resource type="Texture2D" uid="uid://cmgw3birt5d73" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0017.png" id="53_mnw77"]
+[ext_resource type="Texture2D" uid="uid://dd5bc8gs2idef" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0018.png" id="54_vjgyh"]
+[ext_resource type="Texture2D" uid="uid://c33ia0u4hwayk" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0019.png" id="55_d5iia"]
+[ext_resource type="Texture2D" uid="uid://cp01rx17rpw1t" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0020.png" id="56_asu84"]
+[ext_resource type="Texture2D" uid="uid://kit64a5ci6s5" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0001.png" id="57_ldnlw"]
+[ext_resource type="Script" uid="uid://bsu5stjgykohs" path="res://beene_main.gd" id="57_ppx11"]
+[ext_resource type="Texture2D" uid="uid://ca0xsi0aa0200" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0002.png" id="58_qe8ju"]
+[ext_resource type="Texture2D" uid="uid://bc3gghhek05rs" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0003.png" id="59_bnk2o"]
+[ext_resource type="Texture2D" uid="uid://el7uggr854re" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0004.png" id="60_oosfy"]
+[ext_resource type="Texture2D" uid="uid://ccdkkg036mrlr" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0005.png" id="61_nf4f2"]
+[ext_resource type="Texture2D" uid="uid://b0tlsxdtbbtnu" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0006.png" id="62_xkvoa"]
+[ext_resource type="Texture2D" uid="uid://spwbbk85rmbm" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0007.png" id="63_t5kpo"]
+[ext_resource type="Texture2D" uid="uid://ye3of5agpc4k" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0008.png" id="64_pw0td"]
+[ext_resource type="Texture2D" uid="uid://bm43jyimonabw" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0009.png" id="65_37eu1"]
+[ext_resource type="Texture2D" uid="uid://cy2ima3q50tw8" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0010.png" id="66_0wkqm"]
+[ext_resource type="Texture2D" uid="uid://bw4fqqsfjd8gk" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0011.png" id="67_ve5sr"]
+[ext_resource type="Texture2D" uid="uid://y7wnbqes8s4v" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0012.png" id="68_5s44m"]
+[ext_resource type="Texture2D" uid="uid://djvmfs0krm0j5" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0013.png" id="69_ibca3"]
+[ext_resource type="Texture2D" uid="uid://bltae0y8wmvdw" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0014.png" id="70_g3y5b"]
+[ext_resource type="Texture2D" uid="uid://cxdydtjxdicfg" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0015.png" id="71_1slqb"]
+[ext_resource type="Texture2D" uid="uid://ceo6oqk4b2vfx" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0016.png" id="72_uo83y"]
+[ext_resource type="Texture2D" uid="uid://bydcn8txcjiva" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0017.png" id="73_y0aao"]
+[ext_resource type="Texture2D" uid="uid://ckhabhyikp802" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0018.png" id="74_wm5rm"]
+[ext_resource type="Texture2D" uid="uid://bbkdvng0sfac5" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0019.png" id="75_ekl5k"]
+[ext_resource type="Texture2D" uid="uid://cexgfj2qe7dsc" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0020.png" id="76_fdpg8"]
+[ext_resource type="Texture2D" uid="uid://c3rybgp13wjsq" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0021.png" id="77_rpys8"]
+[ext_resource type="Texture2D" uid="uid://coii3komexw2d" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0022.png" id="78_6gr3f"]
+[ext_resource type="Texture2D" uid="uid://cb6iwk80v4s6s" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0023.png" id="79_6seew"]
+[ext_resource type="Texture2D" uid="uid://clhm5n8smfsn6" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0024.png" id="80_3ox4t"]
+[ext_resource type="Texture2D" uid="uid://b7angmiwnsi4g" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0025.png" id="81_4fmho"]
+[ext_resource type="Texture2D" uid="uid://bm4308yug2jt" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0026.png" id="82_aivy6"]
+[ext_resource type="Texture2D" uid="uid://84a3lig0fhto" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0027.png" id="83_bil4k"]
+[ext_resource type="PackedScene" uid="uid://dd27eulewv0n7" path="res://upgraded_button.tscn" id="84_23xmf"]
+[ext_resource type="Texture2D" uid="uid://73l4t4vmsxwd" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0028.png" id="84_hnquj"]
+[ext_resource type="Texture2D" uid="uid://dce5w1gnpqsus" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0029.png" id="85_0h8y2"]
+[ext_resource type="Texture2D" uid="uid://d3tx6dgbecrg5" path="res://mainGame/upgradeIcons/beeneHelper1.png" id="85_pjuso"]
+[ext_resource type="Texture2D" uid="uid://d1i75eyotvbb1" path="res://mainGame/upgradeIcons/x2.png" id="86_23xmf"]
+[ext_resource type="Texture2D" uid="uid://btmatyfqvc56t" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0030.png" id="86_nycv6"]
+[ext_resource type="Texture2D" uid="uid://c7n1qtdjkbpni" path="res://mainGame/upgradeIcons/auto1.png" id="87_swlj1"]
+[ext_resource type="Texture2D" uid="uid://bogo6a2tdyv3g" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0031.png" id="87_x4ftd"]
+[ext_resource type="Texture2D" uid="uid://cbue5n5ppu12g" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0032.png" id="88_arf1h"]
+[ext_resource type="Texture2D" uid="uid://de26tu8vo5v25" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0033.png" id="89_s0om5"]
+[ext_resource type="Script" uid="uid://5mtyntxymp6" path="res://attack_slots.gd" id="89_swlj1"]
+[ext_resource type="Texture2D" uid="uid://dovx4cmjqnq8j" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0034.png" id="90_gkfde"]
+[ext_resource type="Texture2D" uid="uid://cquykdyqt1qgp" path="res://attacks/empty_texture.png" id="90_n5t1e"]
+[ext_resource type="Script" uid="uid://bsorx46kbiup5" path="res://attack_picker.gd" id="90_yysqy"]
+[ext_resource type="Texture2D" uid="uid://cufjoj5kv14j1" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0035.png" id="91_4qxq8"]
+[ext_resource type="Texture2D" uid="uid://gsg2ebnagat0" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0036.png" id="92_ryg4g"]
+[ext_resource type="Texture2D" uid="uid://cifkeeotm11xc" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0037.png" id="93_oy6td"]
+[ext_resource type="Texture2D" uid="uid://cevg3xlm16gad" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0038.png" id="94_fe76k"]
+[ext_resource type="Texture2D" uid="uid://chsj1idjybuiu" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0039.png" id="95_p5pln"]
+[ext_resource type="Texture2D" uid="uid://gg2aynogw7w4" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0040.png" id="96_oiuw5"]
+[ext_resource type="Texture2D" uid="uid://c02mhqfxc5rwb" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0041.png" id="97_mldrc"]
+[ext_resource type="Texture2D" uid="uid://fahwm72xgfov" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0042.png" id="98_1tiwm"]
+[ext_resource type="Texture2D" uid="uid://bjwn0cqei2yof" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0043.png" id="99_xxpw2"]
+[ext_resource type="Texture2D" uid="uid://cviqux0kd6tjq" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0044.png" id="100_wghq8"]
+[ext_resource type="Texture2D" uid="uid://dxtxilquofvwh" path="res://mainGame/beeneMain/beeneYippie/yayyBeene_0045.png" id="101_k08w7"]
+[ext_resource type="PackedScene" uid="uid://dnqy7u0xfufjo" path="res://helper_beene.tscn" id="104_xkvoa"]
+[ext_resource type="Shader" uid="uid://c118e4wpc7okh" path="res://foreground-scroll.gdshader" id="106_wm5rm"]
+[ext_resource type="Shader" uid="uid://4t86pvb31jm8" path="res://scroll-water.gdshader" id="109_ekl5k"]
+[ext_resource type="Script" uid="uid://b0cu4qa2clgr8" path="res://upgraded_button_helper.gd" id="134_xkvoa"]
+[ext_resource type="Texture2D" uid="uid://cx5yb5ujeqxsp" path="res://hud/options.png" id="137_qe8ju"]
+[ext_resource type="PackedScene" uid="uid://33ykgjff2afy" path="res://settings_panel.tscn" id="138_bnk2o"]
+[ext_resource type="Script" uid="uid://c36ndpwgr5j7r" path="res://settings_button_main.gd" id="138_oosfy"]
+[ext_resource type="Texture2D" uid="uid://bo5m6p1ofmjeo" path="res://hud/stats.png" id="142_37eu1"]
+[ext_resource type="Script" uid="uid://6qgklvfa1cp6" path="res://stats_button.gd" id="143_0wkqm"]
+[ext_resource type="PackedScene" uid="uid://clf7ndbbtabvi" path="res://fight_results.tscn" id="143_pw0td"]
+[ext_resource type="Texture2D" uid="uid://c3jje4etfyx54" path="res://hud/fight.png" id="144_5s44m"]
+[ext_resource type="Script" uid="uid://wft1qgxrvbxb" path="res://battle_button.gd" id="145_ibca3"]
+[ext_resource type="Script" uid="uid://d2wlrkey5cp18" path="res://boss_select.gd" id="148_ibca3"]
+[ext_resource type="Texture2D" uid="uid://dcl70vnrn05bd" path="res://hud/buttonLeft.png" id="149_y0aao"]
+[ext_resource type="Texture2D" uid="uid://biwb6mt7utcwr" path="res://hud/buttonRight.png" id="150_wm5rm"]
+[ext_resource type="Texture2D" uid="uid://3anju1wjqhx7" path="res://hud/info.png" id="151_ekl5k"]
+[ext_resource type="Texture2D" uid="uid://coswks6qft5r3" path="res://hud/mainPanel.png" id="152_fdpg8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_getpj"]
+shader = ExtResource("2_82xsv")
+shader_parameter/glow_color = Color(1, 1, 0.5, 1)
+shader_parameter/glow_width = 3.0
+shader_parameter/glow_enabled = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cegan"]
+size = Vector2(376.00006, 536)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppx11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w48qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vivmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2cqfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yaehf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_074og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cegan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_82xsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_getpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ryguw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d13ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1u8w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0odxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lswn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a6jrf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ovcoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ppx11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1yv1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5yh34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pjuso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_23xmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_swlj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_yysqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_n5t1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_h6isl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_53bls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_lwnsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_41lik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_jbvwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_sn1fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_yvsr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vieuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_yjja3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_l0gw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_inymm")
+}],
+"loop": false,
+"name": &"levelUp",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_jcxqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0arob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_dij0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_k1udn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_wat4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ywjan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_m74q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_tko6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_am8a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_8dc3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_htgcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_smeu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_f3y11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_cpm2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_u81y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_rt5wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_mnw77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_vjgyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_d5iia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_asu84")
+}],
+"loop": false,
+"name": &"spook",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_ldnlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_qe8ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_bnk2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_oosfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_nf4f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_xkvoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_t5kpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_pw0td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_37eu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_0wkqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ve5sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_5s44m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_ibca3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_g3y5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_1slqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_uo83y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_y0aao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_wm5rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ekl5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_fdpg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_rpys8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_6gr3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_6seew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_3ox4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_4fmho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_aivy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_bil4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_hnquj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_0h8y2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_nycv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_x4ftd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_arf1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_s0om5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_gkfde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_4qxq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ryg4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_oy6td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_fe76k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_p5pln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_oiuw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_mldrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_1tiwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_xxpw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wghq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_k08w7")
+}],
+"loop": false,
+"name": &"yippie",
+"speed": 24.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekl5k"]
+shader = ExtResource("106_wm5rm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yaehf"]
+shader = ExtResource("15_2cqfq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fdpg8"]
+shader = ExtResource("109_ekl5k")
+
+[sub_resource type="Gradient" id="Gradient_ekl5k"]
+offsets = PackedFloat32Array(0.024615385, 0.48307693)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fdpg8"]
+gradient = SubResource("Gradient_ekl5k")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.4957265, 0.47863248)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ekl5k"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(750, 1, 1)
+direction = Vector3(0.2, 1, 0)
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 6.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abqjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_facbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_b1qrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_come4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h8e4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4lmeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_0cp0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_d2t1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_gngh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_0n3wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qnost")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_wnkbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_f6a44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0cbny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_hrvbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_uypp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_blkrb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0cp0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2t1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gngh3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0n3wm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5t1e"]
+bg_color = Color(0.08235294, 0.23529412, 0.078431375, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Main" type="Node2D" unique_id=67113771]
+script = ExtResource("1_t5kpo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2007856598]
+position = Vector2(690, 360)
+script = ExtResource("15_cegan")
+hover_scale = Vector2(1.08, 1.08)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=337135947]
+z_index = 2
+material = SubResource("ShaderMaterial_getpj")
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_cegan")
+
+[node name="BeeneMain" type="AnimatedSprite2D" parent="Area2D" unique_id=2004034341]
+z_index = 999
+position = Vector2(-160, -253.00003)
+scale = Vector2(0.85978836, 0.8597883)
+sprite_frames = SubResource("SpriteFrames_ppx11")
+animation = &"yippie"
+autoplay = "idle"
+speed_scale = 0.85
+centered = false
+script = ExtResource("57_ppx11")
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="Area2D" unique_id=1048337390]
+stream = ExtResource("17_h8e4i")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="HelperBeene" parent="Area2D" unique_id=1388937692 instance=ExtResource("104_xkvoa")]
+visible = false
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=110986100]
+z_index = 50
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ekl5k")
+position = Vector2(232, 649)
+
+[node name="BeachGround" type="Sprite2D" parent="." unique_id=1028024645]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_yaehf")
+position = Vector2(1172, 360)
+texture = ExtResource("15_vivmo")
+
+[node name="BeachWater" type="Sprite2D" parent="." unique_id=956171244]
+z_index = -2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_fdpg8")
+position = Vector2(1172, 314)
+texture = ExtResource("17_yaehf")
+
+[node name="BeachSky" type="Sprite2D" parent="." unique_id=1588984819]
+z_index = -3
+texture_repeat = 2
+position = Vector2(472, 296)
+scale = Vector2(0.75993055, 0.8416667)
+texture = ExtResource("18_074og")
+
+[node name="Snow" type="GPUParticles2D" parent="." unique_id=619393726]
+z_index = 1000
+position = Vector2(728, -80)
+amount = 200
+texture = SubResource("GradientTexture2D_fdpg8")
+lifetime = 8.0
+process_material = SubResource("ParticleProcessMaterial_ekl5k")
+
+[node name="ClickCounter" type="Node2D" parent="." unique_id=498882309]
+position = Vector2(1277, 75)
+script = ExtResource("21_getpj")
+
+[node name="ComboSprite" type="AnimatedSprite2D" parent="." unique_id=1338501063]
+position = Vector2(1088, 336)
+scale = Vector2(0.6860465, 0.68604654)
+sprite_frames = SubResource("SpriteFrames_abqjc")
+autoplay = "default"
+frame_progress = 0.7429285
+script = ExtResource("38_b1qrp")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=990049778]
+stream = ExtResource("39_come4")
+autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2042573071]
+
+[node name="Panel" type="Control" parent="CanvasLayer" unique_id=1821854656]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("41_0cp0l")
+
+[node name="leftWoodPanel" type="Sprite2D" parent="CanvasLayer/Panel" unique_id=1952778220]
+position = Vector2(207.06248, 339.52765)
+scale = Vector2(0.65395147, 0.65395147)
+texture = ExtResource("41_4lmeg")
+
+[node name="slideInWood" type="AudioStreamPlayer" parent="CanvasLayer/Panel" unique_id=1352433269]
+stream = ExtResource("43_d2t1y")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel" unique_id=357632299]
+layout_mode = 0
+offset_left = 328.0
+offset_right = 416.0
+offset_bottom = 664.0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"FlatButton"
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0cp0l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d2t1y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gngh3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0n3wm")
+
+[node name="x2" parent="CanvasLayer/Panel" unique_id=1081571809 instance=ExtResource("84_23xmf")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 184.0
+offset_right = 108.0
+offset_bottom = 284.0
+texture_normal = ExtResource("86_23xmf")
+hover_scale = Vector2(1.1, 1.1)
+scale_duration = 0.15
+title = "Double Click"
+description = "Multiplies every Beene you get per click by 2!"
+base_price = 500
+exponent = 4
+multiplier_increase = 2
+
+[node name="beeneHelper1" parent="CanvasLayer/Panel" unique_id=1249908539 instance=ExtResource("84_23xmf")]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 184.0
+offset_right = 220.0
+offset_bottom = 284.0
+texture_normal = ExtResource("85_pjuso")
+script = ExtResource("134_xkvoa")
+hover_scale = Vector2(1.1, 1.1)
+scale_duration = 0.15
+title = "Helper Beene"
+description = "A mini Beene that orbits and clicks for you!"
+base_price = 50
+exponent = 1.8
+
+[node name="auto1" parent="CanvasLayer/Panel" unique_id=1278158495 instance=ExtResource("84_23xmf")]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 184.0
+offset_right = 332.0
+offset_bottom = 284.0
+texture_normal = ExtResource("87_swlj1")
+hover_scale = Vector2(1.1, 1.1)
+scale_duration = 0.15
+title = "Upgrade Title"
+description = "Default description"
+base_price = 0
+exponent = 1
+multiplier_increase = 2
+
+[node name="EquippedAttacks" type="HBoxContainer" parent="CanvasLayer/Panel" unique_id=857628325]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = 33.0
+offset_right = 312.0
+offset_bottom = 145.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+alignment = 1
+script = ExtResource("89_swlj1")
+empty_texture = ExtResource("90_n5t1e")
+
+[node name="AttackSlot1" type="TextureButton" parent="CanvasLayer/Panel/EquippedAttacks" unique_id=40686892]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AttackSlot2" type="TextureButton" parent="CanvasLayer/Panel/EquippedAttacks" unique_id=691468727]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AttackSlot3" type="TextureButton" parent="CanvasLayer/Panel/EquippedAttacks" unique_id=695039763]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("90_n5t1e")
+
+[node name="AttackPicker" type="Panel" parent="CanvasLayer" unique_id=1215971818]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = 88.0
+offset_right = -154.66675
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n5t1e")
+script = ExtResource("90_yysqy")
+
+[node name="Label" type="Label" parent="CanvasLayer/AttackPicker" unique_id=1845729023]
+z_index = 1
+layout_mode = 0
+offset_left = 376.0
+offset_top = -56.0
+offset_right = 615.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.8627451)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8627451)
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 56
+text = "ATTACKS"
+horizontal_alignment = 1
+
+[node name="PickerPanel" type="ColorRect" parent="CanvasLayer/AttackPicker" unique_id=1677513071]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 19.0
+offset_right = 960.0
+offset_bottom = 531.0
+color = Color(0.4910553, 0.6549908, 0.44570953, 1)
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/AttackPicker/PickerPanel" unique_id=2037967330]
+layout_mode = 0
+offset_left = 858.0
+offset_top = 13.0
+offset_right = 930.0
+offset_bottom = 53.0
+text = "Close"
+
+[node name="AttackGrid" type="GridContainer" parent="CanvasLayer/AttackPicker/PickerPanel" unique_id=429881863]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 856.0
+offset_bottom = 405.0
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 6
+
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer" unique_id=247621158]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1200.0
+offset_top = 648.0
+offset_right = 1264.0
+offset_bottom = 712.0
+tooltip_text = "Settings"
+texture_normal = ExtResource("137_qe8ju")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("138_oosfy")
+
+[node name="StatsButton" type="TextureButton" parent="CanvasLayer" unique_id=2123157635]
+offset_left = 1122.0
+offset_top = 650.0
+offset_right = 1184.0
+offset_bottom = 712.0
+tooltip_text = "Stats"
+texture_normal = ExtResource("142_37eu1")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("143_0wkqm")
+
+[node name="BattleButton" type="TextureButton" parent="CanvasLayer" unique_id=1648818692]
+offset_left = 1029.0
+offset_top = 648.0
+offset_right = 1104.0769
+offset_bottom = 709.0
+tooltip_text = "Battles"
+texture_normal = ExtResource("144_5s44m")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("145_ibca3")
+
+[node name="SettingsPanel" parent="CanvasLayer" unique_id=589901544 instance=ExtResource("138_bnk2o")]
+visible = false
+slide_duration = 0.4
+
+[node name="FightResults" parent="CanvasLayer" unique_id=1814415287 instance=ExtResource("143_pw0td")]
+visible = false
+offset_left = 1.0
+offset_right = 1.0
+
+[node name="BossSelect" type="Control" parent="CanvasLayer" unique_id=1838325067]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("148_ibca3")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/BossSelect" unique_id=131216613]
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 725.0
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="LeftButton" type="TextureButton" parent="CanvasLayer/BossSelect" unique_id=859190702]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 276.0
+offset_right = 416.0
+offset_bottom = 444.00006
+texture_normal = ExtResource("149_y0aao")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RightButton" type="TextureButton" parent="CanvasLayer/BossSelect" unique_id=1916249689]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 276.0
+offset_right = 984.0
+offset_bottom = 440.20718
+texture_normal = ExtResource("150_wm5rm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="InfoButton" type="TextureButton" parent="CanvasLayer/BossSelect" unique_id=290347371]
+z_index = 2
+layout_mode = 0
+offset_left = 764.0
+offset_top = 61.0
+offset_right = 854.0
+offset_bottom = 165.4643
+texture_normal = ExtResource("151_ekl5k")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="StarIcon" type="Sprite2D" parent="CanvasLayer/BossSelect" unique_id=2125935596]
+
+[node name="BossPanelButton" type="TextureButton" parent="CanvasLayer/BossSelect" unique_id=1149505254]
+z_index = 1
+layout_mode = 0
+offset_left = 430.0
+offset_top = 139.0
+offset_right = 776.0
+offset_bottom = 656.0
+
+[node name="BossPanel" type="Sprite2D" parent="CanvasLayer/BossSelect" unique_id=1617995224]
+position = Vector2(640, 380)
+scale = Vector2(0.6008481, 0.60084814)
+texture = ExtResource("152_fdpg8")
+
+[node name="BossImage" type="TextureRect" parent="CanvasLayer/BossSelect/BossPanel" unique_id=535361776]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BossName" type="Label" parent="CanvasLayer/BossSelect/BossPanel" unique_id=27253122]
+offset_left = -280.10394
+offset_top = 19.138103
+offset_right = 281.95892
+offset_bottom = 96.13811
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 56
+text = "Apple Beene"
+horizontal_alignment = 1
+
+[node name="BossDesc" type="Label" parent="CanvasLayer/BossSelect/BossPanel" unique_id=394795535]
+offset_left = -278.76917
+offset_top = 109.44458
+offset_right = 255.46875
+offset_bottom = 382.7168
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "desc"
+horizontal_alignment = 1
+
+[node name="TransitionOverlay" type="ColorRect" parent="CanvasLayer" unique_id=399353956]
+z_index = 999
+offset_right = 1281.0
+offset_bottom = 725.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

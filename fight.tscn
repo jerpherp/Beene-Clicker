@@ -1,0 +1,2530 @@
+[gd_scene format=3 uid="uid://ch1w6ibighxlq"]
+
+[ext_resource type="Texture2D" uid="uid://cd7h17wnok6o3" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0001.png" id="1_0s2p3"]
+[ext_resource type="Shader" uid="uid://cjpiykvd7t50k" path="res://fightBGShader.gdshader" id="1_ece0t"]
+[ext_resource type="Texture2D" uid="uid://bcw8sc0qh0hvb" path="res://mainGame/beachFight/beach_0001.png" id="1_yusim"]
+[ext_resource type="Texture2D" uid="uid://bo2kbx7gbd5tg" path="res://mainGame/beachFight/beach_0002.png" id="2_ece0t"]
+[ext_resource type="Texture2D" uid="uid://ie1o8iwrmf0t" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0002.png" id="2_jmbr4"]
+[ext_resource type="Texture2D" uid="uid://eq8v0eu6cg0c" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0003.png" id="3_3o242"]
+[ext_resource type="Texture2D" uid="uid://1cpmicuww7w" path="res://mainGame/beachFight/beach_0003.png" id="3_fqqdc"]
+[ext_resource type="AudioStream" uid="uid://f2w4fc81o6b2" path="res://SFX/select.mp3" id="4_dfqtx"]
+[ext_resource type="Texture2D" uid="uid://4wcb4fislx8v" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0004.png" id="4_ehuw2"]
+[ext_resource type="Texture2D" uid="uid://cnqq0wtugqjmn" path="res://mainGame/beachFight/beach_0004.png" id="4_x1dnm"]
+[ext_resource type="Texture2D" uid="uid://c5er725jciyke" path="res://mainGame/beachFight/beach_0005.png" id="5_hfxcr"]
+[ext_resource type="Texture2D" uid="uid://lg7vxphbakrt" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0005.png" id="5_lapgl"]
+[ext_resource type="Texture2D" uid="uid://25ftidns554d" path="res://mainGame/beeneFight/icons/beene_0003.png" id="5_uh6fy"]
+[ext_resource type="Texture2D" uid="uid://c7hagdw0l2t33" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0006.png" id="6_1s7su"]
+[ext_resource type="Texture2D" uid="uid://j8s1wr5tqa1k" path="res://mainGame/beeneFight/icons/beene_0004.png" id="6_1ybuh"]
+[ext_resource type="Texture2D" uid="uid://c73gxs13jjuaf" path="res://mainGame/beachFight/beach_0006.png" id="6_flvgq"]
+[ext_resource type="Texture2D" uid="uid://duqa8j30fjci7" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0007.png" id="7_7hcmd"]
+[ext_resource type="Texture2D" uid="uid://bi7xtugstwsmu" path="res://mainGame/beeneFight/icons/beene_0001.png" id="7_jjv5k"]
+[ext_resource type="Texture2D" uid="uid://da3bprcinftju" path="res://mainGame/beachFight/beach_0007.png" id="7_lubpo"]
+[ext_resource type="Texture2D" uid="uid://dk5c3utf561d4" path="res://mainGame/beeneFight/icons/beene_0002.png" id="8_eev0p"]
+[ext_resource type="Texture2D" uid="uid://vswrycg4jpd8" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0008.png" id="8_qywyq"]
+[ext_resource type="Texture2D" uid="uid://nvcyb647u5g4" path="res://mainGame/beachFight/beach_0008.png" id="8_y8p2v"]
+[ext_resource type="Texture2D" uid="uid://gqu0myy77pt1" path="res://mainGame/beachFight/beach_0009.png" id="9_3ojwq"]
+[ext_resource type="Texture2D" uid="uid://vk5bbq3n6skd" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0009.png" id="9_f8xwb"]
+[ext_resource type="Texture2D" uid="uid://bgkg38fojqerq" path="res://mainGame/pause/beene at table.png" id="9_lsek2"]
+[ext_resource type="Script" uid="uid://yb57sis8qnup" path="res://pause_screen.gd" id="9_t0bq3"]
+[ext_resource type="Texture2D" uid="uid://mf3a7a8bpfo8" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0010.png" id="10_bganb"]
+[ext_resource type="Texture2D" uid="uid://dwbbh56xc2egh" path="res://mainGame/beachFight/beach_0010.png" id="10_f42qp"]
+[ext_resource type="Texture2D" uid="uid://d4nn0f78lhker" path="res://mainGame/pause/pause!.png.png" id="10_t0bq3"]
+[ext_resource type="Texture2D" uid="uid://b2t0oc3wu0k1c" path="res://mainGame/beachFight/beach_0011.png" id="11_0t2js"]
+[ext_resource type="Texture2D" uid="uid://dfnrg1wbfogro" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0011.png" id="11_t3yge"]
+[ext_resource type="Script" uid="uid://bhaibh1ap53na" path="res://qte.gd" id="12_0b6fw"]
+[ext_resource type="Texture2D" uid="uid://bf4ceeuf1hpeg" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0012.png" id="12_07v2b"]
+[ext_resource type="Texture2D" uid="uid://bjbpkketb215p" path="res://mainGame/beachFight/beach_0012.png" id="12_p55lk"]
+[ext_resource type="Texture2D" uid="uid://3yb1io0woqgj" path="res://mainGame/beachFight/beach_0013.png" id="13_2gdp0"]
+[ext_resource type="Texture2D" uid="uid://bw7a0cq5friai" path="res://mainGame/appleBeene/icons/apple_0003.png" id="13_de1lg"]
+[ext_resource type="Texture2D" uid="uid://2b3nkglbj7f3" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0013.png" id="13_nej38"]
+[ext_resource type="Script" uid="uid://st1hbah3g87" path="res://attack_hud.gd" id="13_utqwd"]
+[ext_resource type="Texture2D" uid="uid://cquykdyqt1qgp" path="res://attacks/empty_texture.png" id="14_5cndg"]
+[ext_resource type="Texture2D" uid="uid://chnl47x8cobuy" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0014.png" id="14_8lvxe"]
+[ext_resource type="Texture2D" uid="uid://ckdnaipwaxmtd" path="res://mainGame/appleBeene/icons/apple_0004.png" id="14_252ap"]
+[ext_resource type="Texture2D" uid="uid://chsl3eqpkydb" path="res://mainGame/beachFight/beach_0014.png" id="14_uo1uf"]
+[ext_resource type="Texture2D" uid="uid://cf3tvrpvcunk4" path="res://mainGame/beachFight/beach_0015.png" id="15_mtk0u"]
+[ext_resource type="Texture2D" uid="uid://dyqjj07tk5mv4" path="res://mainGame/appleBeene/icons/apple_0001.png" id="15_tt03d"]
+[ext_resource type="Texture2D" uid="uid://cspmow3820n2i" path="res://mainGame/beachFight/beach_0016.png" id="16_0s2p3"]
+[ext_resource type="Texture2D" uid="uid://bwqpy608016bm" path="res://mainGame/appleBeene/icons/apple_0002.png" id="16_eva26"]
+[ext_resource type="Texture2D" uid="uid://3ypwtas0dkhw" path="res://mainGame/beachFight/beach_0017.png" id="17_jmbr4"]
+[ext_resource type="Texture2D" uid="uid://cx4nl8tcbr2b5" path="res://mainGame/beachFight/beach_0018.png" id="18_3o242"]
+[ext_resource type="Texture2D" uid="uid://jrr6dh6uw5hq" path="res://mainGame/beachFight/beach_0019.png" id="19_ehuw2"]
+[ext_resource type="Texture2D" uid="uid://bifkg3ipg3yn7" path="res://mainGame/beachFight/beach_0020.png" id="20_lapgl"]
+[ext_resource type="Texture2D" uid="uid://b1nakc52p2nvu" path="res://mainGame/beachFight/beach_0021.png" id="21_1s7su"]
+[ext_resource type="Texture2D" uid="uid://d1o8b3k4y755p" path="res://mainGame/beachFight/beach_0022.png" id="22_7hcmd"]
+[ext_resource type="Texture2D" uid="uid://ugx4mhg8hwu3" path="res://mainGame/beachFight/beach_0023.png" id="23_qywyq"]
+[ext_resource type="Texture2D" uid="uid://cx5yb5ujeqxsp" path="res://hud/options.png" id="23_tt03d"]
+[ext_resource type="Script" uid="uid://b3xm42apf1igw" path="res://settings_button.gd" id="24_eva26"]
+[ext_resource type="Texture2D" uid="uid://d2qrhrgth1v4t" path="res://mainGame/beachFight/beach_0024.png" id="24_f8xwb"]
+[ext_resource type="Texture2D" uid="uid://dwlmxy7g2m4s0" path="res://mainGame/beachFight/beach_0025.png" id="25_bganb"]
+[ext_resource type="PackedScene" uid="uid://33ykgjff2afy" path="res://settings_panel.tscn" id="25_eva26"]
+[ext_resource type="Script" uid="uid://dx4gpnrf5kshn" path="res://speed_lines.gd" id="26_rcjit"]
+[ext_resource type="Texture2D" uid="uid://orma7eii5jcs" path="res://mainGame/beachFight/beach_0026.png" id="26_t3yge"]
+[ext_resource type="Texture2D" uid="uid://ce652crbrbtid" path="res://mainGame/beachFight/beach_0027.png" id="27_07v2b"]
+[ext_resource type="Texture2D" uid="uid://cvo1sqhj6vu1v" path="res://hud/great.png" id="27_8u5yx"]
+[ext_resource type="Texture2D" uid="uid://qha5minestcm" path="res://hud/hit.png" id="28_do5pp"]
+[ext_resource type="Texture2D" uid="uid://cxvjh1uqad8bw" path="res://mainGame/beachFight/beach_0028.png" id="28_nej38"]
+[ext_resource type="Texture2D" uid="uid://b53n4q40sl6od" path="res://hud/miss.png" id="29_gloik"]
+[ext_resource type="Texture2D" uid="uid://bwlf044ql7cbf" path="res://mainGame/appleBeene/attackFight/appleAttack_0001.png" id="44_53uu5"]
+[ext_resource type="Texture2D" uid="uid://c4c7ga1ods62q" path="res://mainGame/appleBeene/idleFight/appleIdle_0001.png" id="44_hiy1e"]
+[ext_resource type="Texture2D" uid="uid://drqe1dejx5jov" path="res://mainGame/appleBeene/idleFight/appleIdle_0002.png" id="45_7ld6x"]
+[ext_resource type="Texture2D" uid="uid://cn6omsphewesu" path="res://mainGame/appleBeene/attackFight/appleAttack_0002.png" id="45_dfqtx"]
+[ext_resource type="Texture2D" uid="uid://1ky7er0xqbia" path="res://mainGame/appleBeene/idleFight/appleIdle_0003.png" id="46_o5vf7"]
+[ext_resource type="Texture2D" uid="uid://ypjirnttrq44" path="res://mainGame/appleBeene/attackFight/appleAttack_0003.png" id="46_xfjyq"]
+[ext_resource type="Texture2D" uid="uid://ew86a5icbjkg" path="res://mainGame/appleBeene/idleFight/appleIdle_0004.png" id="47_coges"]
+[ext_resource type="Texture2D" uid="uid://b71m3mv1md8tk" path="res://mainGame/appleBeene/attackFight/appleAttack_0004.png" id="47_p23p4"]
+[ext_resource type="Texture2D" uid="uid://cuet3aba8igcq" path="res://mainGame/appleBeene/idleFight/appleIdle_0005.png" id="48_7yb5u"]
+[ext_resource type="Texture2D" uid="uid://c3nks7co8bhba" path="res://mainGame/appleBeene/attackFight/appleAttack_0005.png" id="48_347dj"]
+[ext_resource type="Texture2D" uid="uid://btib8ajo11075" path="res://mainGame/appleBeene/idleFight/appleIdle_0006.png" id="49_nd3ew"]
+[ext_resource type="Texture2D" uid="uid://41df13o8n380" path="res://mainGame/appleBeene/attackFight/appleAttack_0006.png" id="49_snb57"]
+[ext_resource type="Texture2D" uid="uid://b7g7anynw5nel" path="res://mainGame/appleBeene/idleFight/appleIdle_0007.png" id="50_2mubm"]
+[ext_resource type="Texture2D" uid="uid://cqp41qicunuwd" path="res://mainGame/appleBeene/attackFight/appleAttack_0007.png" id="50_j5mn0"]
+[ext_resource type="Texture2D" uid="uid://b4kdxegk8uw3n" path="res://mainGame/appleBeene/idleFight/appleIdle_0008.png" id="51_77jv5"]
+[ext_resource type="Texture2D" uid="uid://cdf6ohoegu84i" path="res://mainGame/appleBeene/attackFight/appleAttack_0008.png" id="51_ax38t"]
+[ext_resource type="Texture2D" uid="uid://c6knqxb2c45ja" path="res://mainGame/appleBeene/attackFight/appleAttack_0009.png" id="52_de1lg"]
+[ext_resource type="Texture2D" uid="uid://cqw34gfjv6tcx" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0001.png" id="52_hb5fh"]
+[ext_resource type="Texture2D" uid="uid://dsnw4svkl2u7d" path="res://mainGame/appleBeene/idleFight/appleIdle_0009.png" id="52_uh6fy"]
+[ext_resource type="Texture2D" uid="uid://du05lrjtu86ag" path="res://mainGame/appleBeene/idleFight/appleIdle_0010.png" id="53_1ybuh"]
+[ext_resource type="Texture2D" uid="uid://naldwdsu0ax6" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0002.png" id="53_4ja6v"]
+[ext_resource type="Texture2D" uid="uid://cbh1l8odby0fv" path="res://mainGame/appleBeene/attackFight/appleAttack_0010.png" id="53_252ap"]
+[ext_resource type="Texture2D" uid="uid://dx0so16iokldt" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0003.png" id="54_ibie2"]
+[ext_resource type="Texture2D" uid="uid://d2nkdhty33y4s" path="res://mainGame/appleBeene/idleFight/appleIdle_0011.png" id="54_jjv5k"]
+[ext_resource type="Texture2D" uid="uid://delidi1263fuo" path="res://mainGame/appleBeene/attackFight/appleAttack_0011.png" id="54_tt03d"]
+[ext_resource type="Texture2D" uid="uid://b63brfvo1mt5a" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0004.png" id="55_7hhag"]
+[ext_resource type="Texture2D" uid="uid://bgwqs06gy3vgc" path="res://mainGame/appleBeene/idleFight/appleIdle_0012.png" id="55_eev0p"]
+[ext_resource type="Texture2D" uid="uid://13w1gt7xvjue" path="res://mainGame/appleBeene/attackFight/appleAttack_0012.png" id="55_eva26"]
+[ext_resource type="Texture2D" uid="uid://refuo2dqughg" path="res://mainGame/appleBeene/idleFight/appleIdle_0013.png" id="56_ff73e"]
+[ext_resource type="Texture2D" uid="uid://drtp70q6raom1" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0005.png" id="56_itjlo"]
+[ext_resource type="Texture2D" uid="uid://t8676cv1ulq0" path="res://mainGame/appleBeene/attackFight/appleAttack_0013.png" id="56_rcjit"]
+[ext_resource type="Texture2D" uid="uid://kmuippv8rnq6" path="res://mainGame/appleBeene/idleFight/appleIdle_0014.png" id="57_2lmha"]
+[ext_resource type="Texture2D" uid="uid://byr7cil4v33sk" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0006.png" id="57_mps6p"]
+[ext_resource type="Texture2D" uid="uid://bvs5r7t7v4sqf" path="res://mainGame/appleBeene/attackFight/appleAttack_0014.png" id="57_u3vxt"]
+[ext_resource type="Script" uid="uid://bq5j5yuu0jvtv" path="res://fight_camera.gd" id="58_7ld6x"]
+[ext_resource type="Texture2D" uid="uid://bownnfb22mlv2" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0007.png" id="58_k81my"]
+[ext_resource type="Texture2D" uid="uid://d3khmq38522la" path="res://mainGame/appleBeene/attackFight/appleAttack_0015.png" id="58_lq6ar"]
+[ext_resource type="Texture2D" uid="uid://dx224572lwx6i" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0008.png" id="59_3tpug"]
+[ext_resource type="Texture2D" uid="uid://0umgoa2f422n" path="res://mainGame/appleBeene/attackFight/appleAttack_0016.png" id="59_8u5yx"]
+[ext_resource type="Script" uid="uid://cn6ktykkrytmf" path="res://whos_turn.gd" id="59_o5vf7"]
+[ext_resource type="AudioStream" uid="uid://bptusoqxpolpc" path="res://music/Jigsaw_Junction.mp3" id="60_coges"]
+[ext_resource type="Texture2D" uid="uid://daf4cnoyj42ul" path="res://mainGame/appleBeene/attackFight/appleAttack_0017.png" id="60_do5pp"]
+[ext_resource type="Texture2D" uid="uid://y8ptmxi0fnol" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0009.png" id="60_xx4ax"]
+[ext_resource type="Script" uid="uid://cq8n1i5qmw8xb" path="res://heath_bar.gd" id="61_7yb5u"]
+[ext_resource type="Texture2D" uid="uid://de124oiktsrd1" path="res://mainGame/appleBeene/attackFight/appleAttack_0018.png" id="61_gloik"]
+[ext_resource type="Texture2D" uid="uid://ddvjs0y15n1ho" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0010.png" id="61_tt5xw"]
+[ext_resource type="Texture2D" uid="uid://cl7kry4qoy35v" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0011.png" id="62_60hj7"]
+[ext_resource type="Texture2D" uid="uid://kcbwsdalfcra" path="res://mainGame/appleBeene/attackFight/appleAttack_0019.png" id="62_xwt2h"]
+[ext_resource type="Texture2D" uid="uid://b2itci84pmntj" path="res://mainGame/appleBeene/attackFight/appleAttack_0020.png" id="63_vd8fk"]
+[ext_resource type="Texture2D" uid="uid://dr4k8veob6n7c" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0012.png" id="63_xskmk"]
+[ext_resource type="Texture2D" uid="uid://crgikn4dh3yw8" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0013.png" id="64_47hev"]
+[ext_resource type="Texture2D" uid="uid://drtrh7efbaxxf" path="res://mainGame/appleBeene/attackFight/appleAttack_0021.png" id="64_pk0qh"]
+[ext_resource type="Texture2D" uid="uid://b3y62j27hbayh" path="res://mainGame/appleBeene/attackFight/appleAttack_0022.png" id="65_3ropm"]
+[ext_resource type="Texture2D" uid="uid://bpionllwhkk0r" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0014.png" id="65_xmnbl"]
+[ext_resource type="Texture2D" uid="uid://cdicac1dm00cp" path="res://mainGame/appleBeene/attackFight/appleAttack_0023.png" id="66_5j4jd"]
+[ext_resource type="Texture2D" uid="uid://bo01dlr1cxb2l" path="res://mainGame/beachFight/palm.png" id="66_jjv5k"]
+[ext_resource type="Texture2D" uid="uid://bpps0tf8578if" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0015.png" id="66_xa8k5"]
+[ext_resource type="Texture2D" uid="uid://dgdujqjlfom21" path="res://mainGame/beachFight/sandcastle.png" id="67_eev0p"]
+[ext_resource type="Texture2D" uid="uid://dps1fvm112i58" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0016.png" id="67_hgoh5"]
+[ext_resource type="Texture2D" uid="uid://dbfygk6n2mv3y" path="res://mainGame/appleBeene/attackFight/appleAttack_0024.png" id="67_ko4ym"]
+[ext_resource type="Texture2D" uid="uid://3blunvph2ern" path="res://mainGame/appleBeene/attackFight/appleAttack_0025.png" id="68_ehlf3"]
+[ext_resource type="Texture2D" uid="uid://bldr4mvghpwmk" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0017.png" id="68_k2ln2"]
+[ext_resource type="Texture2D" uid="uid://buhljw40mqwq0" path="res://mainGame/appleBeene/attackFight/appleAttack_0026.png" id="69_d0d8u"]
+[ext_resource type="Texture2D" uid="uid://bdav4o0igupjv" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0018.png" id="69_il2ln"]
+[ext_resource type="Texture2D" uid="uid://bsd4st3p6lgrq" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0019.png" id="70_2w1hb"]
+[ext_resource type="Texture2D" uid="uid://hfr5vj0jh4uf" path="res://mainGame/appleBeene/attackFight/appleAttack_0027.png" id="70_vhna0"]
+[ext_resource type="Texture2D" uid="uid://rqotm2k7nvpo" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0020.png" id="71_abgk4"]
+[ext_resource type="Texture2D" uid="uid://bs6biwv637pf5" path="res://mainGame/appleBeene/attackFight/appleAttack_0028.png" id="71_lo0mu"]
+[ext_resource type="Texture2D" uid="uid://ghon6qb34wyd" path="res://mainGame/appleBeene/attackFight/appleAttack_0029.png" id="72_bt3t8"]
+[ext_resource type="Texture2D" uid="uid://dqkm0mlum60is" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0021.png" id="72_nf5uu"]
+[ext_resource type="Texture2D" uid="uid://c1y6kdejpjtac" path="res://mainGame/appleBeene/attackFight/appleAttack_0030.png" id="73_7bnps"]
+[ext_resource type="Texture2D" uid="uid://cyscrhkrl8vhi" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0022.png" id="73_yhcy2"]
+[ext_resource type="Texture2D" uid="uid://dnxoofgp1cdc5" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0023.png" id="74_1qx5m"]
+[ext_resource type="Texture2D" uid="uid://c2viwgpu5fhlv" path="res://mainGame/appleBeene/attackFight/appleAttack_0031.png" id="74_s1f2k"]
+[ext_resource type="Texture2D" uid="uid://bpobulg4wfm6v" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0024.png" id="75_2e5ca"]
+[ext_resource type="Texture2D" uid="uid://drwsjlr035uk4" path="res://mainGame/appleBeene/attackFight/appleAttack_0032.png" id="75_a0xmd"]
+[ext_resource type="Texture2D" uid="uid://bubccispx62rj" path="res://mainGame/appleBeene/attackFight/appleAttack_0033.png" id="76_tjh3e"]
+[ext_resource type="Texture2D" uid="uid://do2mehg8ptja8" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0025.png" id="76_xmjmc"]
+[ext_resource type="Texture2D" uid="uid://c3ctqq6vs8t3m" path="res://mainGame/appleBeene/attackFight/appleAttack_0034.png" id="77_6tymo"]
+[ext_resource type="Texture2D" uid="uid://fq4pvmtlighm" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0026.png" id="77_8l1ij"]
+[ext_resource type="Texture2D" uid="uid://cxop016o7su2p" path="res://mainGame/appleBeene/attackFight/appleAttack_0035.png" id="78_1k5g5"]
+[ext_resource type="Texture2D" uid="uid://yum6nqoa3icl" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0027.png" id="78_umvpm"]
+[ext_resource type="Texture2D" uid="uid://crge4kf2i0eqr" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0028.png" id="79_cspy8"]
+[ext_resource type="Texture2D" uid="uid://do1n3lawbdm5m" path="res://mainGame/appleBeene/attackFight/appleAttack_0036.png" id="79_n0m88"]
+[ext_resource type="Texture2D" uid="uid://dge1sgcemqnv2" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0029.png" id="80_kaw3u"]
+[ext_resource type="Texture2D" uid="uid://xrwbdy0aof3o" path="res://mainGame/appleBeene/attackFight/appleAttack_0037.png" id="80_wgn3j"]
+[ext_resource type="Texture2D" uid="uid://b6f7115hljeeo" path="res://mainGame/appleBeene/attackFight/appleAttack_0038.png" id="81_1ir5w"]
+[ext_resource type="Texture2D" uid="uid://ccrhx7plhmmke" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0030.png" id="81_8sqeq"]
+[ext_resource type="Texture2D" uid="uid://deuo24jgfu7ij" path="res://mainGame/appleBeene/attackFight/appleAttack_0039.png" id="82_c6jwy"]
+[ext_resource type="Texture2D" uid="uid://81saigjdjbfh" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0031.png" id="82_qe4b2"]
+[ext_resource type="Texture2D" uid="uid://c8ayj5sj3kbyd" path="res://mainGame/appleBeene/attackFight/appleAttack_0040.png" id="83_m053d"]
+[ext_resource type="Texture2D" uid="uid://bdd4gd287yvla" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0032.png" id="83_oyery"]
+[ext_resource type="Texture2D" uid="uid://bafsrk7udoa4e" path="res://mainGame/appleBeene/hitFight/appleHit_0001.png" id="84_feq4e"]
+[ext_resource type="Texture2D" uid="uid://cckhf7p7oux6j" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0033.png" id="84_pyslw"]
+[ext_resource type="Texture2D" uid="uid://bxtv7shbp61so" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0001.png" id="85_c7o34"]
+[ext_resource type="Texture2D" uid="uid://b13d0vtrh5wf0" path="res://mainGame/appleBeene/hitFight/appleHit_0002.png" id="85_dj6ud"]
+[ext_resource type="Texture2D" uid="uid://cop7fmokisnir" path="res://mainGame/appleBeene/hitFight/appleHit_0003.png" id="86_241ke"]
+[ext_resource type="Texture2D" uid="uid://ggv56rjaegwu" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0002.png" id="86_yq4qy"]
+[ext_resource type="Texture2D" uid="uid://dfpadejc3x8bb" path="res://mainGame/appleBeene/hitFight/appleHit_0004.png" id="87_v4xls"]
+[ext_resource type="Texture2D" uid="uid://dopadrmnpjlgd" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0003.png" id="87_vsmjg"]
+[ext_resource type="Texture2D" uid="uid://clnrr6ljcgyt8" path="res://mainGame/appleBeene/hitFight/appleHit_0005.png" id="88_07qtn"]
+[ext_resource type="Texture2D" uid="uid://chovoasjy2cf" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0004.png" id="88_jl8wl"]
+[ext_resource type="Texture2D" uid="uid://kgrtoyemo2py" path="res://mainGame/appleBeene/hitFight/appleHit_0006.png" id="89_b0vkq"]
+[ext_resource type="Texture2D" uid="uid://bxu5c4imgs2pk" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0005.png" id="89_j2mly"]
+[ext_resource type="Texture2D" uid="uid://cwk772v6yiw0w" path="res://mainGame/appleBeene/hitFight/appleHit_0007.png" id="90_jy1nu"]
+[ext_resource type="Texture2D" uid="uid://dsk14xxaq27m" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0006.png" id="90_lirhe"]
+[ext_resource type="Texture2D" uid="uid://bpxx100j7j5wp" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0007.png" id="91_hwwb3"]
+[ext_resource type="Texture2D" uid="uid://cv3mk4l0ywjox" path="res://mainGame/appleBeene/hitFight/appleHit_0008.png" id="91_pgn22"]
+[ext_resource type="Texture2D" uid="uid://ca1uiawux46d4" path="res://mainGame/appleBeene/hitFight/appleHit_0009.png" id="92_0856q"]
+[ext_resource type="Texture2D" uid="uid://bu15cqqeqfpr1" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0008.png" id="92_xc636"]
+[ext_resource type="Texture2D" uid="uid://bh203l3qr4huu" path="res://mainGame/appleBeene/hitFight/appleHit_0010.png" id="93_8u5mj"]
+[ext_resource type="Texture2D" uid="uid://dy1a1eaitxvmc" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0009.png" id="93_lvtnu"]
+[ext_resource type="Texture2D" uid="uid://db1cl6mpkag8n" path="res://mainGame/appleBeene/hitFight/appleHit_0011.png" id="94_1jte8"]
+[ext_resource type="Texture2D" uid="uid://bwmef3lcynebo" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0010.png" id="94_wq8us"]
+[ext_resource type="Texture2D" uid="uid://cyxa7fx2rxu3h" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0011.png" id="95_g6k23"]
+[ext_resource type="Texture2D" uid="uid://dv4tcsrjcolkj" path="res://mainGame/appleBeene/hitFight/appleHit_0012.png" id="95_t63i7"]
+[ext_resource type="Texture2D" uid="uid://oom2tkhpiax0" path="res://mainGame/appleBeene/hitFight/appleHit_0013.png" id="96_5tok8"]
+[ext_resource type="Texture2D" uid="uid://c0t8f6cye7rpo" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0012.png" id="96_6fu0x"]
+[ext_resource type="Texture2D" uid="uid://cj1yfco1ukki1" path="res://mainGame/appleBeene/hitFight/appleHit_0014.png" id="97_52y8u"]
+[ext_resource type="Texture2D" uid="uid://f6jnemdjmhss" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0013.png" id="97_njdj8"]
+[ext_resource type="Texture2D" uid="uid://dwo82d75n7u5l" path="res://mainGame/appleBeene/hitFight/appleHit_0015.png" id="98_221fh"]
+[ext_resource type="Texture2D" uid="uid://buj762phqcro7" path="res://mainGame/beeneFight/beeneDodge/beeneFightDodge0014.png" id="98_bs3gt"]
+[ext_resource type="Texture2D" uid="uid://ca58bng26f4fr" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0001.png" id="99_kw2n2"]
+[ext_resource type="Texture2D" uid="uid://b4dcepju2qfly" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0002.png" id="100_n733y"]
+[ext_resource type="Texture2D" uid="uid://di6qy8hfv2wac" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0003.png" id="101_00qtd"]
+[ext_resource type="Texture2D" uid="uid://dxv50sywsjsf3" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0004.png" id="102_lsek2"]
+[ext_resource type="Texture2D" uid="uid://dgol2488xlarc" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0005.png" id="103_t0bq3"]
+[ext_resource type="Texture2D" uid="uid://t2laufan5eg5" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0006.png" id="104_0b6fw"]
+[ext_resource type="Texture2D" uid="uid://dltuyixvh75in" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0007.png" id="105_utqwd"]
+[ext_resource type="Texture2D" uid="uid://dfr4pafb24fyb" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0008.png" id="106_5cndg"]
+[ext_resource type="Texture2D" uid="uid://dw1n0old6ujom" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0009.png" id="107_f0lsv"]
+[ext_resource type="Texture2D" uid="uid://cilrj4i3h44vs" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0010.png" id="108_q8bs3"]
+[ext_resource type="Texture2D" uid="uid://eeqe3inqdt2j" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0011.png" id="109_rnt5s"]
+[ext_resource type="Texture2D" uid="uid://bpq4xn3qfe4ji" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0012.png" id="110_rbdti"]
+[ext_resource type="Texture2D" uid="uid://mjxwf4dlx276" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0013.png" id="111_0j483"]
+[ext_resource type="Texture2D" uid="uid://fn5478cyiml3" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0014.png" id="112_5tedq"]
+[ext_resource type="Texture2D" uid="uid://dmo4epqolbtk7" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0001.png" id="113_acvc4"]
+[ext_resource type="Texture2D" uid="uid://da2uhag2fvhbv" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0015.png" id="113_ue6t8"]
+[ext_resource type="Texture2D" uid="uid://dwuimq2584eny" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0016.png" id="114_3yaww"]
+[ext_resource type="Texture2D" uid="uid://dr2ccpxvqw44n" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0002.png" id="114_x1mbm"]
+[ext_resource type="Texture2D" uid="uid://d0ore5q5pcd5o" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0003.png" id="115_l4xvl"]
+[ext_resource type="Texture2D" uid="uid://cyw7wo52t437" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0017.png" id="115_l6b8o"]
+[ext_resource type="Texture2D" uid="uid://hq2nhq2ecr83" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0004.png" id="116_d4ved"]
+[ext_resource type="Texture2D" uid="uid://sisuf78g0hor" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0018.png" id="116_ul3mt"]
+[ext_resource type="Texture2D" uid="uid://becimjy0dhmxp" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0005.png" id="117_4t8nb"]
+[ext_resource type="Texture2D" uid="uid://b0gkhpxtsyqvx" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0019.png" id="117_5kjso"]
+[ext_resource type="Texture2D" uid="uid://dd66r8xysoyro" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0006.png" id="118_imwxn"]
+[ext_resource type="Texture2D" uid="uid://d1s7bswr1404e" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0020.png" id="118_xrgcs"]
+[ext_resource type="Texture2D" uid="uid://mp14len6y6gp" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0021.png" id="119_f4104"]
+[ext_resource type="Texture2D" uid="uid://bqbn8b64mma1u" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0007.png" id="119_lbgv2"]
+[ext_resource type="Texture2D" uid="uid://bjr7a48meb3d1" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0008.png" id="120_ea2cq"]
+[ext_resource type="Texture2D" uid="uid://bxjuclawd060e" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0022.png" id="120_yohfb"]
+[ext_resource type="Texture2D" uid="uid://dk577iuscdxd2" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0023.png" id="121_3jmdk"]
+[ext_resource type="Texture2D" uid="uid://h6rkt4ed0t48" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0009.png" id="121_yisua"]
+[ext_resource type="Texture2D" uid="uid://cesrho84ukenk" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0024.png" id="122_jikok"]
+[ext_resource type="Texture2D" uid="uid://b6sd67qfn2qhu" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0010.png" id="122_ykn25"]
+[ext_resource type="Texture2D" uid="uid://b4hpckadrmddh" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0011.png" id="123_8x1nl"]
+[ext_resource type="Texture2D" uid="uid://c8rxvbtcae7vh" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0025.png" id="123_wjjak"]
+[ext_resource type="Texture2D" uid="uid://bpcnq7wqpj08a" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0026.png" id="124_64hcc"]
+[ext_resource type="Texture2D" uid="uid://c3c5xh5kp7mp8" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0012.png" id="124_vv2g0"]
+[ext_resource type="Texture2D" uid="uid://dnekduxir0ct5" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0027.png" id="125_cfy0v"]
+[ext_resource type="Texture2D" uid="uid://bhfo8a7f5amdc" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0013.png" id="125_kqb1h"]
+[ext_resource type="Texture2D" uid="uid://byb4njghiie6w" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0028.png" id="126_clj8k"]
+[ext_resource type="Texture2D" uid="uid://b0lb2lrxcfsae" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0014.png" id="126_oorac"]
+[ext_resource type="Texture2D" uid="uid://ckhb0wjhyyu0l" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0015.png" id="127_gl0c3"]
+[ext_resource type="Texture2D" uid="uid://dxisiny0psadm" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0029.png" id="127_rhr8c"]
+[ext_resource type="Texture2D" uid="uid://dt1b588qcehge" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0030.png" id="128_1dw0j"]
+[ext_resource type="Texture2D" uid="uid://b265sp2njfpyx" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0016.png" id="128_ej6ti"]
+[ext_resource type="Texture2D" uid="uid://dr82xqm1phv30" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0031.png" id="129_ubt67"]
+[ext_resource type="Texture2D" uid="uid://c16ivum73ntvc" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0017.png" id="129_v0xq1"]
+[ext_resource type="Texture2D" uid="uid://cne8aobnski12" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0018.png" id="130_8fclv"]
+[ext_resource type="Texture2D" uid="uid://o7mvms8ku3ca" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0032.png" id="130_828lh"]
+[ext_resource type="Texture2D" uid="uid://cfhelpbkcnkea" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0033.png" id="131_nfdjc"]
+[ext_resource type="Texture2D" uid="uid://duyq2on26e63y" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0019.png" id="131_y22no"]
+[ext_resource type="Texture2D" uid="uid://fodsn8hjg1o6" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0020.png" id="132_bj6lf"]
+[ext_resource type="Texture2D" uid="uid://b1iea7plvehm6" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0034.png" id="132_ygmk1"]
+[ext_resource type="Texture2D" uid="uid://diuqmqkbdg8kn" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0021.png" id="133_bpr6u"]
+[ext_resource type="Texture2D" uid="uid://cirvcxjqlv3yu" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0035.png" id="133_h0cko"]
+[ext_resource type="Texture2D" uid="uid://bkahynsha3v07" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0022.png" id="134_08epc"]
+[ext_resource type="Texture2D" uid="uid://dimct7512v8ww" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0036.png" id="134_kmu48"]
+[ext_resource type="Texture2D" uid="uid://bxupbltlbin5q" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0037.png" id="135_67jp2"]
+[ext_resource type="Texture2D" uid="uid://dw8msosa6128j" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0023.png" id="135_sjwpn"]
+[ext_resource type="Texture2D" uid="uid://jnx50iuanlbs" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0024.png" id="136_f8r06"]
+[ext_resource type="Texture2D" uid="uid://x08on4eoqurs" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0038.png" id="136_y20k5"]
+[ext_resource type="Texture2D" uid="uid://84y8fco5iocp" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0039.png" id="137_gbxvy"]
+[ext_resource type="Texture2D" uid="uid://wyo3wohwxh2u" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0025.png" id="137_lxof7"]
+[ext_resource type="Texture2D" uid="uid://drpancf7fmuos" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0040.png" id="138_0pajk"]
+[ext_resource type="Texture2D" uid="uid://cjqyqlhfdq5y3" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0026.png" id="138_fewdm"]
+[ext_resource type="Texture2D" uid="uid://dawitut1khnhi" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0027.png" id="139_oj344"]
+[ext_resource type="Texture2D" uid="uid://coktpa2y4vhdq" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0041.png" id="139_uyctk"]
+[ext_resource type="Texture2D" uid="uid://85wbsojvlwdn" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0028.png" id="140_s5ij7"]
+[ext_resource type="Texture2D" uid="uid://qx3vbouibevv" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0042.png" id="140_x34hk"]
+[ext_resource type="Texture2D" uid="uid://rka2efo236mp" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0029.png" id="141_otvpk"]
+[ext_resource type="Texture2D" uid="uid://dwmgb4fpkswuk" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0043.png" id="141_wjbp7"]
+[ext_resource type="Texture2D" uid="uid://c3knwfbid74sn" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0030.png" id="142_q3kly"]
+[ext_resource type="Texture2D" uid="uid://bno38h213qq1q" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0044.png" id="142_ydgsi"]
+[ext_resource type="Texture2D" uid="uid://jclo0vqyno2w" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0045.png" id="143_vjamr"]
+[ext_resource type="Texture2D" uid="uid://ct01wcebkoevg" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0031.png" id="143_xbpti"]
+[ext_resource type="Texture2D" uid="uid://c4vbpwwco5xyt" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0046.png" id="144_6f3lh"]
+[ext_resource type="Texture2D" uid="uid://dau5d2biu33vq" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0032.png" id="144_6k8m7"]
+[ext_resource type="Texture2D" uid="uid://dcgg2axm68xyc" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0047.png" id="145_m12jx"]
+[ext_resource type="Texture2D" uid="uid://c5f2p0ff6tm3y" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0033.png" id="145_nuch5"]
+[ext_resource type="Texture2D" uid="uid://dx0526vvlor0w" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0034.png" id="146_jgexe"]
+[ext_resource type="Texture2D" uid="uid://np336js8yx5r" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0048.png" id="146_oiisl"]
+[ext_resource type="Texture2D" uid="uid://b1t3a8f1kb0l3" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0035.png" id="147_1rd7x"]
+[ext_resource type="Texture2D" uid="uid://ni1uhex1h3px" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0049.png" id="147_khoj7"]
+[ext_resource type="Texture2D" uid="uid://cokdpxkpodlxe" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0036.png" id="148_o15qw"]
+[ext_resource type="Texture2D" uid="uid://blborv7k36tm0" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0050.png" id="148_r2nb5"]
+[ext_resource type="Texture2D" uid="uid://ctra73vmwahnc" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0051.png" id="149_0ehpx"]
+[ext_resource type="Texture2D" uid="uid://b8ukhsh0ykgou" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0037.png" id="149_oyrjl"]
+[ext_resource type="Texture2D" uid="uid://tue0t56jcv22" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0038.png" id="150_evb6j"]
+[ext_resource type="Texture2D" uid="uid://rrhgi8vhynu4" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0052.png" id="150_qkekq"]
+[ext_resource type="Texture2D" uid="uid://dtqxrwk6n7ve4" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0053.png" id="151_mcjxx"]
+[ext_resource type="Texture2D" uid="uid://b2akgmi4xd1n0" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0039.png" id="151_n2l6o"]
+[ext_resource type="Texture2D" uid="uid://dv1p7o42jawc8" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0040.png" id="152_7gyyg"]
+[ext_resource type="Texture2D" uid="uid://bomvhbagt5x8i" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0054.png" id="152_h567o"]
+[ext_resource type="Texture2D" uid="uid://cnuh7ou2ajvnk" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0041.png" id="153_j8101"]
+[ext_resource type="Texture2D" uid="uid://5exy0mcqmt4o" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0055.png" id="153_vfxye"]
+[ext_resource type="Texture2D" uid="uid://cm1xsxetmxs68" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0056.png" id="154_o8yby"]
+[ext_resource type="Texture2D" uid="uid://4bt1c51frk8f" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0042.png" id="154_pepc3"]
+[ext_resource type="Texture2D" uid="uid://cfgoaxeul2xd" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0043.png" id="155_0dmg2"]
+[ext_resource type="Texture2D" uid="uid://nltmwbm7m235" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0057.png" id="155_1xt8x"]
+[ext_resource type="Texture2D" uid="uid://3jirrir380fy" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0058.png" id="156_6kfxq"]
+[ext_resource type="Texture2D" uid="uid://b3nvtqinwkfj8" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0044.png" id="156_e86e6"]
+[ext_resource type="Texture2D" uid="uid://bw834ak6dwh8x" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0059.png" id="157_ftlhp"]
+[ext_resource type="Texture2D" uid="uid://cqry1dlo847rg" path="res://mainGame/appleBeene/knockoutFight/appleKnockout_0045.png" id="157_g6sia"]
+[ext_resource type="Texture2D" uid="uid://dflpwyyprb1ui" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0060.png" id="158_w743l"]
+[ext_resource type="Script" uid="uid://dlmv3j3opvsvj" path="res://apple_fight.gd" id="158_wvwwa"]
+[ext_resource type="Texture2D" uid="uid://ty6ko2addhgn" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0061.png" id="159_23jnu"]
+[ext_resource type="Texture2D" uid="uid://dho1ygpsxicb" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0062.png" id="160_l7esk"]
+[ext_resource type="Texture2D" uid="uid://dsbg22c153ov5" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0063.png" id="161_fug36"]
+[ext_resource type="Texture2D" uid="uid://drgtwy83cnviv" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0064.png" id="162_8rxsa"]
+[ext_resource type="Texture2D" uid="uid://kmjfhkrfc5x8" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0065.png" id="163_nv4fd"]
+[ext_resource type="Texture2D" uid="uid://b5cqr7bkibpkj" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0066.png" id="164_a1epy"]
+[ext_resource type="Texture2D" uid="uid://43f77imrr6up" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0067.png" id="165_cpwed"]
+[ext_resource type="Texture2D" uid="uid://gjx64y3cic7t" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0068.png" id="166_84xw5"]
+[ext_resource type="Texture2D" uid="uid://c0jeaqqdckwj6" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0069.png" id="167_6ncfy"]
+[ext_resource type="Texture2D" uid="uid://27lg26xgqmcp" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0070.png" id="168_ne22j"]
+[ext_resource type="Texture2D" uid="uid://khuufv5e25dr" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0071.png" id="169_h812c"]
+[ext_resource type="Texture2D" uid="uid://is3jf5hiepl0" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0072.png" id="170_tvvdx"]
+[ext_resource type="Texture2D" uid="uid://dxevg8klmutgx" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0073.png" id="171_e6o75"]
+[ext_resource type="Texture2D" uid="uid://ojamtbabg5l8" path="res://mainGame/beeneFight/beeneFinishFight/beeneFightFinish0074.png" id="172_uho2p"]
+[ext_resource type="Texture2D" uid="uid://cdq4cwk1cpenq" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0001.png" id="173_ltx25"]
+[ext_resource type="Texture2D" uid="uid://bhnq1nw24ht0r" path="res://mainGame/scubaBeene/attack_0001.png" id="174_hc7ix"]
+[ext_resource type="Texture2D" uid="uid://dhaxxpvmdteku" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0002.png" id="174_nk4tv"]
+[ext_resource type="Texture2D" uid="uid://drqdjwmuh82qy" path="res://mainGame/scubaBeene/attack_0002.png" id="175_fm3s2"]
+[ext_resource type="Texture2D" uid="uid://bt2bdmt0ph7iq" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0003.png" id="175_soka4"]
+[ext_resource type="Texture2D" uid="uid://dclb82ru0it6o" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0004.png" id="176_mi63k"]
+[ext_resource type="Texture2D" uid="uid://c623honom7v0" path="res://mainGame/scubaBeene/attack_0003.png" id="176_w7qqx"]
+[ext_resource type="Texture2D" uid="uid://xtovotmirnpj" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0005.png" id="177_50irc"]
+[ext_resource type="Texture2D" uid="uid://b5hrxk1cw6wbj" path="res://mainGame/scubaBeene/attack_0004.png" id="177_s3hcg"]
+[ext_resource type="Texture2D" uid="uid://b0dq637mvv1t7" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0006.png" id="178_uoudk"]
+[ext_resource type="Texture2D" uid="uid://dvbttet8tfx20" path="res://mainGame/scubaBeene/attack_0005.png" id="178_x2sqj"]
+[ext_resource type="Texture2D" uid="uid://da01db7dn1wbb" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0007.png" id="179_bkniv"]
+[ext_resource type="Texture2D" uid="uid://bjj4iptu6x10l" path="res://mainGame/scubaBeene/attack_0006.png" id="179_v5ltn"]
+[ext_resource type="Texture2D" uid="uid://dmgif1gobkwhf" path="res://mainGame/scubaBeene/attack_0007.png" id="180_8vfcs"]
+[ext_resource type="Texture2D" uid="uid://bx7e56unh3x00" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0008.png" id="180_ifgmt"]
+[ext_resource type="Texture2D" uid="uid://ce47eg5fkv4wq" path="res://mainGame/scubaBeene/attack_0008.png" id="181_7chos"]
+[ext_resource type="Texture2D" uid="uid://sm3vriefmo5n" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0009.png" id="181_q2ag0"]
+[ext_resource type="Texture2D" uid="uid://dqm61yv0577h1" path="res://mainGame/scubaBeene/attack_0009.png" id="182_elps4"]
+[ext_resource type="Texture2D" uid="uid://bwyy8277ndel3" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0010.png" id="182_fv3ei"]
+[ext_resource type="Texture2D" uid="uid://oludfvve0dfb" path="res://mainGame/scubaBeene/attack_0010.png" id="183_puoc5"]
+[ext_resource type="Texture2D" uid="uid://bweee2jdgxuts" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0011.png" id="183_whamd"]
+[ext_resource type="Texture2D" uid="uid://pgkisnt6ov30" path="res://mainGame/scubaBeene/attack_0011.png" id="184_8wyv3"]
+[ext_resource type="Texture2D" uid="uid://bfcq2fbfp0bqw" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0012.png" id="184_u7njc"]
+[ext_resource type="Texture2D" uid="uid://6fnvilfsu44e" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0013.png" id="185_gask4"]
+[ext_resource type="Texture2D" uid="uid://bua02ix4dbuv4" path="res://mainGame/scubaBeene/attack_0012.png" id="185_gfddo"]
+[ext_resource type="Texture2D" uid="uid://be1nvrcjvwjic" path="res://mainGame/beeneFight/beeneGetHit/beeneFightHit0014.png" id="186_q2xev"]
+[ext_resource type="Texture2D" uid="uid://bhc86152pq75u" path="res://mainGame/scubaBeene/attack_0013.png" id="186_xgncq"]
+[ext_resource type="Texture2D" uid="uid://c1x13hr548u2i" path="res://mainGame/scubaBeene/attack_0014.png" id="187_rdcoj"]
+[ext_resource type="Texture2D" uid="uid://bvvs44bv86le8" path="res://mainGame/scubaBeene/attack_0015.png" id="188_gvc3h"]
+[ext_resource type="Texture2D" uid="uid://h7pqmgwnm5xy" path="res://mainGame/scubaBeene/attack_0016.png" id="189_nkdk0"]
+[ext_resource type="Texture2D" uid="uid://dqvhcjonuwcnd" path="res://mainGame/scubaBeene/attack_0017.png" id="190_1daq1"]
+[ext_resource type="Texture2D" uid="uid://claeclb504cvn" path="res://mainGame/scubaBeene/attack_0018.png" id="191_ei7ty"]
+[ext_resource type="Texture2D" uid="uid://chvktlovvl6s7" path="res://mainGame/scubaBeene/attack_0019.png" id="192_xmttr"]
+[ext_resource type="Texture2D" uid="uid://dcdndctevjwqo" path="res://mainGame/scubaBeene/attack_0020.png" id="193_07ep3"]
+[ext_resource type="Texture2D" uid="uid://7ku0ijoseckl" path="res://mainGame/scubaBeene/attack_0021.png" id="194_68ahi"]
+[ext_resource type="Texture2D" uid="uid://b6mf4pf6r1d0i" path="res://mainGame/scubaBeene/attack_0022.png" id="195_5guji"]
+[ext_resource type="Texture2D" uid="uid://coivkf4lir5nd" path="res://mainGame/scubaBeene/hit_0001.png" id="196_4eku2"]
+[ext_resource type="Texture2D" uid="uid://6kbvtgxvy7i1" path="res://mainGame/scubaBeene/hit_0002.png" id="197_h5x26"]
+[ext_resource type="Texture2D" uid="uid://ddw5uqjhsodvu" path="res://mainGame/scubaBeene/hit_0003.png" id="198_7pyw8"]
+[ext_resource type="Texture2D" uid="uid://dhoma2v8hxlf7" path="res://mainGame/scubaBeene/hit_0004.png" id="199_4vtwh"]
+[ext_resource type="Texture2D" uid="uid://bx4gkndlnmju8" path="res://mainGame/scubaBeene/hit_0005.png" id="200_hw68v"]
+[ext_resource type="Texture2D" uid="uid://ttgiryq4hwd1" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0001.png" id="201_im0kw"]
+[ext_resource type="Texture2D" uid="uid://vb5nxnras704" path="res://mainGame/scubaBeene/hit_0006.png" id="201_q0m48"]
+[ext_resource type="Texture2D" uid="uid://dky13fgmgvi7q" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0002.png" id="202_0i6qa"]
+[ext_resource type="Texture2D" uid="uid://bfg37jp2okqyt" path="res://mainGame/scubaBeene/hit_0007.png" id="202_4gm37"]
+[ext_resource type="Texture2D" uid="uid://bfgi3oy0ek520" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0003.png" id="203_3gcnr"]
+[ext_resource type="Texture2D" uid="uid://4gic1buw065y" path="res://mainGame/scubaBeene/hit_0008.png" id="203_hhbdm"]
+[ext_resource type="Texture2D" uid="uid://dheudwibwailx" path="res://mainGame/scubaBeene/hit_0009.png" id="204_8255k"]
+[ext_resource type="Texture2D" uid="uid://b5bmjstk2dxbw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0004.png" id="204_basyn"]
+[ext_resource type="Texture2D" uid="uid://dpy2gjpfongqx" path="res://mainGame/scubaBeene/idle_0001.png" id="205_liuhf"]
+[ext_resource type="Texture2D" uid="uid://dkh7ml02j83cv" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0005.png" id="205_s27x6"]
+[ext_resource type="Texture2D" uid="uid://c0gg7kx0iecud" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0006.png" id="206_ss7js"]
+[ext_resource type="Texture2D" uid="uid://di75mohweoana" path="res://mainGame/scubaBeene/idle_0002.png" id="206_vwb3q"]
+[ext_resource type="Texture2D" uid="uid://dd7iklf8lebe4" path="res://mainGame/scubaBeene/idle_0003.png" id="207_jxnev"]
+[ext_resource type="Texture2D" uid="uid://khb3ruxhv08q" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0007.png" id="207_x8ier"]
+[ext_resource type="Texture2D" uid="uid://bkdtut0lw25sh" path="res://mainGame/scubaBeene/idle_0004.png" id="208_4uy71"]
+[ext_resource type="Texture2D" uid="uid://b8ueov5boyvr3" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0008.png" id="208_65q1c"]
+[ext_resource type="Texture2D" uid="uid://bonfg4syi5ux7" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0009.png" id="209_5euwh"]
+[ext_resource type="Texture2D" uid="uid://r63j5qemcnjn" path="res://mainGame/scubaBeene/idle_0005.png" id="209_w4yug"]
+[ext_resource type="Texture2D" uid="uid://j8pi8fapn108" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0010.png" id="210_8w7jl"]
+[ext_resource type="Texture2D" uid="uid://bg51a6h3tob4o" path="res://mainGame/scubaBeene/idle_0006.png" id="210_dhda2"]
+[ext_resource type="Texture2D" uid="uid://d24x8yinhsouw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0011.png" id="211_3xc6c"]
+[ext_resource type="Texture2D" uid="uid://b4ope6xngp4ge" path="res://mainGame/scubaBeene/idle_0007.png" id="211_8bp17"]
+[ext_resource type="Texture2D" uid="uid://dp24jsshnclwx" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0012.png" id="212_3818i"]
+[ext_resource type="Texture2D" uid="uid://di2g0x5abknr3" path="res://mainGame/scubaBeene/idle_0008.png" id="212_b5cue"]
+[ext_resource type="Texture2D" uid="uid://bj64xba7wgm0s" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0013.png" id="213_mgod8"]
+[ext_resource type="Texture2D" uid="uid://dv0qsbono0v7u" path="res://mainGame/scubaBeene/idle_0009.png" id="213_x5fg2"]
+[ext_resource type="Texture2D" uid="uid://cq1k73ccxayi" path="res://mainGame/scubaBeene/idle_0010.png" id="214_kds71"]
+[ext_resource type="Texture2D" uid="uid://bco4owoqqrpy1" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0014.png" id="214_pu37u"]
+[ext_resource type="Texture2D" uid="uid://db1tpy5tlhyl2" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0015.png" id="215_iheem"]
+[ext_resource type="Texture2D" uid="uid://qv2dehe4dxa" path="res://mainGame/scubaBeene/idle_0011.png" id="215_nfytl"]
+[ext_resource type="Texture2D" uid="uid://6a1bqtl03bhx" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0016.png" id="216_8untp"]
+[ext_resource type="Texture2D" uid="uid://iurj27o25jjg" path="res://mainGame/scubaBeene/idle_0012.png" id="216_juwpq"]
+[ext_resource type="Texture2D" uid="uid://p16yyxorwanf" path="res://mainGame/scubaBeene/idle_0013.png" id="217_n6eh3"]
+[ext_resource type="Texture2D" uid="uid://dfihfokgynp8j" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0017.png" id="217_o0o45"]
+[ext_resource type="Texture2D" uid="uid://d4g4dm6seul1u" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0018.png" id="218_8uckw"]
+[ext_resource type="Texture2D" uid="uid://bsp4yr74k3ggi" path="res://mainGame/scubaBeene/idle_0014.png" id="218_om08t"]
+[ext_resource type="Texture2D" uid="uid://cxk80agv5tdn" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0019.png" id="219_i3sno"]
+[ext_resource type="Texture2D" uid="uid://0juvr2w55g2w" path="res://mainGame/scubaBeene/idle_0015.png" id="219_sckvt"]
+[ext_resource type="Texture2D" uid="uid://c0irc5fbadx85" path="res://mainGame/scubaBeene/idle_0016.png" id="220_ieq83"]
+[ext_resource type="Texture2D" uid="uid://ct6a0vwhyoa7" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0020.png" id="220_qy7kk"]
+[ext_resource type="Texture2D" uid="uid://cn0efh2qge7d2" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0021.png" id="221_53uu5"]
+[ext_resource type="Texture2D" uid="uid://dkicagfx8tfj" path="res://mainGame/scubaBeene/idle_0017.png" id="221_i7ncu"]
+[ext_resource type="Texture2D" uid="uid://c00ofgsdgpt8d" path="res://mainGame/scubaBeene/idle_0018.png" id="222_1ebh6"]
+[ext_resource type="Texture2D" uid="uid://dksf3po45jfcm" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0022.png" id="222_dfqtx"]
+[ext_resource type="Texture2D" uid="uid://bjgktg76jxnaw" path="res://mainGame/scubaBeene/idle_0019.png" id="223_smxnp"]
+[ext_resource type="Texture2D" uid="uid://dv66452jmax2a" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0023.png" id="223_xfjyq"]
+[ext_resource type="Texture2D" uid="uid://c6f2qippu6xkg" path="res://mainGame/scubaBeene/idle_0020.png" id="224_kth8w"]
+[ext_resource type="Texture2D" uid="uid://ccaficlnc0kev" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0024.png" id="224_p23p4"]
+[ext_resource type="Texture2D" uid="uid://866gj4cayxbg" path="res://mainGame/scubaBeene/idle_0021.png" id="225_4dpf2"]
+[ext_resource type="Texture2D" uid="uid://62spss3j4e2g" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0025.png" id="225_347dj"]
+[ext_resource type="Texture2D" uid="uid://3y7gqkmpow45" path="res://mainGame/scubaBeene/idle_0022.png" id="226_0upk2"]
+[ext_resource type="Texture2D" uid="uid://tmnld2ehseyw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0026.png" id="226_snb57"]
+[ext_resource type="Texture2D" uid="uid://cnldiu51or4el" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0027.png" id="227_j5mn0"]
+[ext_resource type="Texture2D" uid="uid://cbj338cjcm2mw" path="res://mainGame/scubaBeene/idle_0023.png" id="227_l4g5l"]
+[ext_resource type="Texture2D" uid="uid://cjkncehm43fum" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0028.png" id="228_ax38t"]
+[ext_resource type="Texture2D" uid="uid://b3x6qdxm6xolq" path="res://mainGame/scubaBeene/idle_0024.png" id="228_n1vji"]
+[ext_resource type="Texture2D" uid="uid://bngkugrwxgsk0" path="res://mainGame/scubaBeene/idle_0025.png" id="229_5s3wc"]
+[ext_resource type="Texture2D" uid="uid://p8p2ql5dgnct" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0029.png" id="229_de1lg"]
+[ext_resource type="Texture2D" uid="uid://bvd05fr7lol6i" path="res://mainGame/scubaBeene/knockout_0001.png" id="230_2nlbh"]
+[ext_resource type="Texture2D" uid="uid://mjqgthwxum51" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0030.png" id="230_252ap"]
+[ext_resource type="Texture2D" uid="uid://bccd44omf1ach" path="res://mainGame/scubaBeene/knockout_0002.png" id="231_g5am5"]
+[ext_resource type="Texture2D" uid="uid://dygojjwakl4u1" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0031.png" id="231_tt03d"]
+[ext_resource type="Texture2D" uid="uid://btos7cn0345mg" path="res://mainGame/scubaBeene/knockout_0003.png" id="232_70dd0"]
+[ext_resource type="Texture2D" uid="uid://drw0co0exmjhs" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0032.png" id="232_eva26"]
+[ext_resource type="Texture2D" uid="uid://cibgi34vajg3b" path="res://mainGame/scubaBeene/knockout_0004.png" id="233_14hfx"]
+[ext_resource type="Texture2D" uid="uid://b1nswvaqs2x1w" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0033.png" id="233_rcjit"]
+[ext_resource type="Texture2D" uid="uid://dp1gx783fyd85" path="res://mainGame/scubaBeene/knockout_0005.png" id="234_rv4m3"]
+[ext_resource type="Texture2D" uid="uid://bv3d0ih8dbkm4" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0034.png" id="234_u3vxt"]
+[ext_resource type="Texture2D" uid="uid://dcs2ye2yuq5ca" path="res://mainGame/scubaBeene/knockout_0006.png" id="235_7in16"]
+[ext_resource type="Texture2D" uid="uid://cw3tg01a0r5lf" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0035.png" id="235_lq6ar"]
+[ext_resource type="Texture2D" uid="uid://bpplxb8pdd4nc" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0036.png" id="236_8u5yx"]
+[ext_resource type="Texture2D" uid="uid://bxafp8abq3x0v" path="res://mainGame/scubaBeene/knockout_0007.png" id="236_bgcn1"]
+[ext_resource type="Texture2D" uid="uid://iixoeyrurguw" path="res://mainGame/scubaBeene/knockout_0008.png" id="237_av28v"]
+[ext_resource type="Texture2D" uid="uid://dfseuxcf13obx" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0037.png" id="237_do5pp"]
+[ext_resource type="Texture2D" uid="uid://v4yqbx6kxwcf" path="res://mainGame/scubaBeene/knockout_0009.png" id="238_bjc0j"]
+[ext_resource type="Texture2D" uid="uid://doq3m7dk5q1cm" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0038.png" id="238_gloik"]
+[ext_resource type="Texture2D" uid="uid://c6c8ptid3ubgs" path="res://mainGame/scubaBeene/knockout_0010.png" id="239_j04q6"]
+[ext_resource type="Texture2D" uid="uid://bhj8l47ktd43x" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0039.png" id="239_xwt2h"]
+[ext_resource type="Texture2D" uid="uid://b5awvwpc6vkvq" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0040.png" id="240_vd8fk"]
+[ext_resource type="Texture2D" uid="uid://cfncix1fu3b1m" path="res://mainGame/scubaBeene/knockout_0011.png" id="240_wy78p"]
+[ext_resource type="Texture2D" uid="uid://b4b5opvfxlxwl" path="res://mainGame/scubaBeene/knockout_0012.png" id="241_ky501"]
+[ext_resource type="Texture2D" uid="uid://dihoq1cbbxrwu" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0041.png" id="241_pk0qh"]
+[ext_resource type="Texture2D" uid="uid://cdpp62symtmkp" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0042.png" id="242_3ropm"]
+[ext_resource type="Texture2D" uid="uid://crjrg0bkiwud1" path="res://mainGame/scubaBeene/knockout_0013.png" id="242_4b0ca"]
+[ext_resource type="Texture2D" uid="uid://dfgr20u7u1fr7" path="res://mainGame/scubaBeene/knockout_0014.png" id="243_1utm3"]
+[ext_resource type="Texture2D" uid="uid://ctdoddu48w7ls" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0043.png" id="243_5j4jd"]
+[ext_resource type="Texture2D" uid="uid://cpf2agts8qxmn" path="res://mainGame/scubaBeene/knockout_0015.png" id="244_36lh3"]
+[ext_resource type="Texture2D" uid="uid://dy0vpy8pkywn1" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0044.png" id="244_ko4ym"]
+[ext_resource type="Texture2D" uid="uid://b6hvq7ggo8sg7" path="res://mainGame/scubaBeene/knockout_0016.png" id="245_bie5n"]
+[ext_resource type="Texture2D" uid="uid://dm2ftlp57hmy6" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0045.png" id="245_ehlf3"]
+[ext_resource type="Texture2D" uid="uid://cp04rr3ktmnjb" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0046.png" id="246_d0d8u"]
+[ext_resource type="Texture2D" uid="uid://blv78a42aoblw" path="res://mainGame/scubaBeene/knockout_0017.png" id="246_wh1o1"]
+[ext_resource type="Texture2D" uid="uid://5y0qcyok6ohm" path="res://mainGame/scubaBeene/knockout_0018.png" id="247_mneei"]
+[ext_resource type="Texture2D" uid="uid://pgdcjgfn756q" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0047.png" id="247_vhna0"]
+[ext_resource type="Texture2D" uid="uid://hu8i0hwx0e4p" path="res://mainGame/scubaBeene/knockout_0019.png" id="248_j2108"]
+[ext_resource type="Texture2D" uid="uid://clcs0qnueb0ni" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0048.png" id="248_lo0mu"]
+[ext_resource type="Texture2D" uid="uid://drf1fmicb7gtw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0049.png" id="249_bt3t8"]
+[ext_resource type="Texture2D" uid="uid://d1n4du7yxvpv8" path="res://mainGame/scubaBeene/knockout_0020.png" id="249_qfsos"]
+[ext_resource type="Texture2D" uid="uid://dwlpnxp7oq026" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0050.png" id="250_7bnps"]
+[ext_resource type="Texture2D" uid="uid://cojyriitlkj7" path="res://mainGame/scubaBeene/knockout_0021.png" id="250_sgso2"]
+[ext_resource type="Texture2D" uid="uid://b4c1kh365ulah" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0051.png" id="251_s1f2k"]
+[ext_resource type="Texture2D" uid="uid://21ouetpiv6r8" path="res://mainGame/scubaBeene/knockout_0022.png" id="251_vqtxm"]
+[ext_resource type="Texture2D" uid="uid://ev0wpg2047mw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0052.png" id="252_a0xmd"]
+[ext_resource type="Texture2D" uid="uid://drxdsm448crrn" path="res://mainGame/scubaBeene/knockout_0023.png" id="252_ar5k4"]
+[ext_resource type="Texture2D" uid="uid://dw6vqy6jsm4b8" path="res://mainGame/scubaBeene/knockout_0024.png" id="253_kqbr4"]
+[ext_resource type="Texture2D" uid="uid://n8rpk1e036wd" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0053.png" id="253_tjh3e"]
+[ext_resource type="Texture2D" uid="uid://g2jqld5rjtxa" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0054.png" id="254_6tymo"]
+[ext_resource type="Texture2D" uid="uid://dy8x3nl5j0ods" path="res://mainGame/scubaBeene/knockout_0025.png" id="254_twynb"]
+[ext_resource type="Texture2D" uid="uid://dyk862n4pikou" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0055.png" id="255_1k5g5"]
+[ext_resource type="Texture2D" uid="uid://c68g4hp6xicn0" path="res://mainGame/scubaBeene/knockout_0026.png" id="255_7mb3s"]
+[ext_resource type="Texture2D" uid="uid://ck2ruf5obydbc" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0056.png" id="256_n0m88"]
+[ext_resource type="Texture2D" uid="uid://cp7u0rpnrd12f" path="res://mainGame/scubaBeene/knockout_0027.png" id="256_sycjp"]
+[ext_resource type="Texture2D" uid="uid://btxqxk46u3o8h" path="res://mainGame/scubaBeene/knockout_0028.png" id="257_pte4k"]
+[ext_resource type="Texture2D" uid="uid://cq41ixcyekqcw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0057.png" id="257_wgn3j"]
+[ext_resource type="Texture2D" uid="uid://ekhm8xsib8jk" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0058.png" id="258_1ir5w"]
+[ext_resource type="Texture2D" uid="uid://cjodtt67j1cje" path="res://mainGame/scubaBeene/knockout_0029.png" id="258_mb32a"]
+[ext_resource type="Texture2D" uid="uid://d3whehn520gpy" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0059.png" id="259_c6jwy"]
+[ext_resource type="Texture2D" uid="uid://bnulv0fbsn7qm" path="res://mainGame/scubaBeene/knockout_0030.png" id="259_jf15g"]
+[ext_resource type="Script" uid="uid://bmeyc1578am2l" path="res://scuba_beene.gd" id="260_fm3s2"]
+[ext_resource type="Texture2D" uid="uid://ctiw5utfmgkiw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0060.png" id="260_m053d"]
+[ext_resource type="Texture2D" uid="uid://mmqvrhysil0q" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0061.png" id="261_feq4e"]
+[ext_resource type="Texture2D" uid="uid://cc0h7g2onkwnk" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0062.png" id="262_dj6ud"]
+[ext_resource type="Texture2D" uid="uid://de8ht8q0mm3rj" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0063.png" id="263_241ke"]
+[ext_resource type="Texture2D" uid="uid://cnefrolnj5018" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0064.png" id="264_v4xls"]
+[ext_resource type="Texture2D" uid="uid://h3vo8jqplt8m" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0065.png" id="265_07qtn"]
+[ext_resource type="Texture2D" uid="uid://bvwn2n7kos6ny" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0066.png" id="266_b0vkq"]
+[ext_resource type="Texture2D" uid="uid://dtnhdsugw82k4" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0067.png" id="267_jy1nu"]
+[ext_resource type="Texture2D" uid="uid://bbfw0840n0n0w" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0068.png" id="268_pgn22"]
+[ext_resource type="Texture2D" uid="uid://cw5h5024fylbn" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0069.png" id="269_0856q"]
+[ext_resource type="Texture2D" uid="uid://cbnn2l2qcc28n" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0070.png" id="270_8u5mj"]
+[ext_resource type="Texture2D" uid="uid://be63kdbbpp0k2" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0071.png" id="271_1jte8"]
+[ext_resource type="Texture2D" uid="uid://vgkjrdaeino7" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0072.png" id="272_t63i7"]
+[ext_resource type="Texture2D" uid="uid://dnbhd54cfwhpj" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0073.png" id="273_5tok8"]
+[ext_resource type="Texture2D" uid="uid://cb61dfm16hw7a" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0074.png" id="274_52y8u"]
+[ext_resource type="Texture2D" uid="uid://dfotg0noo5pp5" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0075.png" id="275_221fh"]
+[ext_resource type="Texture2D" uid="uid://brjajhms20l3a" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0076.png" id="276_acvc4"]
+[ext_resource type="Texture2D" uid="uid://5qfnc1r57ayi" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0077.png" id="277_x1mbm"]
+[ext_resource type="Texture2D" uid="uid://mhtreaa60r2y" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0078.png" id="278_l4xvl"]
+[ext_resource type="Texture2D" uid="uid://8hg0p7h44u3r" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0079.png" id="279_d4ved"]
+[ext_resource type="Texture2D" uid="uid://d4lmjjs3fc3r" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0080.png" id="280_4t8nb"]
+[ext_resource type="Texture2D" uid="uid://totjp4c28pwa" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0081.png" id="281_imwxn"]
+[ext_resource type="Texture2D" uid="uid://b30504etcpb46" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0082.png" id="282_lbgv2"]
+[ext_resource type="Texture2D" uid="uid://c8cq1t2t3xrf" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0083.png" id="283_ea2cq"]
+[ext_resource type="Texture2D" uid="uid://c66ugvseu1ssg" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0084.png" id="284_yisua"]
+[ext_resource type="Texture2D" uid="uid://co3phrxp3lnv7" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0085.png" id="285_ykn25"]
+[ext_resource type="Texture2D" uid="uid://ck35vet67onbi" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0086.png" id="286_8x1nl"]
+[ext_resource type="Texture2D" uid="uid://dcmrx3ufsnknt" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0087.png" id="287_vv2g0"]
+[ext_resource type="Texture2D" uid="uid://du3i616vealjj" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0088.png" id="288_kqb1h"]
+[ext_resource type="Texture2D" uid="uid://pf2ockdvj4re" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0089.png" id="289_oorac"]
+[ext_resource type="Texture2D" uid="uid://dfj3a25x6vin" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0090.png" id="290_gl0c3"]
+[ext_resource type="Texture2D" uid="uid://cpntn2qjpcjux" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0091.png" id="291_ej6ti"]
+[ext_resource type="Texture2D" uid="uid://vjj5hmn8u6ji" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0092.png" id="292_v0xq1"]
+[ext_resource type="Texture2D" uid="uid://ben6h3xbiwdnr" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0093.png" id="293_8fclv"]
+[ext_resource type="Texture2D" uid="uid://hbqn16o2ba1u" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0094.png" id="294_y22no"]
+[ext_resource type="Texture2D" uid="uid://i8en74x8beyw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0095.png" id="295_bj6lf"]
+[ext_resource type="Texture2D" uid="uid://b6dc0tmt1a8m5" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0096.png" id="296_bpr6u"]
+[ext_resource type="Texture2D" uid="uid://ctxsonau8w5ux" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0097.png" id="297_08epc"]
+[ext_resource type="Texture2D" uid="uid://b6m4l6lp3s2js" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0098.png" id="298_sjwpn"]
+[ext_resource type="Texture2D" uid="uid://bwxvim47p45m4" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0099.png" id="299_f8r06"]
+[ext_resource type="Texture2D" uid="uid://ceuy7lpxr8ddm" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0100.png" id="300_lxof7"]
+[ext_resource type="Texture2D" uid="uid://bxfoq2oqewxps" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0101.png" id="301_fewdm"]
+[ext_resource type="Texture2D" uid="uid://b4hgv1ob3tysa" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0102.png" id="302_oj344"]
+[ext_resource type="Texture2D" uid="uid://pqe3wpjjva1o" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0103.png" id="303_s5ij7"]
+[ext_resource type="Texture2D" uid="uid://bj1sll302mg4s" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0104.png" id="304_otvpk"]
+[ext_resource type="Texture2D" uid="uid://xgjyo7ifdlc8" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0105.png" id="305_q3kly"]
+[ext_resource type="Texture2D" uid="uid://cdsvk08cj031a" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0106.png" id="306_xbpti"]
+[ext_resource type="Texture2D" uid="uid://ddq6g7n7g7j22" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0107.png" id="307_6k8m7"]
+[ext_resource type="Texture2D" uid="uid://ccun0iq4htkkj" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0108.png" id="308_nuch5"]
+[ext_resource type="Texture2D" uid="uid://xpck02kkkdnb" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0109.png" id="309_jgexe"]
+[ext_resource type="Texture2D" uid="uid://b6r31q2jpxtat" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0110.png" id="310_1rd7x"]
+[ext_resource type="Texture2D" uid="uid://dofw2pj7iylpy" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0111.png" id="311_o15qw"]
+[ext_resource type="Texture2D" uid="uid://4o18gxdd7d0p" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0112.png" id="312_oyrjl"]
+[ext_resource type="Texture2D" uid="uid://darr4jlvdaiq4" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0113.png" id="313_evb6j"]
+[ext_resource type="Texture2D" uid="uid://cugof1jq2oftx" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0114.png" id="314_n2l6o"]
+[ext_resource type="Texture2D" uid="uid://cf0se53vc2na0" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0115.png" id="315_7gyyg"]
+[ext_resource type="Texture2D" uid="uid://bswbmeocpaits" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0116.png" id="316_j8101"]
+[ext_resource type="Texture2D" uid="uid://dodai0s7d5sqp" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0117.png" id="317_pepc3"]
+[ext_resource type="Texture2D" uid="uid://b21vqo4iv60id" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0118.png" id="318_0dmg2"]
+[ext_resource type="Texture2D" uid="uid://dipsef37ctg1b" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0119.png" id="319_e86e6"]
+[ext_resource type="Texture2D" uid="uid://dur5mnjeifknl" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0120.png" id="320_g6sia"]
+[ext_resource type="Script" uid="uid://d4dgbk7n0gc78" path="res://beene_fight.gd" id="321_n733y"]
+[ext_resource type="AudioStream" uid="uid://dliu8tw15gox5" path="res://SFX/appleDodge.mp3" id="432_347dj"]
+[ext_resource type="AudioStream" uid="uid://bd4u6vrwavu8h" path="res://SFX/beeneHit.mp3" id="433_snb57"]
+[ext_resource type="AudioStream" uid="uid://jqpm41blk8fw" path="res://SFX/gethit.mp3" id="434_j5mn0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ff73e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_uh6fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1ybuh")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jjv5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_eev0p")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcjit"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_de1lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_252ap")
+}],
+"loop": true,
+"name": &"hurt_apple",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_tt03d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_eva26")
+}],
+"loop": true,
+"name": &"normal_apple",
+"speed": 6.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0bq3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cndg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0lsv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8bs3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rnt5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0b6fw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbdti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j483"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tedq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ue6t8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqqdc"]
+shader = ExtResource("1_ece0t")
+shader_parameter/blur_amount = 2.000000095
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eev0p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yusim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ece0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fqqdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x1dnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hfxcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_flvgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lubpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y8p2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3ojwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f42qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0t2js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p55lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2gdp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uo1uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_mtk0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0s2p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jmbr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3o242")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ehuw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lapgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1s7su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7hcmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qywyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_f8xwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bganb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_t3yge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_07v2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_nej38")
+}],
+"loop": true,
+"name": &"level",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqijs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_53uu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_dfqtx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_xfjyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_p23p4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_347dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_snb57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_j5mn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ax38t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_de1lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_252ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_tt03d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_eva26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_rcjit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_u3vxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_lq6ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_8u5yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_do5pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_gloik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_xwt2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_vd8fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_pk0qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_3ropm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_5j4jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ko4ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_ehlf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_d0d8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_vhna0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_lo0mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_bt3t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_7bnps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_s1f2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_a0xmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_tjh3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_6tymo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_1k5g5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_n0m88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_wgn3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_1ir5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_c6jwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_m053d")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("84_feq4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_dj6ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_241ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_v4xls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_07qtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_b0vkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_jy1nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_pgn22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_0856q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_8u5mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_1jte8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_t63i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_5tok8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_52y8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_221fh")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_hiy1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_7ld6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_o5vf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_coges")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_7yb5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_nd3ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_2mubm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_77jv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_uh6fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_1ybuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_jjv5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_eev0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ff73e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_2lmha")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("113_acvc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_x1mbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_l4xvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_d4ved")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_4t8nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_imwxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_lbgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_ea2cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_yisua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_ykn25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_8x1nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_vv2g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_kqb1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_oorac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_gl0c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_ej6ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_v0xq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_8fclv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_y22no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_bj6lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_bpr6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_08epc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_sjwpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_f8r06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_lxof7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_fewdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_oj344")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_s5ij7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_otvpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_q3kly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_xbpti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_6k8m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_nuch5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_jgexe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_1rd7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_o15qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_oyrjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_evb6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_n2l6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_7gyyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_j8101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_pepc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_0dmg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_e86e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_g6sia")
+}],
+"loop": false,
+"name": &"knockout",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2mwxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("174_hc7ix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_fm3s2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_w7qqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_s3hcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_x2sqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_v5ltn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_8vfcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_7chos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_elps4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_puoc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_8wyv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_gfddo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_xgncq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_rdcoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_gvc3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_nkdk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_1daq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_ei7ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_xmttr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_07ep3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_68ahi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_5guji")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("196_4eku2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_h5x26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_7pyw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_4vtwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_hw68v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_q0m48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_4gm37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_hhbdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_8255k")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("205_liuhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_vwb3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_jxnev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_4uy71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_w4yug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_dhda2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_8bp17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_b5cue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_x5fg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_kds71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_nfytl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_juwpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_n6eh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_om08t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_sckvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_ieq83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_i7ncu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_1ebh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_smxnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_kth8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_4dpf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_0upk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_l4g5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_n1vji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_5s3wc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("230_2nlbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_g5am5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_70dd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_14hfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_rv4m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_7in16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_bgcn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_av28v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_bjc0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_j04q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_wy78p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_ky501")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_4b0ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_1utm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_36lh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_bie5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_wh1o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_mneei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_j2108")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_qfsos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_sgso2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_vqtxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_ar5k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_kqbr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_twynb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_7mb3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_sycjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_pte4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_mb32a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_jf15g")
+}],
+"loop": false,
+"name": &"knockout",
+"speed": 22.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hiy1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("52_hb5fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_4ja6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_ibie2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_7hhag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_itjlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_mps6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_k81my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_3tpug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_xx4ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_tt5xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_60hj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_xskmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_47hev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_xmnbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_xa8k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_hgoh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_k2ln2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_il2ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_2w1hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_abgk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_nf5uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_yhcy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_1qx5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_2e5ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_xmjmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_8l1ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_umvpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_cspy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_kaw3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_8sqeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_qe4b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_oyery")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_pyslw")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_c7o34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_yq4qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_vsmjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_jl8wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_j2mly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_lirhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_hwwb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_xc636")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_lvtnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_wq8us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_g6k23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_6fu0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_njdj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_bs3gt")
+}],
+"loop": false,
+"name": &"dodge",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99_kw2n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_n733y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_00qtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_lsek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_t0bq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_0b6fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_utqwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_5cndg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_f0lsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_q8bs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_rnt5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_rbdti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_0j483")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_5tedq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_ue6t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_3yaww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_l6b8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_ul3mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_5kjso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_xrgcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_f4104")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_yohfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_3jmdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_jikok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_wjjak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_64hcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_cfy0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_clj8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_rhr8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_1dw0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_ubt67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_828lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_nfdjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_ygmk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_h0cko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_kmu48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_67jp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_y20k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_gbxvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_0pajk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_uyctk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_x34hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_wjbp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_ydgsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_vjamr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_6f3lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_m12jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_oiisl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_khoj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_r2nb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_0ehpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_qkekq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_mcjxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_h567o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_vfxye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_o8yby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_1xt8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_6kfxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_ftlhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_w743l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_23jnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_l7esk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_fug36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_8rxsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_nv4fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_a1epy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_cpwed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_84xw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_6ncfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_ne22j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_h812c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_tvvdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_e6o75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_uho2p")
+}],
+"loop": false,
+"name": &"finish",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("173_ltx25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_nk4tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_soka4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_mi63k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_50irc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_uoudk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_bkniv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_ifgmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_q2ag0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_fv3ei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_whamd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_u7njc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_gask4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_q2xev")
+}],
+"loop": false,
+"name": &"getHit",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0s2p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jmbr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3o242")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ehuw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lapgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1s7su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7hcmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qywyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f8xwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bganb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t3yge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_07v2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nej38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8lvxe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("201_im0kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_0i6qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_3gcnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_basyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_s27x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_ss7js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_x8ier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_65q1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_5euwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_8w7jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_3xc6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_3818i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_mgod8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_pu37u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_iheem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_8untp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_o0o45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_8uckw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_i3sno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_qy7kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_53uu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_dfqtx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_xfjyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_p23p4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_347dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_snb57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_j5mn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_ax38t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_de1lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_252ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_tt03d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_eva26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_rcjit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_u3vxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_lq6ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_8u5yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_do5pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_gloik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_xwt2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_vd8fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_pk0qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_3ropm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_5j4jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_ko4ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_ehlf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_d0d8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_vhna0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_lo0mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_bt3t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_7bnps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_s1f2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_a0xmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_tjh3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_6tymo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_1k5g5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_n0m88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_wgn3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_1ir5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_c6jwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260_m053d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("261_feq4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_dj6ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263_241ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("264_v4xls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265_07qtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("266_b0vkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("267_jy1nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268_pgn22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("269_0856q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("270_8u5mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("271_1jte8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("272_t63i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("273_5tok8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("274_52y8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("275_221fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("276_acvc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("277_x1mbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("278_l4xvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("279_d4ved")
+}, {
+"duration": 1.0,
+"texture": ExtResource("280_4t8nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("281_imwxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("282_lbgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("283_ea2cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("284_yisua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("285_ykn25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("286_8x1nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("287_vv2g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("288_kqb1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("289_oorac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("290_gl0c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("291_ej6ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("292_v0xq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("293_8fclv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("294_y22no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("295_bj6lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("296_bpr6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("297_08epc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("298_sjwpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("299_f8r06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("300_lxof7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("301_fewdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("302_oj344")
+}, {
+"duration": 1.0,
+"texture": ExtResource("303_s5ij7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("304_otvpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("305_q3kly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("306_xbpti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("307_6k8m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("308_nuch5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("309_jgexe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("310_1rd7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("311_o15qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("312_oyrjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("313_evb6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("314_n2l6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("315_7gyyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("316_j8101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_pepc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("318_0dmg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("319_e86e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("320_g6sia")
+}],
+"loop": false,
+"name": &"knockout",
+"speed": 24.0
+}]
+
+[node name="Fight" type="Node2D" unique_id=397196885]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1547320410]
+position = Vector2(720, 392)
+script = ExtResource("58_7ld6x")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=882412307]
+process_mode = 3
+stream = ExtResource("60_coges")
+autoplay = true
+bus = &"Music"
+
+[node name="whosTurn" type="Node" parent="." unique_id=869948239]
+process_mode = 3
+script = ExtResource("59_o5vf7")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=533321186]
+layer = 999
+
+[node name="HoverSFX" type="AudioStreamPlayer" parent="HUD" unique_id=483590761]
+stream = ExtResource("4_dfqtx")
+bus = &"SFX"
+
+[node name="DodgeSFX" type="AudioStreamPlayer" parent="HUD" unique_id=820122647]
+stream = ExtResource("432_347dj")
+bus = &"SFX"
+
+[node name="BeeneHitSFX" type="AudioStreamPlayer" parent="HUD" unique_id=1162422426]
+stream = ExtResource("433_snb57")
+bus = &"SFX"
+
+[node name="GetHitSFX" type="AudioStreamPlayer" parent="HUD" unique_id=611415169]
+stream = ExtResource("434_j5mn0")
+bus = &"SFX"
+
+[node name="EnemyHealthBar" type="Node2D" parent="HUD" unique_id=832055040 node_paths=PackedStringArray("icon")]
+script = ExtResource("61_7yb5u")
+icon = NodePath("../enemyIcon")
+
+[node name="heathBarBorderENEMY" type="ColorRect" parent="HUD/EnemyHealthBar" unique_id=317124364]
+offset_left = 24.0
+offset_top = 656.0
+offset_right = 339.0
+offset_bottom = 696.0
+metadata/_edit_use_anchors_ = true
+
+[node name="heathBarBottomENEMY" type="ColorRect" parent="HUD/EnemyHealthBar" unique_id=1791776747]
+offset_left = 32.0
+offset_top = 664.0
+offset_right = 332.0
+offset_bottom = 688.0
+color = Color(0.9997875, 0.2876515, 0.22555521, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="healthBarTop" type="ColorRect" parent="HUD/EnemyHealthBar" unique_id=1042225658]
+offset_left = 32.0
+offset_top = 664.0
+offset_right = 332.0
+offset_bottom = 688.0
+color = Color(0, 0.84289664, 0.3940069, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="BeeneHealthBar" type="Node2D" parent="HUD" unique_id=790297181 node_paths=PackedStringArray("icon")]
+script = ExtResource("61_7yb5u")
+icon = NodePath("../beeneIcon")
+
+[node name="heathBarBorderPLAYER" type="ColorRect" parent="HUD/BeeneHealthBar" unique_id=1322316211]
+offset_left = 944.0
+offset_top = 24.0
+offset_right = 1259.0
+offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true
+
+[node name="heathBarBottomPLAYER" type="ColorRect" parent="HUD/BeeneHealthBar" unique_id=795651626]
+offset_left = 952.0
+offset_top = 32.0
+offset_right = 1252.0
+offset_bottom = 56.0
+color = Color(0.9997875, 0.2876515, 0.22555521, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="healthBarTop" type="ColorRect" parent="HUD/BeeneHealthBar" unique_id=1183735938]
+offset_left = 952.0
+offset_top = 32.0
+offset_right = 1252.0
+offset_bottom = 56.0
+color = Color(0, 0.84289664, 0.3940069, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="beeneIcon" type="AnimatedSprite2D" parent="HUD" unique_id=981513190]
+position = Vector2(932.00006, 48)
+scale = Vector2(0.61851853, 0.61851853)
+sprite_frames = SubResource("SpriteFrames_ff73e")
+animation = &"normal"
+autoplay = "normal"
+
+[node name="enemyIcon" type="AnimatedSprite2D" parent="HUD" unique_id=135817517]
+position = Vector2(364.8056, 666.875)
+scale = Vector2(0.63518536, 0.6351853)
+sprite_frames = SubResource("SpriteFrames_rcjit")
+animation = &"normal_apple"
+autoplay = "normal_apple"
+
+[node name="PauseScreen" type="Control" parent="HUD" unique_id=1684686315]
+process_mode = 3
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_t0bq3")
+metadata/_edit_use_anchors_ = true
+
+[node name="BeeneAtTable" type="Sprite2D" parent="HUD/PauseScreen" unique_id=1576758610]
+z_index = 6
+position = Vector2(984, 496)
+scale = Vector2(0.5234375, 0.5234375)
+texture = ExtResource("9_lsek2")
+
+[node name="Pause" type="Sprite2D" parent="HUD/PauseScreen" unique_id=2049099436]
+z_index = 5
+position = Vector2(232, 136)
+scale = Vector2(0.52240896, 0.52240896)
+texture = ExtResource("10_t0bq3")
+
+[node name="Dimmer" type="ColorRect" parent="HUD/PauseScreen" unique_id=1687948873]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.627451)
+
+[node name="SettingsPanel" parent="HUD/PauseScreen" unique_id=589901544 instance=ExtResource("25_eva26")]
+z_index = 100
+layout_mode = 0
+
+[node name="ButtonContainer" type="VBoxContainer" parent="HUD/PauseScreen" unique_id=386283883]
+process_mode = 3
+layout_mode = 0
+offset_left = 60.0
+offset_top = 344.0
+offset_right = 248.0
+offset_bottom = 634.0
+theme_override_constants/separation = 35
+
+[node name="ContinueButton" type="Button" parent="HUD/PauseScreen/ButtonContainer" unique_id=806509022]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t0bq3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5cndg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f0lsv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q8bs3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rnt5s")
+text = "Continue"
+alignment = 0
+
+[node name="LeaveFightButton" type="Button" parent="HUD/PauseScreen/ButtonContainer" unique_id=847878799]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0b6fw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rbdti")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0j483")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5tedq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ue6t8")
+text = "Leave Fight"
+alignment = 0
+
+[node name="SettingsButton" type="TextureButton" parent="HUD/PauseScreen/ButtonContainer" unique_id=1448881329]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture_normal = ExtResource("23_tt03d")
+stretch_mode = 4
+script = ExtResource("24_eva26")
+
+[node name="QTE" type="Control" parent="HUD" unique_id=1135269215]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_0b6fw")
+metadata/_edit_use_anchors_ = true
+
+[node name="EquippedAttacksHUD" type="HBoxContainer" parent="HUD" unique_id=1194660612]
+custom_minimum_size = Vector2(100, 0)
+layout_direction = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = -288.0
+offset_right = -312.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("13_utqwd")
+empty_texture = ExtResource("14_5cndg")
+
+[node name="AttackSlot1" type="TextureButton" parent="HUD/EquippedAttacksHUD" unique_id=1409068085]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AttackSlot2" type="TextureButton" parent="HUD/EquippedAttacksHUD" unique_id=378573481]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AttackSlot3" type="TextureButton" parent="HUD/EquippedAttacksHUD" unique_id=1015064275]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TransitionOverlay" type="ColorRect" parent="HUD" unique_id=224396675]
+z_index = 4096
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="SpeedLines" type="Node2D" parent="HUD" unique_id=1693710455]
+position = Vector2(300, 300)
+script = ExtResource("26_rcjit")
+
+[node name="GreatLabel" type="Sprite2D" parent="HUD" unique_id=576535575]
+visible = false
+position = Vector2(664.73083, 205.50002)
+scale = Vector2(1.6726924, 1.6692307)
+texture = ExtResource("27_8u5yx")
+
+[node name="HitLabel" type="Sprite2D" parent="HUD" unique_id=1275866297]
+visible = false
+position = Vector2(472.65387, 177.25002)
+scale = Vector2(1.2934625, 1.3346155)
+texture = ExtResource("28_do5pp")
+
+[node name="MissLabel" type="Sprite2D" parent="HUD" unique_id=1975895047]
+visible = false
+position = Vector2(920.5769, 281.75)
+scale = Vector2(1.3242306, 1.3576922)
+texture = ExtResource("29_gloik")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=576298725]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=556162822]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="beachBG" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=204803378]
+material = SubResource("ShaderMaterial_fqqdc")
+position = Vector2(552, 352)
+scale = Vector2(0.7065383, 0.7065385)
+sprite_frames = SubResource("SpriteFrames_eev0p")
+animation = &"level"
+autoplay = "level"
+frame_progress = 0.298062
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1312914921]
+motion_scale = Vector2(0.7, 0.7)
+
+[node name="appleFight" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=423460661]
+position = Vector2(216, 296)
+scale = Vector2(0.41117883, 0.41117883)
+sprite_frames = SubResource("SpriteFrames_sqijs")
+animation = &"attack"
+autoplay = "idle"
+script = ExtResource("158_wvwwa")
+
+[node name="scubaFight" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=110894501]
+position = Vector2(208, 328)
+scale = Vector2(0.415, 0.415)
+sprite_frames = SubResource("SpriteFrames_2mwxa")
+animation = &"attack"
+autoplay = "idle"
+script = ExtResource("260_fm3s2")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=731315393]
+
+[node name="beeneFight" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1004413756]
+z_index = 3
+position = Vector2(925.99994, 576.00006)
+scale = Vector2(0.5367534, 0.5367535)
+sprite_frames = SubResource("SpriteFrames_hiy1e")
+animation = &"knockout"
+autoplay = "idle"
+script = ExtResource("321_n733y")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1511739149]
+motion_scale = Vector2(1.3, 1.3)
+
+[node name="Palm" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=294920312]
+z_index = 5
+position = Vector2(-146.09375, 195)
+scale = Vector2(0.99092424, 1.1505657)
+texture = ExtResource("66_jjv5k")
+
+[node name="Sandcastle" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=60934110]
+z_index = 5
+position = Vector2(1304, 696)
+scale = Vector2(0.77307206, 0.77307206)
+texture = ExtResource("67_eev0p")
