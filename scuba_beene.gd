@@ -1,23 +1,26 @@
 extends AnimatedSprite2D
 
 var animation_offsets = {
-	"attack": Vector2(50, 10),   # tune these
+	"attack": Vector2(50, 10),
 	"hit": Vector2(0, 0),
 	"idle": Vector2(0, 0),
 	"knockout": Vector2(-500, -40),
 }
 
+@onready var bubbles = $Bubbles
+@onready var attack_bubbles = $AttackBubbles
+
 #FOR TESTING OFFSETS
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_1:
-			play_animation("attack")
-		if event.keycode == KEY_2:
-			play_animation("hit")
-		if event.keycode == KEY_3:
-			play_animation("idle")
-		if event.keycode == KEY_4:
-			play_animation("knockout")
+#func _input(event):
+	#if event is InputEventKey and event.pressed:
+		#if event.keycode == KEY_1:
+			#play_animation("attack")
+		#if event.keycode == KEY_2:
+			#play_animation("hit")
+		#if event.keycode == KEY_3:
+			#play_animation("idle")
+		#if event.keycode == KEY_4:
+			#play_animation("knockout")
 
 var animation_linger = {
 	"attack": 0.0,
@@ -41,3 +44,13 @@ func play_animation(anim_name: String):
 	play(anim_name)
 	if animation_offsets.has(anim_name):
 		offset = animation_offsets[anim_name]
+	
+	if anim_name == "attack":
+		bubbles.speed_scale = 4.0
+	else:
+		bubbles.speed_scale = 1.0
+
+func trigger_attack_bubbles():
+	attack_bubbles.speed_scale = 4.0
+	attack_bubbles.restart()
+	attack_bubbles.emitting = true

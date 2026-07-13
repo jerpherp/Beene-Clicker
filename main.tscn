@@ -62,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://bmliw3cjoj5cc" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0001.png" id="37_jcxqu"]
 [ext_resource type="Texture2D" uid="uid://uibqm31b4vou" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0002.png" id="38_0arob"]
 [ext_resource type="Script" uid="uid://dt2gab0opb0ve" path="res://combo_sprite.gd" id="38_b1qrp"]
-[ext_resource type="AudioStream" uid="uid://bnnedc2hsu4l6" path="res://music/Seaside_Shuffle.mp3" id="39_come4"]
+[ext_resource type="AudioStream" path="res://music/Seaside_Shuffle.mp3" id="39_come4"]
 [ext_resource type="Texture2D" uid="uid://ck8sx2lwg8uiv" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0003.png" id="39_dij0e"]
 [ext_resource type="Texture2D" uid="uid://5y1wt6tvmb0" path="res://mainGame/beeneMain/beeneSpook/beeneBumpSpook0004.png" id="40_k1udn"]
 [ext_resource type="Script" uid="uid://cm3ti5m02f6x6" path="res://panel.gd" id="41_0cp0l"]

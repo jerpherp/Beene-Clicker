@@ -9,32 +9,38 @@ extends Node2D
 @onready var bg_foreground = $Foreground
 @onready var snow = $Snow
 
+@onready var bg_music = $BackgroundMusic
+
 var backgrounds := [
 	{
 		"ground": "res://mainGame/backgrounds/beach/beachGround.png",
 		"water": "res://mainGame/backgrounds/beach/water.png", 
 		"sky": "res://mainGame/backgrounds/beach/sky.png",
 		"foreground": "",
+		"music": "res://music/Seaside_Shuffle.ogg",
 	},
 	{
 		"ground": "res://mainGame/backgrounds/mountains/mountains.png",
 		"water": "res://mainGame/backgrounds/mountains/farMountains.png",
 		"sky": "res://mainGame/backgrounds/mountains/sky.png",
 		"foreground": "res://mainGame/backgrounds/mountains/foreground.png",
+		"music": "res://music/Moonlit_Mountain.ogg",
 	},
 ]
 
 func _apply_background():
 	var bg = backgrounds[Global.current_background]
-	# only snow for the mountains!	
-	if (Global.current_background == 1):
-		snow.show()
-	else:
-		snow.hide()
 	bg_ground.texture = load(bg["ground"])
 	bg_water.texture = load(bg["water"])
 	bg_sky.texture = load(bg["sky"])
 	bg_foreground.texture = load(bg["foreground"])
+	snow.visible = Global.current_background == 1
+	
+	# change music
+	var new_music = load(bg["music"])
+	if bg_music.stream != new_music:
+		bg_music.stream = new_music
+		bg_music.play()
 
 func _ready():
 	_apply_background()

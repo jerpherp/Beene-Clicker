@@ -21,7 +21,7 @@ var current_boss := 1
 
 var boss1_unlocked := false
 
-var current_background := 0
+var current_background := 1
 
 var new_attacks := [] 
 
@@ -47,7 +47,8 @@ var fight_config := {
 	"qte_count_min": 1,
 	"qte_count_max": 2,
 	"enemy_scene": "res://fight.tscn",
-	"qte_time_limit": 2.2
+	"qte_time_limit": 2.2,
+	"dodge_sound": "res://SFX/appleDodge.mp3",
 }
 
 var fight_stats := {
@@ -88,6 +89,7 @@ var boss_data := [
 			"qte_count_min": 1,
 			"qte_count_max": 2,
 			"qte_time_limit": 2,
+			"dodge_sound": "res://SFX/appleDodge.mp3",
 		}
 	},
 	{
@@ -102,6 +104,7 @@ var boss_data := [
 			"qte_count_min": 2,
 			"qte_count_max": 4,
 			"qte_time_limit": 1.3,
+			"dodge_sound": "res://SFX/scubaAttack.mp3",
 		}
 	},
 ]

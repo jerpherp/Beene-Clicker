@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bcw8sc0qh0hvb" path="res://mainGame/beachFight/beach_0001.png" id="1_yusim"]
 [ext_resource type="Texture2D" uid="uid://bo2kbx7gbd5tg" path="res://mainGame/beachFight/beach_0002.png" id="2_ece0t"]
 [ext_resource type="Texture2D" uid="uid://ie1o8iwrmf0t" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0002.png" id="2_jmbr4"]
+[ext_resource type="AudioStream" uid="uid://ddp74oyhha6qm" path="res://music/Jigsaw_Junction.ogg" id="2_w7qqx"]
 [ext_resource type="Texture2D" uid="uid://eq8v0eu6cg0c" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0003.png" id="3_3o242"]
 [ext_resource type="Texture2D" uid="uid://1cpmicuww7w" path="res://mainGame/beachFight/beach_0003.png" id="3_fqqdc"]
 [ext_resource type="AudioStream" uid="uid://f2w4fc81o6b2" path="res://SFX/select.mp3" id="4_dfqtx"]
@@ -105,7 +106,6 @@
 [ext_resource type="Texture2D" uid="uid://dx224572lwx6i" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0008.png" id="59_3tpug"]
 [ext_resource type="Texture2D" uid="uid://0umgoa2f422n" path="res://mainGame/appleBeene/attackFight/appleAttack_0016.png" id="59_8u5yx"]
 [ext_resource type="Script" uid="uid://cn6ktykkrytmf" path="res://whos_turn.gd" id="59_o5vf7"]
-[ext_resource type="AudioStream" uid="uid://bptusoqxpolpc" path="res://music/Jigsaw_Junction.mp3" id="60_coges"]
 [ext_resource type="Texture2D" uid="uid://daf4cnoyj42ul" path="res://mainGame/appleBeene/attackFight/appleAttack_0017.png" id="60_do5pp"]
 [ext_resource type="Texture2D" uid="uid://y8ptmxi0fnol" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0009.png" id="60_xx4ax"]
 [ext_resource type="Script" uid="uid://cq8n1i5qmw8xb" path="res://heath_bar.gd" id="61_7yb5u"]
@@ -469,6 +469,7 @@
 [ext_resource type="Script" uid="uid://bmeyc1578am2l" path="res://scuba_beene.gd" id="260_fm3s2"]
 [ext_resource type="Texture2D" uid="uid://ctiw5utfmgkiw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0060.png" id="260_m053d"]
 [ext_resource type="Texture2D" uid="uid://mmqvrhysil0q" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0061.png" id="261_feq4e"]
+[ext_resource type="Texture2D" uid="uid://dubm4845iueu2" path="res://mainGame/attackParticles/bubble.png" id="261_w7qqx"]
 [ext_resource type="Texture2D" uid="uid://cc0h7g2onkwnk" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0062.png" id="262_dj6ud"]
 [ext_resource type="Texture2D" uid="uid://de8ht8q0mm3rj" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0063.png" id="263_241ke"]
 [ext_resource type="Texture2D" uid="uid://cnefrolnj5018" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0064.png" id="264_v4xls"]
@@ -1344,6 +1345,34 @@ animations = [{
 "name": &"knockout",
 "speed": 22.0
 }]
+
+[sub_resource type="CurveTexture" id="CurveTexture_w7qqx"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fm3s2"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 58.54
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, -50, 0)
+scale_min = 0.29999998
+scale_max = 0.79999995
+color = Color(0.8117647, 1, 1, 1)
+alpha_curve = SubResource("CurveTexture_w7qqx")
+
+[sub_resource type="CurveTexture" id="CurveTexture_s3hcg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w7qqx"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(3, 0.3, 0)
+spread = 20.0
+initial_velocity_min = 800.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
+alpha_curve = SubResource("CurveTexture_s3hcg")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hiy1e"]
 animations = [{
@@ -2226,7 +2255,7 @@ script = ExtResource("58_7ld6x")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=882412307]
 process_mode = 3
-stream = ExtResource("60_coges")
+stream = ExtResource("2_w7qqx")
 autoplay = true
 bus = &"Music"
 
@@ -2502,6 +2531,23 @@ sprite_frames = SubResource("SpriteFrames_2mwxa")
 animation = &"attack"
 autoplay = "idle"
 script = ExtResource("260_fm3s2")
+
+[node name="Bubbles" type="GPUParticles2D" parent="ParallaxBackground/ParallaxLayer2/scubaFight" unique_id=1252354819]
+position = Vector2(55.421646, -48.19278)
+amount = 6
+texture = ExtResource("261_w7qqx")
+lifetime = 7.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_fm3s2")
+
+[node name="AttackBubbles" type="GPUParticles2D" parent="ParallaxBackground/ParallaxLayer2/scubaFight" unique_id=1507682136]
+z_index = 5
+emitting = false
+amount = 30
+texture = ExtResource("261_w7qqx")
+lifetime = 4.0
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_w7qqx")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=731315393]
 

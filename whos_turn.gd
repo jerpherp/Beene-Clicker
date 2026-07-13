@@ -19,8 +19,9 @@ var fight_timer := 0.0
 func _ready():	
 	Global.reset_fight_stats()
 	base_damage = Global.fight_config["base_damage"]
-	print("base_damage set to: ", base_damage)
 	enemy_health.setup(Global.fight_config["enemy_health"])
+	
+	dodge_sfx.stream = load(Global.fight_config["dodge_sound"])
 	
 	# show correct enemy
 	if Global.current_boss == 1:
@@ -63,6 +64,7 @@ var base_damage := 20
 @onready var qte = get_tree().get_root().get_node("Fight/HUD/QTE")
 @onready var player_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer3/beeneFight")
 @onready var enemy_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight")
+@onready var scuba_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight")
 @onready var attack_hud = get_tree().get_root().get_node("Fight/HUD/EquippedAttacksHUD")
 @onready var music = get_tree().get_root().get_node("Fight/BackgroundMusic")
 @onready var transition_overlay = get_tree().get_root().get_node("Fight/HUD/TransitionOverlay")
@@ -195,10 +197,14 @@ func _apply_damage():
 	var this_turn = enemy_turn_id
 	var reduction = float(qte_damage_reduction) / float(total_qtes)
 	var final_damage = int(base_damage * (1.0 - reduction))
+	
+	if Global.current_boss == 2:
+		scuba_sprite.trigger_attack_bubbles()
 
 	if final_damage == 0:
 		_show_label(great_label)
-		speed_lines.trigger()
+		if Global.current_boss == 1:
+			speed_lines.trigger()
 		dodge_sfx.pitch_scale = randf_range(0.9, 1.1)
 		dodge_sfx.play()
 		enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
@@ -220,7 +226,8 @@ func _apply_damage():
 	if this_turn != enemy_turn_id:
 		return
 
-	speed_lines.trigger()
+	if Global.current_boss == 1:
+		speed_lines.trigger()
 	if player_health.current_health <= 0:
 		player_sprite.play_animation("knockout")
 		enemy_sprite.play_animation("idle")
