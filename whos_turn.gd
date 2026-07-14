@@ -16,12 +16,28 @@ var fight_timer := 0.0
 @onready var enemy_icon = get_tree().get_root().get_node("Fight/HUD/enemyIcon")
 @onready var enemy_health_bar = get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar")
 
+# beach layer nodes (boss 1+2)
+@onready var beach_bg = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer/beachBG")
+@onready var palm = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Palm")
+@onready var sandcastle = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Sandcastle")
+
+# mountain layer nodes (boss 3+4)
+@onready var snow = get_tree().get_root().get_node("Fight/ParallaxBackground/Snow")
+@onready var mountains_bg = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer8/mountainsBG")
+@onready var far_mountains = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer7/FarMountains")
+@onready var mountains = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer6/Mountains")
+@onready var ground = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer5/Ground")
+@onready var snowman = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Snowman")
+@onready var close_mountain = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/CloseMountain")
+
 func _ready():	
 	Global.reset_fight_stats()
+	_apply_fight_background()
 	base_damage = Global.fight_config["base_damage"]
 	enemy_health.setup(Global.fight_config["enemy_health"])
 	
 	dodge_sfx.stream = load(Global.fight_config["dodge_sound"])
+	Global.current_boss = 3
 	
 	# show correct enemy
 	if Global.current_boss == 1:
@@ -43,6 +59,38 @@ func _ready():
 	
 	await get_tree().create_timer(0.5).timeout
 	start_player_turn()
+	
+# ============================================================
+# BACKGROUNDS
+# ============================================================
+
+func _apply_fight_background():
+	if Global.current_boss == 1 || Global.current_boss == 2:
+		# show beach
+		beach_bg.visible = true
+		palm.visible = true
+		sandcastle.visible = true
+		# hide mountains
+		snow.visible = false
+		mountains_bg.visible = false
+		far_mountains.visible = false
+		mountains.visible = false
+		ground.visible = false
+		snowman.visible = false
+		close_mountain.visible = false
+	elif Global.current_boss == 3 || Global.current_boss == 4:
+		# hide beach
+		beach_bg.visible = false
+		palm.visible = false
+		sandcastle.visible = false
+		# show mountains
+		snow.visible = true
+		mountains_bg.visible = true
+		far_mountains.visible = true
+		mountains.visible = true
+		ground.visible = true
+		snowman.visible = true
+		close_mountain.visible = true
 
 # ============================================================
 # QTE STATE
@@ -303,13 +351,19 @@ func _player_death():
 
 	var music_tween = create_tween()
 	music_tween.tween_property(music, "volume_db", -80.0, 1.5)
+	
+	var bg_layer_path = ""
+	if Global.current_boss == 1 || Global.current_boss == 2:
+		bg_layer_path = "Fight/ParallaxBackground/ParallaxLayer"
+	elif Global.current_boss == 3 || Global.current_boss == 4:
+		bg_layer_path = "Fight/ParallaxBackground/ParallaxLayer8"
 
-	var beach_layer = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer")
+	var bg_layer = get_tree().get_root().get_node(bg_layer_path)
 	var black_rect = ColorRect.new()
 	black_rect.size = Vector2(3000, 3000)
 	black_rect.position = Vector2(-1500, -1500)
 	black_rect.color = Color(0, 0, 0, 0)
-	beach_layer.add_child(black_rect)
+	bg_layer.add_child(black_rect)
 	var beach_tween = create_tween()
 	beach_tween.tween_property(black_rect, "color", Color(0, 0, 0, 1), 1.0)
 
@@ -320,6 +374,16 @@ func _player_death():
 	var nodes_to_fade = [
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Palm"),
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Sandcastle"),
+		get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar"),
+		get_tree().get_root().get_node("Fight/HUD/BeeneHealthBar"),
+		get_tree().get_root().get_node("Fight/HUD/beeneIcon"),
+		get_tree().get_root().get_node("Fight/HUD/enemyIcon"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer8/mountainsBG"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer7/FarMountains"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer6/Mountains"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer5/Ground"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Snowman"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/CloseMountain"),
 		get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar"),
 		get_tree().get_root().get_node("Fight/HUD/BeeneHealthBar"),
 		get_tree().get_root().get_node("Fight/HUD/beeneIcon"),

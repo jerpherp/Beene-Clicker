@@ -17,7 +17,7 @@ var show_fight_results := false
 var helper_beene_active := false
 var helper_beene_count := 0
 
-var current_boss := 1
+var current_boss := 0
 
 var boss1_unlocked := false
 

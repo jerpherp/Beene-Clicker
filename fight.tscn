@@ -66,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://qha5minestcm" path="res://hud/hit.png" id="28_do5pp"]
 [ext_resource type="Texture2D" uid="uid://cxvjh1uqad8bw" path="res://mainGame/beachFight/beach_0028.png" id="28_nej38"]
 [ext_resource type="Texture2D" uid="uid://b53n4q40sl6od" path="res://hud/miss.png" id="29_gloik"]
+[ext_resource type="Texture2D" uid="uid://46ufxvnd81rf" path="res://mainGame/mountainsFight/background.png" id="30_elps4"]
 [ext_resource type="Texture2D" uid="uid://bwlf044ql7cbf" path="res://mainGame/appleBeene/attackFight/appleAttack_0001.png" id="44_53uu5"]
 [ext_resource type="Texture2D" uid="uid://c4c7ga1ods62q" path="res://mainGame/appleBeene/idleFight/appleIdle_0001.png" id="44_hiy1e"]
 [ext_resource type="Texture2D" uid="uid://drqe1dejx5jov" path="res://mainGame/appleBeene/idleFight/appleIdle_0002.png" id="45_7ld6x"]
@@ -107,11 +108,14 @@
 [ext_resource type="Texture2D" uid="uid://0umgoa2f422n" path="res://mainGame/appleBeene/attackFight/appleAttack_0016.png" id="59_8u5yx"]
 [ext_resource type="Script" uid="uid://cn6ktykkrytmf" path="res://whos_turn.gd" id="59_o5vf7"]
 [ext_resource type="Texture2D" uid="uid://daf4cnoyj42ul" path="res://mainGame/appleBeene/attackFight/appleAttack_0017.png" id="60_do5pp"]
+[ext_resource type="Texture2D" uid="uid://bqr8f63tjoar3" path="res://mainGame/mountainsFight/farMountains.png" id="60_puoc5"]
 [ext_resource type="Texture2D" uid="uid://y8ptmxi0fnol" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0009.png" id="60_xx4ax"]
 [ext_resource type="Script" uid="uid://cq8n1i5qmw8xb" path="res://heath_bar.gd" id="61_7yb5u"]
+[ext_resource type="Texture2D" uid="uid://skbrrfd1axf0" path="res://mainGame/mountainsFight/mountains.png" id="61_8wyv3"]
 [ext_resource type="Texture2D" uid="uid://de124oiktsrd1" path="res://mainGame/appleBeene/attackFight/appleAttack_0018.png" id="61_gloik"]
 [ext_resource type="Texture2D" uid="uid://ddvjs0y15n1ho" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0010.png" id="61_tt5xw"]
 [ext_resource type="Texture2D" uid="uid://cl7kry4qoy35v" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0011.png" id="62_60hj7"]
+[ext_resource type="Texture2D" uid="uid://bqs5us7plff84" path="res://mainGame/mountainsFight/ground.png" id="62_gfddo"]
 [ext_resource type="Texture2D" uid="uid://kcbwsdalfcra" path="res://mainGame/appleBeene/attackFight/appleAttack_0019.png" id="62_xwt2h"]
 [ext_resource type="Texture2D" uid="uid://b2itci84pmntj" path="res://mainGame/appleBeene/attackFight/appleAttack_0020.png" id="63_vd8fk"]
 [ext_resource type="Texture2D" uid="uid://dr4k8veob6n7c" path="res://mainGame/beeneFight/beeneAttack/beeneFightAttack0012.png" id="63_xskmk"]
@@ -533,6 +537,8 @@
 [ext_resource type="AudioStream" uid="uid://dliu8tw15gox5" path="res://SFX/appleDodge.mp3" id="432_347dj"]
 [ext_resource type="AudioStream" uid="uid://bd4u6vrwavu8h" path="res://SFX/beeneHit.mp3" id="433_snb57"]
 [ext_resource type="AudioStream" uid="uid://jqpm41blk8fw" path="res://SFX/gethit.mp3" id="434_j5mn0"]
+[ext_resource type="Texture2D" uid="uid://0be1p21yxofv" path="res://mainGame/mountainsFight/snowman.png" id="536_xgncq"]
+[ext_resource type="Texture2D" uid="uid://ctwucysgk6hn6" path="res://mainGame/mountainsFight/closeMountain.png" id="539_rdcoj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ff73e"]
 animations = [{
@@ -603,6 +609,29 @@ animations = [{
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tedq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ue6t8"]
+
+[sub_resource type="Gradient" id="Gradient_ekl5k"]
+offsets = PackedFloat32Array(0.024615385, 0.48307693)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_elps4"]
+gradient = SubResource("Gradient_ekl5k")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.4957265, 0.47863248)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_puoc5"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(750, 1, 1)
+direction = Vector3(0.2, 1, 0)
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 98, 0)
+scale_min = 2.0
+scale_max = 6.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fqqdc"]
 shader = ExtResource("1_ece0t")
@@ -2501,10 +2530,27 @@ texture = ExtResource("29_gloik")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=576298725]
 
+[node name="Snow" type="GPUParticles2D" parent="ParallaxBackground" unique_id=1367513999]
+z_index = 1000
+position = Vector2(624, -24)
+amount = 250
+texture = SubResource("GradientTexture2D_elps4")
+lifetime = 8.0
+process_material = SubResource("ParticleProcessMaterial_puoc5")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground" unique_id=394862451]
+motion_scale = Vector2(0, 0)
+
+[node name="mountainsBG" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8" unique_id=1214623644]
+position = Vector2(600.00006, 376)
+scale = Vector2(0.73, 0.72999996)
+texture = ExtResource("30_elps4")
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=556162822]
 motion_scale = Vector2(0.6, 0.6)
 
 [node name="beachBG" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=204803378]
+visible = false
 material = SubResource("ShaderMaterial_fqqdc")
 position = Vector2(552, 352)
 scale = Vector2(0.7065383, 0.7065385)
@@ -2513,10 +2559,35 @@ animation = &"level"
 autoplay = "level"
 frame_progress = 0.298062
 
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1614795328]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="FarMountains" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7" unique_id=516967181]
+position = Vector2(664, 200)
+scale = Vector2(0.80769235, 0.8076923)
+texture = ExtResource("60_puoc5")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1809311124]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Mountains" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6" unique_id=137347466]
+position = Vector2(632, 250)
+scale = Vector2(0.80769235, 0.8076923)
+texture = ExtResource("61_8wyv3")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=323969591]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="Ground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" unique_id=584382131]
+position = Vector2(600, 384.00003)
+scale = Vector2(0.70538473, 0.7053847)
+texture = ExtResource("62_gfddo")
+
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1312914921]
 motion_scale = Vector2(0.7, 0.7)
 
 [node name="appleFight" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=423460661]
+visible = false
 position = Vector2(216, 296)
 scale = Vector2(0.41117883, 0.41117883)
 sprite_frames = SubResource("SpriteFrames_sqijs")
@@ -2563,14 +2634,28 @@ script = ExtResource("321_n733y")
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1511739149]
 motion_scale = Vector2(1.3, 1.3)
 
-[node name="Palm" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=294920312]
+[node name="Snowman" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=1417387767]
 z_index = 5
-position = Vector2(-146.09375, 195)
+position = Vector2(1216, 744)
+scale = Vector2(0.5228086, 0.5228086)
+texture = ExtResource("536_xgncq")
+
+[node name="Palm" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=294920312]
+visible = false
+z_index = 5
+position = Vector2(-112, 184)
 scale = Vector2(0.99092424, 1.1505657)
 texture = ExtResource("66_jjv5k")
 
 [node name="Sandcastle" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=60934110]
+visible = false
 z_index = 5
 position = Vector2(1304, 696)
 scale = Vector2(0.77307206, 0.77307206)
 texture = ExtResource("67_eev0p")
+
+[node name="CloseMountain" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=2109747621]
+z_index = 5
+position = Vector2(-128, 504)
+scale = Vector2(0.7160278, 0.7160279)
+texture = ExtResource("539_rdcoj")
