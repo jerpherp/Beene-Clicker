@@ -43,22 +43,34 @@
 [ext_resource type="Texture2D" uid="uid://chnl47x8cobuy" path="res://mainGame/beeneFight/beeneIdle/beeneFightIdle0014.png" id="14_8lvxe"]
 [ext_resource type="Texture2D" uid="uid://ckdnaipwaxmtd" path="res://mainGame/appleBeene/icons/apple_0004.png" id="14_252ap"]
 [ext_resource type="Texture2D" uid="uid://chsl3eqpkydb" path="res://mainGame/beachFight/beach_0014.png" id="14_uo1uf"]
+[ext_resource type="Texture2D" uid="uid://jkbomct6gun0" path="res://mainGame/fightIcons/feazent0003.png" id="15_68ahi"]
 [ext_resource type="Texture2D" uid="uid://cf3tvrpvcunk4" path="res://mainGame/beachFight/beach_0015.png" id="15_mtk0u"]
 [ext_resource type="Texture2D" uid="uid://dyqjj07tk5mv4" path="res://mainGame/appleBeene/icons/apple_0001.png" id="15_tt03d"]
+[ext_resource type="Texture2D" uid="uid://b3kq7wh2ogk2l" path="res://mainGame/fightIcons/scuba0003.png" id="15_xgncq"]
 [ext_resource type="Texture2D" uid="uid://cspmow3820n2i" path="res://mainGame/beachFight/beach_0016.png" id="16_0s2p3"]
+[ext_resource type="Texture2D" uid="uid://cfochpblaex2o" path="res://mainGame/fightIcons/feazent0004.png" id="16_5guji"]
 [ext_resource type="Texture2D" uid="uid://bwqpy608016bm" path="res://mainGame/appleBeene/icons/apple_0002.png" id="16_eva26"]
+[ext_resource type="Texture2D" uid="uid://cvsr67wocu8bo" path="res://mainGame/fightIcons/scuba0004.png" id="16_rdcoj"]
+[ext_resource type="Texture2D" uid="uid://belva3gnxgo70" path="res://mainGame/fightIcons/peeper0003.png" id="17_4eku2"]
 [ext_resource type="Texture2D" uid="uid://3ypwtas0dkhw" path="res://mainGame/beachFight/beach_0017.png" id="17_jmbr4"]
 [ext_resource type="Texture2D" uid="uid://cx4nl8tcbr2b5" path="res://mainGame/beachFight/beach_0018.png" id="18_3o242"]
+[ext_resource type="Texture2D" uid="uid://cyrx2u2aksqhp" path="res://mainGame/fightIcons/peeper0004.png" id="18_h5x26"]
 [ext_resource type="Texture2D" uid="uid://jrr6dh6uw5hq" path="res://mainGame/beachFight/beach_0019.png" id="19_ehuw2"]
+[ext_resource type="Texture2D" uid="uid://d145or8j2kbx2" path="res://mainGame/fightIcons/scuba0001.png" id="19_gvc3h"]
 [ext_resource type="Texture2D" uid="uid://bifkg3ipg3yn7" path="res://mainGame/beachFight/beach_0020.png" id="20_lapgl"]
+[ext_resource type="Texture2D" uid="uid://cyam6lkmrbrhe" path="res://mainGame/fightIcons/scuba0002.png" id="20_nkdk0"]
 [ext_resource type="Texture2D" uid="uid://b1nakc52p2nvu" path="res://mainGame/beachFight/beach_0021.png" id="21_1s7su"]
 [ext_resource type="Texture2D" uid="uid://d1o8b3k4y755p" path="res://mainGame/beachFight/beach_0022.png" id="22_7hcmd"]
+[ext_resource type="Texture2D" uid="uid://bgbtpoj5mshpm" path="res://mainGame/fightIcons/feazent0001.png" id="23_7pyw8"]
 [ext_resource type="Texture2D" uid="uid://ugx4mhg8hwu3" path="res://mainGame/beachFight/beach_0023.png" id="23_qywyq"]
 [ext_resource type="Texture2D" uid="uid://cx5yb5ujeqxsp" path="res://hud/options.png" id="23_tt03d"]
+[ext_resource type="Texture2D" uid="uid://4ile3itlpgca" path="res://mainGame/fightIcons/feazent0002.png" id="24_4vtwh"]
 [ext_resource type="Script" uid="uid://b3xm42apf1igw" path="res://settings_button.gd" id="24_eva26"]
 [ext_resource type="Texture2D" uid="uid://d2qrhrgth1v4t" path="res://mainGame/beachFight/beach_0024.png" id="24_f8xwb"]
 [ext_resource type="Texture2D" uid="uid://dwlmxy7g2m4s0" path="res://mainGame/beachFight/beach_0025.png" id="25_bganb"]
 [ext_resource type="PackedScene" uid="uid://33ykgjff2afy" path="res://settings_panel.tscn" id="25_eva26"]
+[ext_resource type="Texture2D" uid="uid://5x66e7n5y81e" path="res://mainGame/fightIcons/peeper0001.png" id="25_hw68v"]
+[ext_resource type="Texture2D" uid="uid://dk54g268e8fje" path="res://mainGame/fightIcons/peeper0002.png" id="26_q0m48"]
 [ext_resource type="Script" uid="uid://dx4gpnrf5kshn" path="res://speed_lines.gd" id="26_rcjit"]
 [ext_resource type="Texture2D" uid="uid://orma7eii5jcs" path="res://mainGame/beachFight/beach_0026.png" id="26_t3yge"]
 [ext_resource type="Texture2D" uid="uid://ce652crbrbtid" path="res://mainGame/beachFight/beach_0027.png" id="27_07v2b"]
@@ -490,50 +502,150 @@
 [ext_resource type="Texture2D" uid="uid://dfotg0noo5pp5" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0075.png" id="275_221fh"]
 [ext_resource type="Texture2D" uid="uid://brjajhms20l3a" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0076.png" id="276_acvc4"]
 [ext_resource type="Texture2D" uid="uid://5qfnc1r57ayi" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0077.png" id="277_x1mbm"]
+[ext_resource type="Texture2D" uid="uid://ewr0x1r0w3f8" path="res://mainGame/peeper/attack_0001.png" id="278_jj8ac"]
 [ext_resource type="Texture2D" uid="uid://mhtreaa60r2y" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0078.png" id="278_l4xvl"]
 [ext_resource type="Texture2D" uid="uid://8hg0p7h44u3r" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0079.png" id="279_d4ved"]
+[ext_resource type="Texture2D" uid="uid://ditfs1sqawecm" path="res://mainGame/peeper/attack_0002.png" id="279_vlm8j"]
 [ext_resource type="Texture2D" uid="uid://d4lmjjs3fc3r" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0080.png" id="280_4t8nb"]
+[ext_resource type="Texture2D" uid="uid://wcuvbq6f4m5g" path="res://mainGame/peeper/attack_0003.png" id="280_j5013"]
 [ext_resource type="Texture2D" uid="uid://totjp4c28pwa" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0081.png" id="281_imwxn"]
+[ext_resource type="Texture2D" uid="uid://b0k2r0cvawi47" path="res://mainGame/peeper/attack_0004.png" id="281_oprs5"]
+[ext_resource type="Texture2D" uid="uid://dumqdy82hb4yy" path="res://mainGame/peeper/attack_0005.png" id="282_ggfa5"]
 [ext_resource type="Texture2D" uid="uid://b30504etcpb46" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0082.png" id="282_lbgv2"]
 [ext_resource type="Texture2D" uid="uid://c8cq1t2t3xrf" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0083.png" id="283_ea2cq"]
+[ext_resource type="Texture2D" uid="uid://c1ff3l27gm6r4" path="res://mainGame/peeper/attack_0006.png" id="283_lshb5"]
+[ext_resource type="Texture2D" uid="uid://c6dpd30nlh5et" path="res://mainGame/peeper/attack_0007.png" id="284_po2my"]
 [ext_resource type="Texture2D" uid="uid://c66ugvseu1ssg" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0084.png" id="284_yisua"]
+[ext_resource type="Texture2D" uid="uid://cka6sl04tmwh1" path="res://mainGame/peeper/attack_0008.png" id="285_h0plo"]
 [ext_resource type="Texture2D" uid="uid://co3phrxp3lnv7" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0085.png" id="285_ykn25"]
+[ext_resource type="Texture2D" uid="uid://c5r5ssabjaufx" path="res://mainGame/peeper/attack_0009.png" id="286_3hps4"]
 [ext_resource type="Texture2D" uid="uid://ck35vet67onbi" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0086.png" id="286_8x1nl"]
+[ext_resource type="Texture2D" uid="uid://qewkdg43ce2" path="res://mainGame/peeper/attack_0010.png" id="287_b68xq"]
 [ext_resource type="Texture2D" uid="uid://dcmrx3ufsnknt" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0087.png" id="287_vv2g0"]
 [ext_resource type="Texture2D" uid="uid://du3i616vealjj" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0088.png" id="288_kqb1h"]
+[ext_resource type="Texture2D" uid="uid://bg55bhayfoyw1" path="res://mainGame/peeper/attack_0011.png" id="288_mmqet"]
+[ext_resource type="Texture2D" uid="uid://c7ci7y6jkr352" path="res://mainGame/peeper/attack_0012.png" id="289_jc3v6"]
 [ext_resource type="Texture2D" uid="uid://pf2ockdvj4re" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0089.png" id="289_oorac"]
+[ext_resource type="Texture2D" uid="uid://c7wxanycmx25k" path="res://mainGame/peeper/attack_0013.png" id="290_05r24"]
 [ext_resource type="Texture2D" uid="uid://dfj3a25x6vin" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0090.png" id="290_gl0c3"]
 [ext_resource type="Texture2D" uid="uid://cpntn2qjpcjux" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0091.png" id="291_ej6ti"]
+[ext_resource type="Texture2D" uid="uid://d2ioudv82vsk2" path="res://mainGame/peeper/attack_0014.png" id="291_h5b6m"]
 [ext_resource type="Texture2D" uid="uid://vjj5hmn8u6ji" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0092.png" id="292_v0xq1"]
+[ext_resource type="Texture2D" uid="uid://dimunx6bydm1q" path="res://mainGame/peeper/attack_0015.png" id="292_wm8cq"]
 [ext_resource type="Texture2D" uid="uid://ben6h3xbiwdnr" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0093.png" id="293_8fclv"]
+[ext_resource type="Texture2D" uid="uid://bv7wx7ccc870s" path="res://mainGame/peeper/attack_0016.png" id="293_h86ow"]
+[ext_resource type="Texture2D" uid="uid://bnse6nqits2yl" path="res://mainGame/peeper/attack_0017.png" id="294_w78rn"]
 [ext_resource type="Texture2D" uid="uid://hbqn16o2ba1u" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0094.png" id="294_y22no"]
 [ext_resource type="Texture2D" uid="uid://i8en74x8beyw" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0095.png" id="295_bj6lf"]
+[ext_resource type="Texture2D" uid="uid://bjaakqb2ylq8j" path="res://mainGame/peeper/attack_0018.png" id="295_ut1m7"]
 [ext_resource type="Texture2D" uid="uid://b6dc0tmt1a8m5" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0096.png" id="296_bpr6u"]
+[ext_resource type="Texture2D" uid="uid://c3s0xuwksksel" path="res://mainGame/peeper/attack_0019.png" id="296_nxa85"]
 [ext_resource type="Texture2D" uid="uid://ctxsonau8w5ux" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0097.png" id="297_08epc"]
+[ext_resource type="Texture2D" uid="uid://cjeh8vnnr86cb" path="res://mainGame/peeper/attack_0020.png" id="297_q0ue4"]
+[ext_resource type="Texture2D" uid="uid://b6ti48k5u7h6e" path="res://mainGame/peeper/attack_0021.png" id="298_a7h4t"]
 [ext_resource type="Texture2D" uid="uid://b6m4l6lp3s2js" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0098.png" id="298_sjwpn"]
+[ext_resource type="Texture2D" uid="uid://dgqjgmpirtu5e" path="res://mainGame/peeper/attack_0022.png" id="299_dnh38"]
 [ext_resource type="Texture2D" uid="uid://bwxvim47p45m4" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0099.png" id="299_f8r06"]
+[ext_resource type="Texture2D" uid="uid://cadbd00thv2uc" path="res://mainGame/peeper/attack_0023.png" id="300_b7mf7"]
 [ext_resource type="Texture2D" uid="uid://ceuy7lpxr8ddm" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0100.png" id="300_lxof7"]
 [ext_resource type="Texture2D" uid="uid://bxfoq2oqewxps" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0101.png" id="301_fewdm"]
+[ext_resource type="Texture2D" uid="uid://1sn63nwn2x2p" path="res://mainGame/peeper/attack_0024.png" id="301_jyovi"]
+[ext_resource type="Texture2D" uid="uid://biiig10qtsmh4" path="res://mainGame/peeper/attack_0025.png" id="302_36dx8"]
 [ext_resource type="Texture2D" uid="uid://b4hgv1ob3tysa" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0102.png" id="302_oj344"]
+[ext_resource type="Texture2D" uid="uid://c2bix1n84hg2" path="res://mainGame/peeper/attack_0026.png" id="303_mpd4s"]
 [ext_resource type="Texture2D" uid="uid://pqe3wpjjva1o" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0103.png" id="303_s5ij7"]
+[ext_resource type="Texture2D" uid="uid://dn4qrmgjhf26u" path="res://mainGame/peeper/attack_0027.png" id="304_grv4r"]
 [ext_resource type="Texture2D" uid="uid://bj1sll302mg4s" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0104.png" id="304_otvpk"]
+[ext_resource type="Texture2D" uid="uid://dmp76vtd5gtix" path="res://mainGame/peeper/attack_0028.png" id="305_i7k1o"]
 [ext_resource type="Texture2D" uid="uid://xgjyo7ifdlc8" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0105.png" id="305_q3kly"]
+[ext_resource type="Texture2D" uid="uid://dqmckrov2b4ff" path="res://mainGame/peeper/attack_0029.png" id="306_be6b6"]
 [ext_resource type="Texture2D" uid="uid://cdsvk08cj031a" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0106.png" id="306_xbpti"]
 [ext_resource type="Texture2D" uid="uid://ddq6g7n7g7j22" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0107.png" id="307_6k8m7"]
+[ext_resource type="Texture2D" uid="uid://b71rorlevns7d" path="res://mainGame/peeper/attack_0030.png" id="307_wmvcj"]
+[ext_resource type="Texture2D" uid="uid://cl426xibfvvvs" path="res://mainGame/peeper/hit_0001.png" id="308_53k70"]
 [ext_resource type="Texture2D" uid="uid://ccun0iq4htkkj" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0108.png" id="308_nuch5"]
+[ext_resource type="Texture2D" uid="uid://df15kj2h5xu76" path="res://mainGame/peeper/hit_0002.png" id="309_1sjcq"]
 [ext_resource type="Texture2D" uid="uid://xpck02kkkdnb" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0109.png" id="309_jgexe"]
 [ext_resource type="Texture2D" uid="uid://b6r31q2jpxtat" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0110.png" id="310_1rd7x"]
+[ext_resource type="Texture2D" uid="uid://cur38d8t62u7v" path="res://mainGame/peeper/hit_0003.png" id="310_i1gda"]
 [ext_resource type="Texture2D" uid="uid://dofw2pj7iylpy" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0111.png" id="311_o15qw"]
+[ext_resource type="Texture2D" uid="uid://bn8io7dnfvdo3" path="res://mainGame/peeper/hit_0004.png" id="311_wx3iv"]
+[ext_resource type="Texture2D" uid="uid://bxjt2m0s2clnw" path="res://mainGame/peeper/hit_0005.png" id="312_h3lkf"]
 [ext_resource type="Texture2D" uid="uid://4o18gxdd7d0p" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0112.png" id="312_oyrjl"]
+[ext_resource type="Texture2D" uid="uid://ctfufh7ndt1ug" path="res://mainGame/peeper/hit_0006.png" id="313_bvlyw"]
 [ext_resource type="Texture2D" uid="uid://darr4jlvdaiq4" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0113.png" id="313_evb6j"]
+[ext_resource type="Texture2D" uid="uid://dgib7aqqodcbu" path="res://mainGame/peeper/hit_0007.png" id="314_583a8"]
 [ext_resource type="Texture2D" uid="uid://cugof1jq2oftx" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0114.png" id="314_n2l6o"]
 [ext_resource type="Texture2D" uid="uid://cf0se53vc2na0" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0115.png" id="315_7gyyg"]
+[ext_resource type="Texture2D" uid="uid://fry860g764a5" path="res://mainGame/peeper/hit_0008.png" id="315_bk0xp"]
 [ext_resource type="Texture2D" uid="uid://bswbmeocpaits" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0116.png" id="316_j8101"]
+[ext_resource type="Texture2D" uid="uid://c0g5188cgd2o" path="res://mainGame/peeper/hit_0009.png" id="316_kagqy"]
 [ext_resource type="Texture2D" uid="uid://dodai0s7d5sqp" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0117.png" id="317_pepc3"]
+[ext_resource type="Texture2D" uid="uid://cg6a142g7v3sd" path="res://mainGame/peeper/hit_0010.png" id="317_y6bu5"]
 [ext_resource type="Texture2D" uid="uid://b21vqo4iv60id" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0118.png" id="318_0dmg2"]
+[ext_resource type="Texture2D" uid="uid://cxl3hy3abg1qh" path="res://mainGame/peeper/idle_0001.png" id="318_v5p6i"]
 [ext_resource type="Texture2D" uid="uid://dipsef37ctg1b" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0119.png" id="319_e86e6"]
+[ext_resource type="Texture2D" uid="uid://bt0i64flvg2br" path="res://mainGame/peeper/idle_0002.png" id="319_fj7fi"]
 [ext_resource type="Texture2D" uid="uid://dur5mnjeifknl" path="res://mainGame/beeneFight/beeneKnockout/beeneFightKnockout0120.png" id="320_g6sia"]
+[ext_resource type="Texture2D" uid="uid://ds00b3kti25af" path="res://mainGame/peeper/idle_0003.png" id="320_w4wqj"]
+[ext_resource type="Texture2D" uid="uid://d02enc0jvtolf" path="res://mainGame/peeper/idle_0004.png" id="321_am048"]
 [ext_resource type="Script" uid="uid://d4dgbk7n0gc78" path="res://beene_fight.gd" id="321_n733y"]
+[ext_resource type="Texture2D" uid="uid://ekmmcs8d0sxu" path="res://mainGame/peeper/idle_0005.png" id="322_4gbbo"]
+[ext_resource type="Texture2D" uid="uid://dceamwfj47p1r" path="res://mainGame/peeper/idle_0006.png" id="323_q70ul"]
+[ext_resource type="Texture2D" uid="uid://b2savsemiltyh" path="res://mainGame/peeper/idle_0007.png" id="324_621fg"]
+[ext_resource type="Texture2D" uid="uid://cfqh2b2jgc4uq" path="res://mainGame/peeper/idle_0008.png" id="325_kai5j"]
+[ext_resource type="Texture2D" uid="uid://c2qvejlvrior8" path="res://mainGame/peeper/idle_0009.png" id="326_htg05"]
+[ext_resource type="Texture2D" uid="uid://pq0d627hxmx5" path="res://mainGame/peeper/idle_0010.png" id="327_arow8"]
+[ext_resource type="Texture2D" uid="uid://cqq88rx74liyy" path="res://mainGame/peeper/idle_0011.png" id="328_2ijhd"]
+[ext_resource type="Texture2D" uid="uid://c61shfg2cxxur" path="res://mainGame/peeper/idle_0012.png" id="329_clmdp"]
+[ext_resource type="Texture2D" uid="uid://c21g1ouexcrot" path="res://mainGame/peeper/idle_0013.png" id="330_jc0ip"]
+[ext_resource type="Texture2D" uid="uid://wi5fgyx6rj5n" path="res://mainGame/peeper/idle_0014.png" id="331_bwi03"]
+[ext_resource type="Texture2D" uid="uid://d0fnxxwxaitk1" path="res://mainGame/peeper/knockout_0001.png" id="332_wcx1v"]
+[ext_resource type="Texture2D" uid="uid://ctn0fnas3ncx6" path="res://mainGame/peeper/knockout_0002.png" id="333_cvsne"]
+[ext_resource type="Texture2D" uid="uid://bnqpe06lm0iqb" path="res://mainGame/peeper/knockout_0003.png" id="334_suicf"]
+[ext_resource type="Texture2D" uid="uid://c4bxf1qwe0kee" path="res://mainGame/peeper/knockout_0004.png" id="335_qkd2k"]
+[ext_resource type="Texture2D" uid="uid://qrldv4n7c7hf" path="res://mainGame/peeper/knockout_0005.png" id="336_xnb2g"]
+[ext_resource type="Texture2D" uid="uid://csgs8dejlxx35" path="res://mainGame/peeper/knockout_0006.png" id="337_gorik"]
+[ext_resource type="Texture2D" uid="uid://drsobdm1ytgv8" path="res://mainGame/peeper/knockout_0007.png" id="338_4fs1i"]
+[ext_resource type="Texture2D" uid="uid://bya0jbcn1wpwp" path="res://mainGame/peeper/knockout_0008.png" id="339_wu8m6"]
+[ext_resource type="Texture2D" uid="uid://c43qa60elvlut" path="res://mainGame/peeper/knockout_0009.png" id="340_udr8f"]
+[ext_resource type="Texture2D" uid="uid://cbfdhybyh25vx" path="res://mainGame/peeper/knockout_0010.png" id="341_4lh78"]
+[ext_resource type="Texture2D" uid="uid://tso2y6jxmkmu" path="res://mainGame/peeper/knockout_0011.png" id="342_82vua"]
+[ext_resource type="Texture2D" uid="uid://ilkja4wpeucs" path="res://mainGame/peeper/knockout_0012.png" id="343_iofsu"]
+[ext_resource type="Texture2D" uid="uid://bgxhi5ba7gcmc" path="res://mainGame/peeper/knockout_0013.png" id="344_qemd6"]
+[ext_resource type="Texture2D" uid="uid://io4swpitrtk4" path="res://mainGame/peeper/knockout_0014.png" id="345_eides"]
+[ext_resource type="Texture2D" uid="uid://duorsl54hlv6d" path="res://mainGame/peeper/knockout_0015.png" id="346_i640f"]
+[ext_resource type="Texture2D" uid="uid://b2sets5yqb1hy" path="res://mainGame/peeper/knockout_0016.png" id="347_xneke"]
+[ext_resource type="Texture2D" uid="uid://dwripj2tyhc5y" path="res://mainGame/peeper/knockout_0017.png" id="348_qdu5a"]
+[ext_resource type="Texture2D" uid="uid://cyph4x1x5t6sn" path="res://mainGame/peeper/knockout_0018.png" id="349_u774p"]
+[ext_resource type="Texture2D" uid="uid://dql01vo05lgqj" path="res://mainGame/peeper/knockout_0019.png" id="350_djfpg"]
+[ext_resource type="Texture2D" uid="uid://dipeep5k41jch" path="res://mainGame/peeper/knockout_0020.png" id="351_btus6"]
+[ext_resource type="Texture2D" uid="uid://dc4dr5fm3jbqx" path="res://mainGame/peeper/knockout_0021.png" id="352_uq5uo"]
+[ext_resource type="Texture2D" uid="uid://bi7w4wgcehaph" path="res://mainGame/peeper/knockout_0022.png" id="353_7fu6t"]
+[ext_resource type="Texture2D" uid="uid://barjlcx348mwl" path="res://mainGame/peeper/knockout_0023.png" id="354_apxxk"]
+[ext_resource type="Texture2D" uid="uid://hjyj6wg2wdon" path="res://mainGame/peeper/knockout_0024.png" id="355_ib625"]
+[ext_resource type="Texture2D" uid="uid://bcg1pojr56qve" path="res://mainGame/peeper/knockout_0025.png" id="356_m634v"]
+[ext_resource type="Texture2D" uid="uid://brfgtr6cl06p6" path="res://mainGame/peeper/knockout_0026.png" id="357_hwtx3"]
+[ext_resource type="Texture2D" uid="uid://15b8ijpbulvv" path="res://mainGame/peeper/knockout_0027.png" id="358_na8ex"]
+[ext_resource type="Texture2D" uid="uid://vhtiw2u1nl0s" path="res://mainGame/peeper/knockout_0028.png" id="359_k4u4n"]
+[ext_resource type="Texture2D" uid="uid://dix357n1t6lag" path="res://mainGame/peeper/knockout_0029.png" id="360_ji8uj"]
+[ext_resource type="Texture2D" uid="uid://rrh0nv515saj" path="res://mainGame/peeper/knockout_0030.png" id="361_8hbaf"]
+[ext_resource type="Texture2D" uid="uid://8ny2y3ghxji6" path="res://mainGame/peeper/knockout_0031.png" id="362_7g22x"]
+[ext_resource type="Texture2D" uid="uid://c1wy0psjohcup" path="res://mainGame/peeper/knockout_0032.png" id="363_earsp"]
+[ext_resource type="Texture2D" uid="uid://ctuba3qn57wtc" path="res://mainGame/peeper/knockout_0033.png" id="364_vffg7"]
+[ext_resource type="Texture2D" uid="uid://je60keuwgitx" path="res://mainGame/peeper/knockout_0034.png" id="365_xbfjg"]
+[ext_resource type="Texture2D" uid="uid://djqb2ruq0dsiv" path="res://mainGame/peeper/knockout_0035.png" id="366_jrxwa"]
+[ext_resource type="Texture2D" uid="uid://838fih7gubxo" path="res://mainGame/peeper/knockout_0036.png" id="367_tulis"]
+[ext_resource type="Texture2D" uid="uid://b8fpr056hv74l" path="res://mainGame/peeper/knockout_0037.png" id="368_a5ygp"]
+[ext_resource type="Texture2D" uid="uid://dm3e6g8w0kado" path="res://mainGame/peeper/knockout_0038.png" id="369_c61rc"]
+[ext_resource type="Texture2D" uid="uid://d2nqkt6bfoihd" path="res://mainGame/peeper/knockout_0039.png" id="370_4uq51"]
+[ext_resource type="Texture2D" uid="uid://gryi4uoemtwt" path="res://mainGame/peeper/knockout_0040.png" id="371_4fsb4"]
+[ext_resource type="Texture2D" uid="uid://dr7q5fe5btbo6" path="res://mainGame/peeper/knockout_0041.png" id="372_pg14c"]
+[ext_resource type="Texture2D" uid="uid://b3001wxmfo256" path="res://mainGame/peeper/knockout_0042.png" id="373_mm8ft"]
+[ext_resource type="Texture2D" uid="uid://bpfk2oy5v6lcd" path="res://mainGame/peeper/knockout_0043.png" id="374_75cdd"]
+[ext_resource type="Texture2D" uid="uid://ck5q5tt4mnal3" path="res://mainGame/peeper/knockout_0044.png" id="375_ivart"]
+[ext_resource type="Texture2D" uid="uid://c1od5kgth1u2t" path="res://mainGame/peeper/knockout_0045.png" id="376_ka3a4"]
+[ext_resource type="Script" uid="uid://cjj0xklikfthh" path="res://peeper_fight.gd" id="377_k1rnu"]
 [ext_resource type="AudioStream" uid="uid://dliu8tw15gox5" path="res://SFX/appleDodge.mp3" id="432_347dj"]
 [ext_resource type="AudioStream" uid="uid://bd4u6vrwavu8h" path="res://SFX/beeneHit.mp3" id="433_snb57"]
 [ext_resource type="AudioStream" uid="uid://jqpm41blk8fw" path="res://SFX/gethit.mp3" id="434_j5mn0"]
@@ -580,6 +692,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("15_68ahi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5guji")
+}],
+"loop": true,
+"name": &"hurt_fezeant",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_4eku2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_h5x26")
+}],
+"loop": true,
+"name": &"hurt_peeper",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_xgncq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rdcoj")
+}],
+"loop": true,
+"name": &"hurt_scuba",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("15_tt03d")
 }, {
 "duration": 1.0,
@@ -587,6 +732,39 @@ animations = [{
 }],
 "loop": true,
 "name": &"normal_apple",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_7pyw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4vtwh")
+}],
+"loop": true,
+"name": &"normal_fezeant",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_hw68v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_q0m48")
+}],
+"loop": true,
+"name": &"normal_peeper",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_gvc3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nkdk0")
+}],
+"loop": true,
+"name": &"normal_scuba",
 "speed": 6.0
 }]
 
@@ -1402,6 +1580,344 @@ initial_velocity_max = 1000.0
 gravity = Vector3(0, 98, 0)
 scale_min = 0.5
 alpha_curve = SubResource("CurveTexture_s3hcg")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1isd1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("278_jj8ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("279_vlm8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("280_j5013")
+}, {
+"duration": 1.0,
+"texture": ExtResource("281_oprs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("282_ggfa5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("283_lshb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("284_po2my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("285_h0plo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("286_3hps4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("287_b68xq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("288_mmqet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("289_jc3v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("290_05r24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("291_h5b6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("292_wm8cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("293_h86ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("294_w78rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("295_ut1m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("296_nxa85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("297_q0ue4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("298_a7h4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("299_dnh38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("300_b7mf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("301_jyovi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("302_36dx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("303_mpd4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("304_grv4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("305_i7k1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("306_be6b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("307_wmvcj")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("308_53k70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("309_1sjcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("310_i1gda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("311_wx3iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("312_h3lkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("313_bvlyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("314_583a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("315_bk0xp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("316_kagqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_y6bu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_y6bu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_y6bu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_y6bu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_y6bu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_y6bu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_y6bu5")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("318_v5p6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("319_fj7fi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("320_w4wqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("321_am048")
+}, {
+"duration": 1.0,
+"texture": ExtResource("322_4gbbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("323_q70ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("324_621fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("325_kai5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("326_htg05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("327_arow8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("328_2ijhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("329_clmdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("330_jc0ip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("331_bwi03")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("332_wcx1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("333_cvsne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("334_suicf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("335_qkd2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("336_xnb2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("337_gorik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("338_4fs1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339_wu8m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("340_udr8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("341_4lh78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("342_82vua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("343_iofsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("344_qemd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("345_eides")
+}, {
+"duration": 1.0,
+"texture": ExtResource("346_i640f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("347_xneke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("348_qdu5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("349_u774p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("350_djfpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("351_btus6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("352_uq5uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("353_7fu6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("354_apxxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("355_ib625")
+}, {
+"duration": 1.0,
+"texture": ExtResource("356_m634v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("357_hwtx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("358_na8ex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("359_k4u4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("360_ji8uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("361_8hbaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("362_7g22x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("363_earsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("364_vffg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("365_xbfjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("366_jrxwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("367_tulis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("368_a5ygp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("369_c61rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("370_4uq51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("371_4fsb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("372_pg14c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("373_mm8ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("374_75cdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("375_ivart")
+}, {
+"duration": 1.0,
+"texture": ExtResource("376_ka3a4")
+}],
+"loop": false,
+"name": &"knockout",
+"speed": 18.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hiy1e"]
 animations = [{
@@ -2373,14 +2889,16 @@ animation = &"normal"
 autoplay = "normal"
 
 [node name="enemyIcon" type="AnimatedSprite2D" parent="HUD" unique_id=135817517]
-position = Vector2(364.8056, 666.875)
+position = Vector2(359.80563, 666.875)
 scale = Vector2(0.63518536, 0.6351853)
 sprite_frames = SubResource("SpriteFrames_rcjit")
-animation = &"normal_apple"
+animation = &"normal_peeper"
 autoplay = "normal_apple"
+frame_progress = 0.14250629
 
 [node name="PauseScreen" type="Control" parent="HUD" unique_id=1684686315]
 process_mode = 3
+visible = false
 z_index = 5
 layout_mode = 3
 anchors_preset = 15
@@ -2550,7 +3068,6 @@ texture = ExtResource("30_elps4")
 motion_scale = Vector2(0.6, 0.6)
 
 [node name="beachBG" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=204803378]
-visible = false
 material = SubResource("ShaderMaterial_fqqdc")
 position = Vector2(552, 352)
 scale = Vector2(0.7065383, 0.7065385)
@@ -2596,6 +3113,7 @@ autoplay = "idle"
 script = ExtResource("158_wvwwa")
 
 [node name="scubaFight" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=110894501]
+visible = false
 position = Vector2(208, 328)
 scale = Vector2(0.415, 0.415)
 sprite_frames = SubResource("SpriteFrames_2mwxa")
@@ -2619,6 +3137,14 @@ texture = ExtResource("261_w7qqx")
 lifetime = 4.0
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_w7qqx")
+
+[node name="peeperFight" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=988810330]
+position = Vector2(192, 296.00003)
+scale = Vector2(0.38999996, 0.3899999)
+sprite_frames = SubResource("SpriteFrames_1isd1")
+animation = &"hit"
+autoplay = "idle"
+script = ExtResource("377_k1rnu")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=731315393]
 

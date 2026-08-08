@@ -2,7 +2,7 @@ extends Node2D
 
 @export var max_health := 100
 @export var bar_width := 300
-@export var hurt_threshold := 20
+@export var hurt_threshold_percent := 0.2
 @export var icon : AnimatedSprite2D
 
 var current_health := 100
@@ -36,7 +36,7 @@ func update_bar():
 	tween.tween_property(fill, "size:x", bar_width * percent, 0.2)
 	
 	if icon:
-		if current_health <= hurt_threshold:
+		if percent <= hurt_threshold_percent:
 			icon.play(hurt_animation)
 		else:
 			icon.play(normal_animation)

@@ -1,7 +1,7 @@
 extends Node
 
 # THE TOTAL NUMBER OF BEENES CLICKED!
-var click_count := 0
+var click_count := 999911
 # CLICK MULTIPLIER
 var click_multiplier := 1
 
@@ -17,7 +17,7 @@ var show_fight_results := false
 var helper_beene_active := false
 var helper_beene_count := 0
 
-var current_boss := 0
+var current_boss := 3
 
 var boss1_unlocked := false
 
@@ -30,8 +30,8 @@ var attack_data := {
 	"attack2": {"name": "Beene Rage", "desc": "Hits hard but slow. Cools down after one use.", "source": "base", "damage": 8, "cooldown": true},
 	"boss1_attack1": {"name": "Seed Shrapnel", "desc": "Throws sharp seeds that do a good amount of damage.", "source": "boss1", "damage": 8, "cooldown": false},
 	"boss1_attack2": {"name": "Newton's Downfall", "desc": "A high-gravity slam that does crushing damage to your opponent. Cools down after one use.", "source": "boss1", "damage": 15, "cooldown": true},
-	"boss2_attack1": {"name": "???", "desc": "???", "source": "boss2"},
-	"boss2_attack2": {"name": "???", "desc": "???", "source": "boss2"},
+	"boss2_attack1": {"name": "Bubble Burst", "desc": "Blows a myriad of bubbles at your opponent. Sounds harmless, but packs a punch.", "source": "boss2", "damage": 18, "cooldown": false},
+	"boss2_attack2": {"name": "Tidal Wave", "desc": "Creates a massive wave that crashes on your enemy. Cools down after one use.", "source": "boss2", "damage": 25, "cooldown": true},
 	"boss3_attack1": {"name": "???", "desc": "???", "source": "boss3"},
 	"boss3_attack2": {"name": "???", "desc": "???", "source": "boss3"},
 	"boss4_attack1": {"name": "???", "desc": "???", "source": "boss4"},
@@ -107,6 +107,51 @@ var boss_data := [
 			"dodge_sound": "res://SFX/scubaAttack.mp3",
 		}
 	},
+	{
+		"name": "Peeper", 
+		"desc": "Got one eye and is always watching. Always.", 
+		"scene": "res://fight.tscn",
+		"image": "res://bosses/boss2.png",
+		"config": {
+			"enemy_health": 500,
+			"base_damage": randf_range(32, 45),
+			"qte_speed": 1.8,
+			"qte_count_min": 2,
+			"qte_count_max": 4,
+			"qte_time_limit": 1.2,
+			"dodge_sound": "res://SFX/scubaAttack.mp3",
+		}
+	},
+	{
+		"name": "Fezant", 
+		"desc": "Just a bird. Doesn't know where he is most of the time.", 
+		"scene": "res://fight.tscn",
+		"image": "res://bosses/boss2.png",
+		"config": {
+			"enemy_health": 800,
+			"base_damage": randf_range(50, 68),
+			"qte_speed": 2.2,
+			"qte_count_min": 3,
+			"qte_count_max": 5,
+			"qte_time_limit": 1.1,
+			"dodge_sound": "res://SFX/scubaAttack.mp3",
+		}
+	},
+	{
+		"name": "Dunno yet", 
+		"desc": "Dunno yet", 
+		"scene": "res://fight.tscn",
+		"image": "res://bosses/boss2.png",
+		"config": {
+			"enemy_health": 800,
+			"base_damage": randf_range(50, 68),
+			"qte_speed": 2.2,
+			"qte_count_min": 3,
+			"qte_count_max": 5,
+			"qte_time_limit": 1.1,
+			"dodge_sound": "res://SFX/scubaAttack.mp3",
+		}
+	},
 ]
 
 const SAVE_PATH = "user://save.dat"
@@ -115,12 +160,12 @@ func _ready():
 	#if FileAccess.file_exists(SAVE_PATH):
 		#DirAccess.remove_absolute(SAVE_PATH)
 	load_data()
-	bosses_unlocked[1] = true
+	bosses_unlocked[3] = true
+	# temp: unlock all attacks for testing
+	unlocked_attacks = ["attack1", "attack2", "boss1_attack1", "boss1_attack2", "boss2_attack1", "boss2_attack2"]
+	equipped_attacks = ["boss2_attack1", "boss2_attack2", "attack1"]
 	if unlocked_attacks.is_empty():
-		unlocked_attacks = ["attack1", "attack2"]
-		equipped_attacks = ["attack1", "attack2", ""]
 		save_data()
-	#click_count = 999999
 
 
 func apply_volumes():

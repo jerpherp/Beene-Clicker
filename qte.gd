@@ -70,9 +70,6 @@ func _build_ui():
 	key_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	key_label.position = Vector2(center.x - 100, center.y - 60)
 	key_label.size = Vector2(200, 120)
-	key_label.add_theme_color_override("font_color", Color.BLACK)
-	key_label.add_theme_color_override("font_outline_color", Color.WHITE)
-	key_label.add_theme_constant_override("outline_size", 20)
 	add_child(key_label)
 
 	# --- TIMING CIRCLE ---

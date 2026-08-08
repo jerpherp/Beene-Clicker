@@ -13,6 +13,7 @@ var enemy_turn_id := 0
 var fight_timer := 0.0
 @onready var apple_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight")
 @onready var boss2_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight")
+@onready var boss3_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight")
 @onready var enemy_icon = get_tree().get_root().get_node("Fight/HUD/enemyIcon")
 @onready var enemy_health_bar = get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar")
 
@@ -30,32 +31,37 @@ var fight_timer := 0.0
 @onready var snowman = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Snowman")
 @onready var close_mountain = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/CloseMountain")
 
-func _ready():	
+func _ready():
 	Global.reset_fight_stats()
 	_apply_fight_background()
 	base_damage = Global.fight_config["base_damage"]
-	enemy_health.setup(Global.fight_config["enemy_health"])
-	
 	dodge_sfx.stream = load(Global.fight_config["dodge_sound"])
-	Global.current_boss = 3
 	
 	# show correct enemy
 	if Global.current_boss == 1:
 		enemy_sprite = apple_sprite
-		boss2_sprite.visible = false
 		apple_sprite.visible = true
+		boss2_sprite.visible = false
+		boss3_sprite.visible = false
 		enemy_health_bar.hurt_animation = "hurt_apple"
 		enemy_health_bar.normal_animation = "normal_apple"
 	elif Global.current_boss == 2:
 		enemy_sprite = boss2_sprite
 		apple_sprite.visible = false
 		boss2_sprite.visible = true
+		boss3_sprite.visible = false
 		enemy_health_bar.hurt_animation = "hurt_scuba"
 		enemy_health_bar.normal_animation = "normal_scuba"
+	elif Global.current_boss == 3:
+		enemy_sprite = boss3_sprite
+		apple_sprite.visible = false
+		boss2_sprite.visible = false
+		boss3_sprite.visible = true
+		enemy_health_bar.hurt_animation = "hurt_peeper"
+		enemy_health_bar.normal_animation = "normal_peeper"
 	
-	enemy_health.max_health = Global.fight_config["enemy_health"]
-	enemy_health.current_health = Global.fight_config["enemy_health"]
-	enemy_health.update_bar()
+	await get_tree().process_frame
+	enemy_health.setup(Global.fight_config["enemy_health"])
 	
 	await get_tree().create_timer(0.5).timeout
 	start_player_turn()
@@ -129,10 +135,12 @@ var base_damage := 20
 # ============================================================
 
 func _enemy_anim(anim_name: String) -> void:
-	enemy_sprite.animation_finished.disconnect(enemy_sprite._on_animation_finished)
+	if enemy_sprite.animation_finished.is_connected(enemy_sprite._on_animation_finished):
+		enemy_sprite.animation_finished.disconnect(enemy_sprite._on_animation_finished)
 	enemy_sprite.play_animation(anim_name)
 	await enemy_sprite.animation_finished
-	enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
+	if not enemy_sprite.animation_finished.is_connected(enemy_sprite._on_animation_finished):
+		enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
 
 func _show_label(label: Node):
 	label.visible = true
@@ -181,6 +189,8 @@ func start_player_turn():
 	attack_hud.update_slots()
 
 func start_enemy_turn():
+	print("enemy sprite is: ", enemy_sprite.name)
+	print("current boss: ", Global.current_boss)
 	var count = randi_range(
 		Global.fight_config["qte_count_min"],
 		Global.fight_config["qte_count_max"]
@@ -305,7 +315,7 @@ func player_attack(attack_id: String):
 	beene_hit_sfx.pitch_scale = randf_range(0.9, 1.1)
 	beene_hit_sfx.play()
 	player_sprite.play_animation("attack")
-	await get_tree().create_timer(0.8).timeout
+	await get_tree().create_timer(0.85).timeout
 	_show_label(hit_label)
 	await _enemy_anim("hit")
 
@@ -324,8 +334,6 @@ func player_attack(attack_id: String):
 		return
 
 	enemy_sprite.play_animation("idle")
-	await player_sprite.animation_finished
-
 	current_turn = Turn.ENEMY
 	start_enemy_turn()
 

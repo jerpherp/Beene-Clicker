@@ -19,10 +19,10 @@ func _ready():
 
 	# create tooltip label
 	tooltip_label = Label.new()
+	tooltip_label.add_theme_font_size_override("font_size", 20)
 	tooltip_label.visible = false
-	tooltip_label.add_theme_color_override("font_color", Color.WHITE)
-	tooltip_label.add_theme_color_override("font_outline_color", Color.BLACK)
-	tooltip_label.add_theme_constant_override("outline_size", 4)
+	tooltip_label.autowrap_mode = TextServer.AUTOWRAP_WORD
+	tooltip_label.custom_minimum_size = Vector2(900, 50)
 	$PickerPanel.add_child(tooltip_label)
 
 func open(slot_index: int):
@@ -83,9 +83,7 @@ func _on_attack_picked(attack_id: String):
 func _show_tooltip(text: String, btn: TextureButton):
 	tooltip_label.text = text
 	tooltip_label.visible = true
-	print("panel size: ", $PickerPanel.size)
-	print("label size: ", tooltip_label.size)
-	tooltip_label.position = Vector2(20, $PickerPanel.size.y - 90)
+	tooltip_label.position = Vector2(20, $PickerPanel.size.y - 110)
 
 func _hide_tooltip():
 	tooltip_label.visible = false

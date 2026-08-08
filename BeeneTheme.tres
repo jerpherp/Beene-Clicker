@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://b0gqh2gn8sule"]
+
+[ext_resource type="FontFile" uid="uid://ctjyy8bh86ydr" path="res://Beenetonium/Beenetonium.fnt" id="1_616mq"]
+
+[resource]
+default_font = ExtResource("1_616mq")
+default_font_size = 20
+/colors/font_color = Color(1, 1, 1, 1)
+/font_sizes/letter_spacing = 16
+Label/font_sizes/font_size = 24

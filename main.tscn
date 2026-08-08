@@ -886,10 +886,10 @@ script = ExtResource("90_yysqy")
 [node name="Label" type="Label" parent="CanvasLayer/AttackPicker" unique_id=1845729023]
 z_index = 1
 layout_mode = 0
-offset_left = 376.0
-offset_top = -56.0
-offset_right = 615.0
-offset_bottom = 39.0
+offset_left = 333.0
+offset_top = -24.0
+offset_right = 626.0
+offset_bottom = 88.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.8627451)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8627451)
 theme_override_constants/outline_size = 32
@@ -1034,8 +1034,6 @@ offset_left = -280.10394
 offset_top = 19.138103
 offset_right = 281.95892
 offset_bottom = 96.13811
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 56
 text = "Apple Beene"
@@ -1044,13 +1042,12 @@ horizontal_alignment = 1
 [node name="BossDesc" type="Label" parent="CanvasLayer/BossSelect/BossPanel" unique_id=394795535]
 offset_left = -278.76917
 offset_top = 109.44458
-offset_right = 255.46875
+offset_right = 279.60474
 offset_bottom = 382.7168
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 36
 text = "desc"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="TransitionOverlay" type="ColorRect" parent="CanvasLayer" unique_id=399353956]
 z_index = 999
