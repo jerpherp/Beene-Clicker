@@ -7,10 +7,10 @@ var slots_node : Node
 var tooltip_label : Label
 
 @export var locked_texture : Texture2D
-@export var total_attacks := 12
+@export var total_attacks := 10
 @export var attacks_per_source := 2
 
-var attack_sources := ["base", "boss1", "boss2", "boss3", "boss4", "boss5"]
+var attack_sources := ["base", "boss1", "boss2", "boss3", "boss4"]
 
 func _ready():
 	visible = false

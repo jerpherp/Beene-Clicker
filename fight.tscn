@@ -788,12 +788,12 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ue6t8"]
 
-[sub_resource type="Gradient" id="Gradient_ekl5k"]
+[sub_resource type="Gradient" id="Gradient_jj8ac"]
 offsets = PackedFloat32Array(0.024615385, 0.48307693)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_elps4"]
-gradient = SubResource("Gradient_ekl5k")
+gradient = SubResource("Gradient_jj8ac")
 width = 8
 height = 8
 fill = 1

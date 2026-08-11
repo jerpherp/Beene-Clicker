@@ -11,6 +11,8 @@ extends Node2D
 
 @onready var bg_music = $BackgroundMusic
 
+@onready var animation_player = $CanvasLayer/AnimationPlayer
+
 var backgrounds := [
 	{
 		"ground": "res://mainGame/backgrounds/beach/beachGround.png",
@@ -43,6 +45,7 @@ func _apply_background():
 		bg_music.play()
 
 func _ready():
+	animation_player.play("fade_out")
 	_apply_background()
 	
 	for i in Global.helper_beene_count:

@@ -34,10 +34,6 @@ var attack_data := {
 	"boss2_attack2": {"name": "Tidal Wave", "desc": "Creates a massive wave that crashes on your enemy. Cools down after one use.", "source": "boss2", "damage": 25, "cooldown": true},
 	"boss3_attack1": {"name": "???", "desc": "???", "source": "boss3"},
 	"boss3_attack2": {"name": "???", "desc": "???", "source": "boss3"},
-	"boss4_attack1": {"name": "???", "desc": "???", "source": "boss4"},
-	"boss4_attack2": {"name": "???", "desc": "???", "source": "boss4"},
-	"boss5_attack1": {"name": "???", "desc": "???", "source": "boss5"},
-	"boss5_attack2": {"name": "???", "desc": "???", "source": "boss5"},
 }
 
 var fight_config := {
@@ -98,7 +94,7 @@ var boss_data := [
 		"scene": "res://fight.tscn",
 		"image": "res://bosses/boss2.png",
 		"config": {
-			"enemy_health": 235,
+			"enemy_health": 275,
 			"base_damage": randf_range(16, 30),
 			"qte_speed": 1.5,
 			"qte_count_min": 2,
@@ -113,7 +109,7 @@ var boss_data := [
 		"scene": "res://fight.tscn",
 		"image": "res://bosses/boss2.png",
 		"config": {
-			"enemy_health": 500,
+			"enemy_health": 650,
 			"base_damage": randf_range(32, 45),
 			"qte_speed": 1.8,
 			"qte_count_min": 2,
@@ -124,26 +120,11 @@ var boss_data := [
 	},
 	{
 		"name": "Fezant", 
-		"desc": "Just a bird. Doesn't know where he is most of the time.", 
+		"desc": "Just a bird. Doesn't know where they are most of the time.", 
 		"scene": "res://fight.tscn",
 		"image": "res://bosses/boss2.png",
 		"config": {
-			"enemy_health": 800,
-			"base_damage": randf_range(50, 68),
-			"qte_speed": 2.2,
-			"qte_count_min": 3,
-			"qte_count_max": 5,
-			"qte_time_limit": 1.1,
-			"dodge_sound": "res://SFX/scubaAttack.mp3",
-		}
-	},
-	{
-		"name": "Dunno yet", 
-		"desc": "Dunno yet", 
-		"scene": "res://fight.tscn",
-		"image": "res://bosses/boss2.png",
-		"config": {
-			"enemy_health": 800,
+			"enemy_health": 1000,
 			"base_damage": randf_range(50, 68),
 			"qte_speed": 2.2,
 			"qte_count_min": 3,

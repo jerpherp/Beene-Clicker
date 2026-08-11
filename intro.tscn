@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://knnetw7pjwvc"]
 
+[ext_resource type="Script" uid="uid://bvl0f3mvl0hxd" path="res://intro.gd" id="1_e84uo"]
 [ext_resource type="Texture2D" uid="uid://d0lkudn7x0b0o" path="res://intro/gbeLogo_0001.png" id="1_vls05"]
 [ext_resource type="Texture2D" uid="uid://c6y1evcg5rxdj" path="res://intro/gbeLogo_0002.png" id="2_e84uo"]
 [ext_resource type="Texture2D" uid="uid://c5hc763h3s56x" path="res://intro/gbeLogo_0003.png" id="3_lm474"]
@@ -30,6 +31,43 @@
 [ext_resource type="Texture2D" uid="uid://bavv1ng5f5jbc" path="res://intro/gbeLogo_0028.png" id="28_p1e3i"]
 [ext_resource type="Texture2D" uid="uid://x341aoxua5nc" path="res://intro/gbeLogo_0029.png" id="29_q6ydb"]
 [ext_resource type="Texture2D" uid="uid://7beywleo7ppe" path="res://intro/gbeLogo_0030.png" id="30_rgnre"]
+
+[sub_resource type="Animation" id="Animation_vls05"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e84uo"]
+resource_name = "fade"
+length = 6.0666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.9333333, 1.9333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lm474"]
+_data = {
+&"RESET": SubResource("Animation_vls05"),
+&"fade": SubResource("Animation_e84uo")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jisl1"]
 animations = [{
@@ -130,8 +168,25 @@ animations = [{
 }]
 
 [node name="Intro" type="Node2D" unique_id=373816182]
+script = ExtResource("1_e84uo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1967229562]
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=194496203]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_lm474")
 
 [node name="Logo" type="AnimatedSprite2D" parent="." unique_id=1213279484]
+z_index = -1
 position = Vector2(640, 359.99997)
 scale = Vector2(0.6666666, 0.6666666)
 sprite_frames = SubResource("SpriteFrames_jisl1")

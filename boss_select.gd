@@ -62,13 +62,13 @@ func close():
 	visible = false
 
 func _on_left():
-	current_index = (current_index - 1 + 5) % 5
+	current_index = (current_index - 1 + Global.boss_data.size()) % Global.boss_data.size()
 	if (current_index < 0):
-		current_index = 5
+		current_index = Global.boss_data.size()
 	update_display()
 
 func _on_right():
-	current_index = (current_index + 1) % 5
+	current_index = (current_index + 1) % Global.boss_data.size()
 	if (current_index > Global.boss_data.size()):
 		current_index = 1
 	update_display()

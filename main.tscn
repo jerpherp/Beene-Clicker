@@ -149,7 +149,9 @@
 [ext_resource type="PackedScene" uid="uid://clf7ndbbtabvi" path="res://fight_results.tscn" id="143_pw0td"]
 [ext_resource type="Texture2D" uid="uid://c3jje4etfyx54" path="res://hud/fight.png" id="144_5s44m"]
 [ext_resource type="Script" uid="uid://wft1qgxrvbxb" path="res://battle_button.gd" id="145_ibca3"]
+[ext_resource type="Texture2D" uid="uid://vip7wla3ejt5" path="res://hud/shop.png" id="148_fdpg8"]
 [ext_resource type="Script" uid="uid://d2wlrkey5cp18" path="res://boss_select.gd" id="148_ibca3"]
+[ext_resource type="Script" uid="uid://dg677a5c66a57" path="res://store_button.gd" id="149_rpys8"]
 [ext_resource type="Texture2D" uid="uid://dcl70vnrn05bd" path="res://hud/buttonLeft.png" id="149_y0aao"]
 [ext_resource type="Texture2D" uid="uid://biwb6mt7utcwr" path="res://hud/buttonRight.png" id="150_wm5rm"]
 [ext_resource type="Texture2D" uid="uid://3anju1wjqhx7" path="res://hud/info.png" id="151_ekl5k"]
@@ -677,6 +679,43 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="Animation" id="Animation_ekl5k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fdpg8"]
+resource_name = "fade_out"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.10000001, 1.1333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rpys8"]
+_data = {
+&"RESET": SubResource("Animation_ekl5k"),
+&"fade_out": SubResource("Animation_fdpg8")
+}
+
 [node name="Main" type="Node2D" unique_id=67113771]
 script = ExtResource("1_t5kpo")
 
@@ -693,7 +732,7 @@ shape = SubResource("RectangleShape2D_cegan")
 
 [node name="BeeneMain" type="AnimatedSprite2D" parent="Area2D" unique_id=2004034341]
 z_index = 999
-position = Vector2(-160, -253.00003)
+position = Vector2(-159, -253.00003)
 scale = Vector2(0.85978836, 0.8597883)
 sprite_frames = SubResource("SpriteFrames_ppx11")
 animation = &"yippie"
@@ -871,6 +910,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource("90_n5t1e")
 
 [node name="AttackPicker" type="Panel" parent="CanvasLayer" unique_id=1215971818]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -921,7 +961,7 @@ offset_right = 856.0
 offset_bottom = 405.0
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 15
-columns = 6
+columns = 5
 
 [node name="SettingsButton" type="TextureButton" parent="CanvasLayer" unique_id=247621158]
 custom_minimum_size = Vector2(40, 40)
@@ -957,6 +997,17 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("145_ibca3")
 
+[node name="StoreButton" type="TextureButton" parent="CanvasLayer" unique_id=607261591]
+offset_left = 943.0
+offset_top = 648.0
+offset_right = 1025.6229
+offset_bottom = 708.0
+tooltip_text = "Store"
+texture_normal = ExtResource("148_fdpg8")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("149_rpys8")
+
 [node name="SettingsPanel" parent="CanvasLayer" unique_id=589901544 instance=ExtResource("138_bnk2o")]
 visible = false
 slide_duration = 0.4
@@ -967,6 +1018,7 @@ offset_left = 1.0
 offset_right = 1.0
 
 [node name="BossSelect" type="Control" parent="CanvasLayer" unique_id=1838325067]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1054,4 +1106,8 @@ z_index = 999
 offset_right = 1281.0
 offset_bottom = 725.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1025285897]
+root_node = NodePath("../TransitionOverlay")
+libraries/ = SubResource("AnimationLibrary_rpys8")

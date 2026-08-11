@@ -11,10 +11,12 @@ config_version=5
 [application]
 
 config/name="Beene Clicker"
+config/description="Click some Beenes n' fight some foes..."
 config/version="0.1.0"
-run/main_scene="uid://7xh2kuhyhia0"
+run/main_scene="uid://knnetw7pjwvc"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="uid://brlxnov55rv2s"
 
 [audio]
 

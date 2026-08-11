@@ -1,0 +1,365 @@
+[gd_scene format=3 uid="uid://ikd0jvac6uec"]
+
+[ext_resource type="Texture2D" uid="uid://lxeskb38h22n" path="res://store/background.png" id="1_3hi0p"]
+[ext_resource type="Script" uid="uid://dx2ivhylifk5e" path="res://store.gd" id="1_pmeuj"]
+[ext_resource type="Texture2D" uid="uid://d2shpu4sovojn" path="res://store/floor.png" id="2_x7ts4"]
+[ext_resource type="Texture2D" uid="uid://bycks6f8s1qri" path="res://store/counter.png" id="3_x7ts4"]
+[ext_resource type="Texture2D" uid="uid://e86nowl6ssys" path="res://store/shades_0001.png" id="4_nvomd"]
+[ext_resource type="Texture2D" uid="uid://d2xdq225pi0pn" path="res://store/shades_0002.png" id="5_0sk1s"]
+[ext_resource type="Texture2D" uid="uid://bxd26kan5lair" path="res://store/shades_0003.png" id="6_hayl1"]
+[ext_resource type="Texture2D" uid="uid://u04p5l2vi2hj" path="res://store/shades_0004.png" id="7_q7j3g"]
+[ext_resource type="Texture2D" uid="uid://xds7nme4qm61" path="res://store/shades_0005.png" id="8_jdax8"]
+[ext_resource type="Texture2D" uid="uid://shw5wdtt27u4" path="res://store/shades_0006.png" id="9_afjsh"]
+[ext_resource type="Texture2D" uid="uid://bfv57titk6qkn" path="res://store/shades_0007.png" id="10_hi8wy"]
+[ext_resource type="Texture2D" uid="uid://0lhqpkdek6mu" path="res://store/shades_0008.png" id="11_pmeuj"]
+[ext_resource type="Texture2D" uid="uid://cuywpmiwctj12" path="res://store/light_0001.png" id="12_hi8wy"]
+[ext_resource type="Texture2D" uid="uid://btl2qdxfl23kk" path="res://store/light_0002.png" id="13_pmeuj"]
+[ext_resource type="Texture2D" uid="uid://dab0omr2s4d6a" path="res://store/hand_0001.png" id="13_sqkq8"]
+[ext_resource type="Texture2D" uid="uid://brvy32fkv3wwe" path="res://store/hand_0002.png" id="14_pilm7"]
+[ext_resource type="Texture2D" uid="uid://dnk8s0r51topm" path="res://store/light_0003.png" id="14_xbkst"]
+[ext_resource type="Texture2D" uid="uid://dp1b2e2olp8kg" path="res://store/light_0004.png" id="15_fw4l6"]
+[ext_resource type="Texture2D" uid="uid://3d17exx8eci0" path="res://store/hand_0003.png" id="15_ka4fl"]
+[ext_resource type="Texture2D" uid="uid://b0vhc0vn7cwp" path="res://store/light_0005.png" id="16_3wvf5"]
+[ext_resource type="Texture2D" uid="uid://c0iwlh73q72y1" path="res://store/hand_0004.png" id="16_jq5oj"]
+[ext_resource type="Texture2D" uid="uid://cph8imq0cwqc5" path="res://store/light_0006.png" id="17_qdyly"]
+[ext_resource type="Texture2D" uid="uid://bjyctwhpsock7" path="res://store/hand_0005.png" id="17_vwody"]
+[ext_resource type="Texture2D" uid="uid://bre8h33dtxc8t" path="res://store/hand_0006.png" id="18_acacy"]
+[ext_resource type="Texture2D" uid="uid://bk1ogwnwp3adk" path="res://store/vignette.png" id="19_xbkst"]
+[ext_resource type="Texture2D" uid="uid://crc4niepb3cp8" path="res://store/back.png" id="26_pilm7"]
+[ext_resource type="Script" uid="uid://bu1gvusjeme65" path="res://back_button.gd" id="27_ka4fl"]
+[ext_resource type="Texture2D" uid="uid://bd7ytilioe1c6" path="res://store/healthPotion.png" id="28_jq5oj"]
+[ext_resource type="Script" uid="uid://bt6jcmjhj0hbp" path="res://health_potion_button.gd" id="29_3nhb5"]
+[ext_resource type="Texture2D" uid="uid://c2fkm08usp1ms" path="res://store/armor1.png" id="29_ph2jo"]
+[ext_resource type="Texture2D" uid="uid://bextujx2r6c6w" path="res://store/armor2.png" id="30_1omdj"]
+[ext_resource type="Texture2D" uid="uid://bkwnj23r7uavl" path="res://store/armor3.png" id="31_3nhb5"]
+[ext_resource type="Script" uid="uid://bgg1plvdgm4fv" path="res://beene_armor_button.gd" id="31_pqk1f"]
+[ext_resource type="Texture2D" uid="uid://coeo5b0ifx0a0" path="res://store/strength.png" id="32_1omdj"]
+[ext_resource type="Script" uid="uid://dsmee7lp7ddk7" path="res://bronze_armor_button.gd" id="33_i3ar3"]
+[ext_resource type="Script" uid="uid://dyub2boh125gs" path="res://gold_armor_button.gd" id="35_dwow2"]
+[ext_resource type="Script" uid="uid://cijbb5m5rxsqe" path="res://strengh_1_button.gd" id="37_5kmm7"]
+
+[sub_resource type="Gradient" id="Gradient_ekl5k"]
+offsets = PackedFloat32Array(0.064615384, 0.5784615)
+colors = PackedColorArray(0.050980393, 0.050980393, 0.050980393, 0.3019608, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xbkst"]
+gradient = SubResource("Gradient_ekl5k")
+width = 3
+height = 3
+fill = 1
+fill_from = Vector2(0.50427353, 0.50427353)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fw4l6"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(750, 1, 1)
+direction = Vector3(0.2, 1, 0)
+spread = 180.0
+initial_velocity_min = 2.8999999
+initial_velocity_max = 42.899998
+gravity = Vector3(0, 20, 0)
+scale_min = 2.0
+scale_max = 6.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbkst"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nvomd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0sk1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hayl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q7j3g")
+}, {
+"duration": 7.0,
+"texture": ExtResource("8_jdax8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_afjsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hi8wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pmeuj")
+}],
+"loop": true,
+"name": &"store_idle",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph2jo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_sqkq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pilm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ka4fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jq5oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vwody")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_acacy")
+}],
+"loop": true,
+"name": &"hand",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4qhq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_hi8wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pmeuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xbkst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fw4l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3wvf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qdyly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pmeuj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_ekl5k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fdpg8"]
+resource_name = "fade_out"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.10000001, 1.1333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbkst"]
+_data = {
+&"RESET": SubResource("Animation_ekl5k"),
+&"fade_out": SubResource("Animation_fdpg8")
+}
+
+[node name="Store" type="Control" unique_id=971782476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pmeuj")
+
+[node name="Crud" type="GPUParticles2D" parent="." unique_id=1103023411]
+z_index = 1000
+position = Vector2(599, -24)
+amount = 15
+texture = SubResource("GradientTexture2D_xbkst")
+lifetime = 8.0
+collision_base_size = 0.1
+process_material = SubResource("ParticleProcessMaterial_fw4l6")
+
+[node name="BeenesAmount" type="Label" parent="." unique_id=478912748]
+z_index = 100
+layout_mode = 0
+offset_left = 784.0
+offset_top = 21.0
+offset_right = 1256.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 36
+text = "0 Beenes"
+horizontal_alignment = 2
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1502856328]
+position = Vector2(648, 368)
+scale = Vector2(0.6594705, 0.61906844)
+texture = ExtResource("1_3hi0p")
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=38141989]
+position = Vector2(659.69006, 424)
+scale = Vector2(0.64154994, 0.53907883)
+texture = ExtResource("2_x7ts4")
+
+[node name="Counter" type="Sprite2D" parent="." unique_id=606292686]
+z_index = 1
+position = Vector2(368, 490)
+scale = Vector2(0.74005586, 0.7400558)
+texture = ExtResource("3_x7ts4")
+
+[node name="Shades" type="AnimatedSprite2D" parent="." unique_id=1285280029]
+position = Vector2(384, 317)
+scale = Vector2(0.67454547, 0.71060604)
+sprite_frames = SubResource("SpriteFrames_xbkst")
+animation = &"store_idle"
+autoplay = "store_idle"
+frame_progress = 0.27718914
+
+[node name="Hand" type="AnimatedSprite2D" parent="." unique_id=2107361141]
+z_index = 1
+position = Vector2(570, 344)
+scale = Vector2(0.74, 0.74)
+sprite_frames = SubResource("SpriteFrames_ph2jo")
+animation = &"hand"
+autoplay = "hand"
+frame_progress = 0.23162001
+
+[node name="light" type="AnimatedSprite2D" parent="." unique_id=750425573]
+position = Vector2(1024, 32)
+scale = Vector2(0.79333335, 0.79333335)
+sprite_frames = SubResource("SpriteFrames_w4qhq")
+autoplay = "default"
+frame_progress = 0.80097383
+
+[node name="Vignette" type="Sprite2D" parent="." unique_id=1306849596]
+z_index = 4
+position = Vector2(638.5, 362.00006)
+scale = Vector2(0.33411458, 0.33888882)
+texture = ExtResource("19_xbkst")
+
+[node name="TransitionOverlay" type="ColorRect" parent="." unique_id=1188258361]
+z_index = 999
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 725.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=907373997]
+root_node = NodePath("../TransitionOverlay")
+libraries/ = SubResource("AnimationLibrary_xbkst")
+autoplay = &"fade_out"
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=145186491]
+z_index = 4
+layout_mode = 0
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 150.0
+offset_bottom = 101.0
+tooltip_text = "Return"
+texture_normal = ExtResource("26_pilm7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("27_ka4fl")
+
+[node name="InfoPanel" type="Control" parent="." unique_id=351313359]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoPanel" unique_id=1508786775]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 30
+
+[node name="ItemName" type="Label" parent="InfoPanel/VBoxContainer" unique_id=1273575531]
+layout_mode = 2
+
+[node name="ItemDesc" type="Label" parent="InfoPanel/VBoxContainer" unique_id=160433801]
+layout_mode = 2
+
+[node name="ItemPrice" type="Label" parent="InfoPanel/VBoxContainer" unique_id=1924190557]
+layout_mode = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=253093651]
+
+[node name="HealthPotionButton" type="TextureButton" parent="Area2D" unique_id=1218878583]
+z_index = 1
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 200.0
+offset_bottom = 396.0
+texture_normal = ExtResource("28_jq5oj")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("29_3nhb5")
+
+[node name="BeeneArmorButton" type="TextureButton" parent="Area2D" unique_id=1931513307]
+z_index = 1
+offset_left = 65.0
+offset_top = 436.0
+offset_right = 206.0
+offset_bottom = 580.0
+texture_normal = ExtResource("29_ph2jo")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("31_pqk1f")
+
+[node name="BronzeArmorButton" type="TextureButton" parent="Area2D" unique_id=1216529926]
+z_index = 1
+offset_left = 244.0
+offset_top = 436.0
+offset_right = 388.0
+offset_bottom = 580.0
+texture_normal = ExtResource("30_1omdj")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("33_i3ar3")
+
+[node name="GoldArmorButton" type="TextureButton" parent="Area2D" unique_id=1546803614]
+z_index = 1
+offset_left = 428.0
+offset_top = 438.0
+offset_right = 564.0
+offset_bottom = 578.0
+texture_normal = ExtResource("31_3nhb5")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("35_dwow2")
+
+[node name="Strengh1Button" type="TextureButton" parent="Area2D" unique_id=559989898]
+z_index = 1
+offset_left = 580.0
+offset_top = 461.0
+offset_right = 768.5
+offset_bottom = 577.0
+texture_normal = ExtResource("32_1omdj")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("37_5kmm7")
