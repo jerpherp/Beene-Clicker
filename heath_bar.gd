@@ -8,12 +8,17 @@ extends Node2D
 var current_health := 100
 
 @onready var fill = $healthBarTop
+@onready var bonus_label = get_tree().get_root().get_node("Fight/HUD/BonusHP")
 
 @export var hurt_animation := "hurt_apple"
 @export var normal_animation := "normal_apple"
 
 func _ready():
+	_update_bonus_label()
 	update_bar()
+	
+func _update_bonus_label():
+	bonus_label.visible = Global.owned_items.get("health_potion", false)
 	
 func setup(new_max_health: int):
 	max_health = new_max_health

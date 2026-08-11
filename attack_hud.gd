@@ -58,7 +58,12 @@ func update_slots():
 			slots[i].texture_normal = load("res://attacks/" + attack_id + ".png")
 			if Global.attack_data.has(attack_id):
 				var data = Global.attack_data[attack_id]
-				slots[i].tooltip_text = data["name"] + "\n" + data["desc"] + "\nDamage: " + str(data["damage"])
+				var base_dmg = data["damage"]
+				var actual_dmg = int(base_dmg * (1.0 + Global.get_damage_bonus()))
+				var tooltip = data["name"] + "\n" + data["desc"] + "\nDamage: " + str(actual_dmg)
+				if Global.owned_items.get("strength_1", false):
+					tooltip += " -" + str(actual_dmg - base_dmg) + " bonus-"
+				slots[i].tooltip_text = tooltip
 		else:
 			slots[i].texture_normal = empty_texture
 

@@ -79,8 +79,11 @@
 [ext_resource type="Texture2D" uid="uid://cxvjh1uqad8bw" path="res://mainGame/beachFight/beach_0028.png" id="28_nej38"]
 [ext_resource type="Texture2D" uid="uid://b53n4q40sl6od" path="res://hud/miss.png" id="29_gloik"]
 [ext_resource type="Texture2D" uid="uid://46ufxvnd81rf" path="res://mainGame/mountainsFight/background.png" id="30_elps4"]
+[ext_resource type="Texture2D" uid="uid://c2fkm08usp1ms" path="res://store/armor1.png" id="42_oprs5"]
+[ext_resource type="Texture2D" uid="uid://bextujx2r6c6w" path="res://store/armor2.png" id="43_ggfa5"]
 [ext_resource type="Texture2D" uid="uid://bwlf044ql7cbf" path="res://mainGame/appleBeene/attackFight/appleAttack_0001.png" id="44_53uu5"]
 [ext_resource type="Texture2D" uid="uid://c4c7ga1ods62q" path="res://mainGame/appleBeene/idleFight/appleIdle_0001.png" id="44_hiy1e"]
+[ext_resource type="Texture2D" uid="uid://bkwnj23r7uavl" path="res://store/armor3.png" id="44_lshb5"]
 [ext_resource type="Texture2D" uid="uid://drqe1dejx5jov" path="res://mainGame/appleBeene/idleFight/appleIdle_0002.png" id="45_7ld6x"]
 [ext_resource type="Texture2D" uid="uid://cn6omsphewesu" path="res://mainGame/appleBeene/attackFight/appleAttack_0002.png" id="45_dfqtx"]
 [ext_resource type="Texture2D" uid="uid://1ky7er0xqbia" path="res://mainGame/appleBeene/idleFight/appleIdle_0003.png" id="46_o5vf7"]
@@ -787,6 +790,23 @@ animations = [{
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tedq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ue6t8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_po2my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_oprs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ggfa5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_lshb5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_jj8ac"]
 offsets = PackedFloat32Array(0.024615385, 0.48307693)
@@ -3045,6 +3065,21 @@ visible = false
 position = Vector2(920.5769, 281.75)
 scale = Vector2(1.3242306, 1.3576922)
 texture = ExtResource("29_gloik")
+
+[node name="BonusHP" type="Label" parent="HUD" unique_id=928884634]
+offset_left = 1216.0
+offset_top = 16.0
+offset_right = 1265.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 28
+text = "+25"
+
+[node name="ArmorIcon" type="AnimatedSprite2D" parent="HUD" unique_id=850018031]
+position = Vector2(1254, 62.000004)
+scale = Vector2(0.19000019, 0.19000019)
+sprite_frames = SubResource("SpriteFrames_po2my")
+frame = 1
+frame_progress = 0.9169458
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=576298725]
 

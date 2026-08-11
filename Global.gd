@@ -138,8 +138,8 @@ var boss_data := [
 const SAVE_PATH = "user://save.dat"
 
 func _ready():
-	#if FileAccess.file_exists(SAVE_PATH):
-		#DirAccess.remove_absolute(SAVE_PATH)
+	if FileAccess.file_exists(SAVE_PATH):
+		DirAccess.remove_absolute(SAVE_PATH)
 	load_data()
 	bosses_unlocked[3] = true
 	# temp: unlock all attacks for testing
@@ -185,3 +185,34 @@ func load_data():
 		current_boss = file.get_var() if not file.eof_reached() else 1
 		upgrade_levels = file.get_var() if not file.eof_reached() else {"x2": 1, "beeneHelper1": 1, "auto1": 1}
 		bosses_unlocked = file.get_var() if not file.eof_reached() else [true, false, false, false, false]
+		owned_items = file.get_var() if not file.eof_reached() else {
+			"beene_armor": false,
+			"bronze_armor": false, 
+			"gold_armor": false,
+			"health_potion": false,
+			"strength_1": false,
+		}
+
+var owned_items := {
+	"beene_armor": false,
+	"bronze_armor": false,
+	"gold_armor": false,
+	"health_potion": 0,
+	"strength_1": false,
+}
+
+func get_damage_reduction() -> float:
+	var reduction := 0.0
+	if owned_items["gold_armor"]:
+		reduction += 0.5
+	elif owned_items["bronze_armor"]:
+		reduction += 0.25
+	elif owned_items["beene_armor"]:
+		reduction += 0.1
+	return reduction
+
+func get_damage_bonus() -> float:
+	var bonus := 0.0
+	if owned_items["strength_1"]:
+		bonus += 0.15
+	return bonus

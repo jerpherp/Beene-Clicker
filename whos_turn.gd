@@ -16,6 +16,7 @@ var fight_timer := 0.0
 @onready var boss3_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight")
 @onready var enemy_icon = get_tree().get_root().get_node("Fight/HUD/enemyIcon")
 @onready var enemy_health_bar = get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar")
+@onready var armorIcon = get_tree().get_root().get_node("Fight/HUD/ArmorIcon")
 
 # beach layer nodes (boss 1+2)
 @onready var beach_bg = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer/beachBG")
@@ -36,6 +37,12 @@ func _ready():
 	_apply_fight_background()
 	base_damage = Global.fight_config["base_damage"]
 	dodge_sfx.stream = load(Global.fight_config["dodge_sound"])
+	
+	var bonus_hp = 25 if Global.owned_items.get("health_potion", false) else 0
+	player_health.setup(100 + bonus_hp)
+	
+	# tint player icon based on armor
+	_apply_armor_icon()
 	
 	# show correct enemy
 	if Global.current_boss == 1:
@@ -256,6 +263,8 @@ func _apply_damage():
 	var reduction = float(qte_damage_reduction) / float(total_qtes)
 	var final_damage = int(base_damage * (1.0 - reduction))
 	
+	final_damage = int(final_damage * (1.0 - Global.get_damage_reduction()))
+	
 	if Global.current_boss == 2:
 		scuba_sprite.trigger_attack_bubbles()
 
@@ -322,6 +331,8 @@ func player_attack(attack_id: String):
 	var damage = 20
 	if Global.attack_data.has(attack_id):
 		damage = Global.attack_data[attack_id]["damage"]
+		
+	damage = int(damage * (1.0 + Global.get_damage_bonus()))
 
 	enemy_health.take_damage(damage)
 	Global.fight_stats["hits_dealt"] += 1
@@ -497,3 +508,13 @@ func _transition_to_main():
 	Global.play_yippie = true
 	Global.show_fight_results = true
 	get_tree().change_scene_to_file("res://main.tscn")
+
+func _apply_armor_icon():
+	if Global.owned_items.get("gold_armor", false):
+		armorIcon.frame = 2
+	elif Global.owned_items.get("bronze_armor", false):
+		armorIcon.frame = 1
+	elif Global.owned_items.get("beene_armor", false):
+		armorIcon.frame = 0
+	else:
+		armorIcon.visible = false;

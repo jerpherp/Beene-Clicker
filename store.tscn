@@ -28,15 +28,11 @@
 [ext_resource type="Texture2D" uid="uid://crc4niepb3cp8" path="res://store/back.png" id="26_pilm7"]
 [ext_resource type="Script" uid="uid://bu1gvusjeme65" path="res://back_button.gd" id="27_ka4fl"]
 [ext_resource type="Texture2D" uid="uid://bd7ytilioe1c6" path="res://store/healthPotion.png" id="28_jq5oj"]
-[ext_resource type="Script" uid="uid://bt6jcmjhj0hbp" path="res://health_potion_button.gd" id="29_3nhb5"]
+[ext_resource type="Script" uid="uid://c3ilmlgcqfjmd" path="res://store_item_button.gd" id="29_3nhb5"]
 [ext_resource type="Texture2D" uid="uid://c2fkm08usp1ms" path="res://store/armor1.png" id="29_ph2jo"]
 [ext_resource type="Texture2D" uid="uid://bextujx2r6c6w" path="res://store/armor2.png" id="30_1omdj"]
 [ext_resource type="Texture2D" uid="uid://bkwnj23r7uavl" path="res://store/armor3.png" id="31_3nhb5"]
-[ext_resource type="Script" uid="uid://bgg1plvdgm4fv" path="res://beene_armor_button.gd" id="31_pqk1f"]
 [ext_resource type="Texture2D" uid="uid://coeo5b0ifx0a0" path="res://store/strength.png" id="32_1omdj"]
-[ext_resource type="Script" uid="uid://dsmee7lp7ddk7" path="res://bronze_armor_button.gd" id="33_i3ar3"]
-[ext_resource type="Script" uid="uid://dyub2boh125gs" path="res://gold_armor_button.gd" id="35_dwow2"]
-[ext_resource type="Script" uid="uid://cijbb5m5rxsqe" path="res://strengh_1_button.gd" id="37_5kmm7"]
 
 [sub_resource type="Gradient" id="Gradient_ekl5k"]
 offsets = PackedFloat32Array(0.064615384, 0.5784615)
@@ -319,6 +315,10 @@ texture_normal = ExtResource("28_jq5oj")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("29_3nhb5")
+item_name = "Health Potion"
+item_desc = "Adds an extra 25 HP on top of what you have!"
+item_price = 5000
+item_id = "health_potion"
 
 [node name="BeeneArmorButton" type="TextureButton" parent="Area2D" unique_id=1931513307]
 z_index = 1
@@ -329,7 +329,11 @@ offset_bottom = 580.0
 texture_normal = ExtResource("29_ph2jo")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("31_pqk1f")
+script = ExtResource("29_3nhb5")
+item_name = "Beene Armor"
+item_desc = "Gives your Beene an extra 10% of protection against your foes!"
+item_price = 3500
+item_id = "beene_armor"
 
 [node name="BronzeArmorButton" type="TextureButton" parent="Area2D" unique_id=1216529926]
 z_index = 1
@@ -340,7 +344,11 @@ offset_bottom = 580.0
 texture_normal = ExtResource("30_1omdj")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("33_i3ar3")
+script = ExtResource("29_3nhb5")
+item_name = "Bronze Armor"
+item_desc = "Heavy, large, and strong, this armor gives you 25% protection during battles!"
+item_price = 15000
+item_id = "bronze_armor"
 
 [node name="GoldArmorButton" type="TextureButton" parent="Area2D" unique_id=1546803614]
 z_index = 1
@@ -351,7 +359,11 @@ offset_bottom = 578.0
 texture_normal = ExtResource("31_3nhb5")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("35_dwow2")
+script = ExtResource("29_3nhb5")
+item_name = "Gold Armor"
+item_desc = "Only the best armor for a fightin' Beene. Gives you 50% protection during the toughest of battles."
+item_price = 150000
+item_id = "gold_armor"
 
 [node name="Strengh1Button" type="TextureButton" parent="Area2D" unique_id=559989898]
 z_index = 1
@@ -362,4 +374,8 @@ offset_bottom = 577.0
 texture_normal = ExtResource("32_1omdj")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("37_5kmm7")
+script = ExtResource("29_3nhb5")
+item_name = "Beene Strength I"
+item_desc = "Give your Beene some muscles! Adds an additional 15% damage buff during your attack."
+item_price = 45000
+item_id = "strength_1"
