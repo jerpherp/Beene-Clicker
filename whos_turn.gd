@@ -33,7 +33,9 @@ var fight_timer := 0.0
 @onready var close_mountain = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/CloseMountain")
 
 func _ready():
+	#Global.current_boss = 3
 	Global.reset_fight_stats()
+	Global.fight_config = Global.boss_data[Global.current_boss - 1]["config"]
 	_apply_fight_background()
 	base_damage = Global.fight_config["base_damage"]
 	dodge_sfx.stream = load(Global.fight_config["dodge_sound"])
@@ -126,6 +128,7 @@ var base_damage := 20
 @onready var player_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer3/beeneFight")
 @onready var enemy_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight")
 @onready var scuba_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight")
+@onready var peeper_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight")
 @onready var attack_hud = get_tree().get_root().get_node("Fight/HUD/EquippedAttacksHUD")
 @onready var music = get_tree().get_root().get_node("Fight/BackgroundMusic")
 @onready var transition_overlay = get_tree().get_root().get_node("Fight/HUD/TransitionOverlay")
@@ -267,6 +270,8 @@ func _apply_damage():
 	
 	if Global.current_boss == 2:
 		scuba_sprite.trigger_attack_bubbles()
+	elif Global.current_boss == 3:
+		peeper_sprite.trigger_eye_beam(player_sprite.global_position)
 
 	if final_damage == 0:
 		_show_label(great_label)
@@ -389,6 +394,7 @@ func _player_death():
 	var nodes_to_darken = [
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight"),
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight"),
 	]
 	var nodes_to_fade = [
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Palm"),
@@ -407,6 +413,9 @@ func _player_death():
 		get_tree().get_root().get_node("Fight/HUD/BeeneHealthBar"),
 		get_tree().get_root().get_node("Fight/HUD/beeneIcon"),
 		get_tree().get_root().get_node("Fight/HUD/enemyIcon"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/Snow"),
+		get_tree().get_root().get_node("Fight/HUD/BonusHP"),
+		get_tree().get_root().get_node("Fight/HUD/ArmorIcon"),
 	]
 
 	for node in nodes_to_darken:

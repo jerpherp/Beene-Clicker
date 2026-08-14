@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bextujx2r6c6w" path="res://store/armor2.png" id="30_1omdj"]
 [ext_resource type="Texture2D" uid="uid://bkwnj23r7uavl" path="res://store/armor3.png" id="31_3nhb5"]
 [ext_resource type="Texture2D" uid="uid://coeo5b0ifx0a0" path="res://store/strength.png" id="32_1omdj"]
+[ext_resource type="AudioStream" uid="uid://b56ua71ojxhlh" path="res://music/Beenie_Jammer.ogg" id="34_pqk1f"]
 
 [sub_resource type="Gradient" id="Gradient_ekl5k"]
 offsets = PackedFloat32Array(0.064615384, 0.5784615)
@@ -379,3 +380,8 @@ item_name = "Beene Strength I"
 item_desc = "Give your Beene some muscles! Adds an additional 15% damage buff during your attack."
 item_price = 45000
 item_id = "strength_1"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1179030425]
+stream = ExtResource("34_pqk1f")
+autoplay = true
+bus = &"Music"

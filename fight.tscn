@@ -3181,6 +3181,22 @@ animation = &"hit"
 autoplay = "idle"
 script = ExtResource("377_k1rnu")
 
+[node name="EyeBeam" type="Line2D" parent="ParallaxBackground/ParallaxLayer2/peeperFight" unique_id=804895517]
+visible = false
+z_index = 9
+position = Vector2(56.41028, -176.92316)
+points = PackedVector2Array(-20.512817, -123.07703, 1081.7007, 295.00403, 1169.231, 328.20514, 3241.026, 1148.7183)
+width = 60.0
+round_precision = 32
+
+[node name="EyeBeamGlow" type="Line2D" parent="ParallaxBackground/ParallaxLayer2/peeperFight" unique_id=1324712532]
+visible = false
+z_index = 9
+position = Vector2(56.41028, -176.92316)
+points = PackedVector2Array(-20.512817, -123.07703, 1081.7007, 295.00403, 1169.231, 328.20514, 3241.026, 1148.7183)
+width = 60.0
+round_precision = 32
+
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=731315393]
 
 [node name="beeneFight" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1004413756]

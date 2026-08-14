@@ -3,14 +3,14 @@ extends TextureButton
 @export var hover_scale := Vector2(1.1, 1.1)
 @export var scale_duration := 0.15
 
-@export var title := "Beene Bot"
-@export var description := "Gathers Beenes automatically while you are away from the game."
+@export var title := "Lucky Jackpot"
+@export var description := "Grants a chance for clicks to hit a massive multiplier."
 
-@export var base_price := 500
-@export var exponent := 1.5
+@export var base_price := 3000
+@export var exponent := 2.5
 var level := 1
 
-@export var clicks_per_second_increase := 1
+@export var multiplier_increase := 1
 @onready var counter = get_tree().get_root().get_node("Main/ClickCounter")
 @onready var tooltip = $Tooltip
 
@@ -60,11 +60,8 @@ func _update_tooltip_text():
 func _on_pressed():
 	if Global.click_count >= get_price():
 		Global.click_count -= get_price()
-		Global.has_auto_collect = true
+		Global.has_jackpot = true
 		level += 1
-		
-		Global.beene_bot_rate += clicks_per_second_increase
-		
 		Global.upgrade_levels[name] = level
 		Global.save_data()
 		

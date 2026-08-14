@@ -36,15 +36,43 @@ func _input_event(_viewport, event, _shape_idx):
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			click_sfx.pitch_scale = randf_range(0.6, 1.2)
 			click_sfx.play()
-			Global.click_count += Global.click_multiplier
+			
+			var multiplier = Global.click_multiplier
+			
+			# click frenzy
+			if Global.click_frenzy_active:
+				multiplier *= 3
+			
+			# golden click every 100 clicks
+			if Global.has_golden_click:
+				Global.golden_click_counter += 1
+				if Global.golden_click_counter >= 100:
+					Global.golden_click_counter = 0
+					multiplier *= 10
+					_show_golden_click()
+			
+			# jackpot chance
+			if Global.has_jackpot:
+				if randf() < Global.jackpot_chance:
+					multiplier *= 100
+					_show_jackpot()
+			
+			Global.click_count += multiplier
 			counter.update_display()
 			combo_sprite.trigger()
 			Global.save_data()
-			
-			# check if we should trigger the fight
-			if Global.click_count >= randi_range(1000, 1200) and not Global.boss1_unlocked:
-				_trigger_fight()
 
+func _show_golden_click():
+	# flash a golden effect on the beene
+	var tween = create_tween()
+	tween.tween_property($BeeneMain, "modulate", Color(1.5, 1.2, 0.0), 0.1)
+	tween.tween_property($BeeneMain, "modulate", Color.WHITE, 0.3)
+	
+func _show_jackpot():
+	# bigger flash for jackpot
+	var tween = create_tween()
+	tween.tween_property($BeeneMain, "modulate", Color(2.0, 1.5, 0.0), 0.1)
+	tween.tween_property($BeeneMain, "modulate", Color.WHITE, 0.5)
 
 func _on_mouse_exited():
 	is_hovered = false

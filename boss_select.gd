@@ -2,6 +2,7 @@ extends Control
 
 @export var slide_duration := 0.4
 
+# Node References
 @onready var left_btn = $LeftButton
 @onready var right_btn = $RightButton
 @onready var info_btn = $InfoButton
@@ -13,6 +14,14 @@ extends Control
 @onready var fade_overlay = get_tree().get_root().get_node("Main/CanvasLayer/TransitionOverlay")
 @onready var panel_btn = $BossPanelButton
 @onready var music = get_tree().get_root().get_node("Main/BackgroundMusic")
+
+# Sprite Textures for Stars - Adjust file paths to match your assets!
+const STAR_FULL_TEX = preload("res://hud/star.png")   
+const STAR_EMPTY_TEX = preload("res://hud/starFull.png") 
+
+# Container generated dynamically via code
+var stars_container: HBoxContainer
+var star_rects: Array[TextureRect] = []
 
 var current_index := 0
 var shown_x : float
@@ -28,15 +37,50 @@ func _ready():
 	left_btn.pressed.connect(_on_left)
 	right_btn.pressed.connect(_on_right)
 	
-	# add hover to all buttons
+	# Add hover to all buttons
 	for btn in [left_btn, right_btn, info_btn]:
 		btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		btn.mouse_entered.connect(_on_hover.bind(btn))
 		btn.mouse_exited.connect(_on_exit.bind(btn))
 		
 	bg_rect.gui_input.connect(_on_bg_clicked)
+	
+	# Dynamically build the 5-star container and texture rects
+	_setup_stars_ui()
 		
 	update_display()
+
+# Creates the 5 stars via code
+func _setup_stars_ui():
+	stars_container = HBoxContainer.new()
+	stars_container.name = "StarsContainer"
+	stars_container.alignment = BoxContainer.ALIGNMENT_CENTER
+	stars_container.add_theme_constant_override("separation", 6)
+	
+	boss_panel.add_child(stars_container)
+	
+	stars_container.position = Vector2(-185, 220) 
+	stars_container.size = Vector2(200, 30)
+	
+	for i in range(5):
+		var star = TextureRect.new()
+		star.custom_minimum_size = Vector2(70, 70)
+		star.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		star.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		stars_container.add_child(star)
+		star_rects.append(star)
+
+# Updates star textures dynamically
+func _update_star_sprites(rating: int, unlocked: bool):
+	for i in range(star_rects.size()):
+		var star = star_rects[i]
+		if unlocked and i < rating:
+			star.texture = STAR_FULL_TEX
+			star.modulate = Color.WHITE
+		else:
+			star.texture = STAR_EMPTY_TEX
+			# Dim empty stars slightly when locked
+			star.modulate = Color.WHITE if unlocked else Color(0.4, 0.4, 0.4, 0.5)
 
 func _on_hover(btn: TextureButton):
 	var tween = create_tween()
@@ -63,30 +107,39 @@ func close():
 
 func _on_left():
 	current_index = (current_index - 1 + Global.boss_data.size()) % Global.boss_data.size()
-	if (current_index < 0):
-		current_index = Global.boss_data.size()
 	update_display()
 
 func _on_right():
 	current_index = (current_index + 1) % Global.boss_data.size()
-	if (current_index > Global.boss_data.size()):
-		current_index = 1
 	update_display()
 
 func update_display():
 	var data = Global.boss_data[current_index]
 	var unlocked = Global.bosses_unlocked[current_index]
 	
-	boss_name.text = data["name"]
-	boss_desc.text = data["desc"]
-	boss_image.texture = load(data["image"])
-
+	# Default rating: Boss 1 = 1 star, Boss 2 = 2 stars, etc.
+	# If defined in dictionary as data["difficulty"], it uses that instead
+	var difficulty_stars = data.get("difficulty", current_index + 1)
+	
 	if unlocked:
+		boss_name.text = data["name"]
+		boss_desc.text = data["desc"]
+		boss_image.texture = load(data["image"])
 		boss_image.modulate = Color.WHITE
 		boss_name.modulate = Color.WHITE
+		
+		_update_star_sprites(difficulty_stars, true)
+		panel_btn.disabled = false
 	else:
-		boss_image.modulate = Color(0.3, 0.3, 0.3)
-		boss_name.modulate = Color(0.3, 0.3, 0.3)
+		# Mask locked boss details
+		boss_name.text = "???"
+		boss_desc.text = "???"
+		boss_image.texture = load(data["image"])
+		boss_image.modulate = Color(0.15, 0.15, 0.15, 0.8) # Dark silhouette
+		boss_name.modulate = Color(0.6, 0.6, 0.6)
+		
+		_update_star_sprites(0, false) # Show all empty stars for locked boss
+		panel_btn.disabled = true
 
 func _on_fight():
 	if Global.bosses_unlocked[current_index]:

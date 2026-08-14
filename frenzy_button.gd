@@ -3,18 +3,21 @@ extends TextureButton
 @export var hover_scale := Vector2(1.1, 1.1)
 @export var scale_duration := 0.15
 
-@export var title := "Beene Bot"
-@export var description := "Gathers Beenes automatically while you are away from the game."
+@export var title := "Click Frenzy"
+@export var description := "Triples all click gains for 10 seconds."
 
-@export var base_price := 500
-@export var exponent := 1.5
+@export var base_price := 2000
+@export var exponent := 2.0
 var level := 1
 
-@export var clicks_per_second_increase := 1
+@export var frenzy_duration := 10.0
+@export var frenzy_multiplier := 3
+
 @onready var counter = get_tree().get_root().get_node("Main/ClickCounter")
 @onready var tooltip = $Tooltip
 
 var original_scale: Vector2
+var frenzy_timer: SceneTreeTimer
 
 func _ready():
 	var upgrade_name = name
@@ -58,13 +61,14 @@ func _update_tooltip_text():
 	$Tooltip/UpgradeDesc.text = "[b]" + title + "[/b]\n Level " + str(level) + "\n" + description + "\n[b]Cost:[/b] " + str(get_price()) + " Beenes"
 
 func _on_pressed():
+	if Global.frenzy_active:
+		return
+
 	if Global.click_count >= get_price():
+		# Deduct cost and level up
 		Global.click_count -= get_price()
-		Global.has_auto_collect = true
+		Global.has_click_frenzy = true
 		level += 1
-		
-		Global.beene_bot_rate += clicks_per_second_increase
-		
 		Global.upgrade_levels[name] = level
 		Global.save_data()
 		
@@ -73,3 +77,22 @@ func _on_pressed():
 			
 		_update_tooltip_text()
 		update_price_display()
+		
+		# Start 10-second Click Frenzy
+		_start_frenzy()
+
+func _start_frenzy():
+	Global.frenzy_active = true
+	Global.click_multiplier *= frenzy_multiplier
+	
+	# Give button a frenzy active visual tint
+	modulate = Color(1, 0.85, 0.2)
+	
+	# Create 10 second timer
+	frenzy_timer = get_tree().create_timer(frenzy_duration)
+	await frenzy_timer.timeout
+	
+	# Revert frenzy effects after 10 seconds
+	Global.frenzy_active = false
+	Global.click_multiplier = max(1, int(Global.click_multiplier / frenzy_multiplier))
+	modulate = Color.WHITE

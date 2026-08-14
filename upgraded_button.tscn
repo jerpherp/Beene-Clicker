@@ -6,13 +6,6 @@
 offset_top = -40.0
 offset_right = 40.0
 script = ExtResource("1_riabq")
-hover_scale = null
-scale_duration = null
-title = null
-description = null
-base_price = null
-exponent = null
-multiplier_increase = null
 
 [node name="Tooltip" type="PanelContainer" parent="." unique_id=1550566862]
 z_index = 9
@@ -24,7 +17,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -96.0
 offset_top = -40.0
-offset_right = 108.0
+offset_right = 172.0
 grow_horizontal = 2
 grow_vertical = 0
 
