@@ -29,12 +29,20 @@ func _ready():
 	sfx_slider.value = Global.sfx_volume
 	
 	# add screen size options
+	screen_options.clear()
 	screen_options.add_item("1280x720")
 	screen_options.add_item("1920x1080")
 	screen_options.add_item("Fullscreen")
+	
+	# Select saved screen option on load
+	if Global.screen_size_index >= 0 and Global.screen_size_index < screen_options.item_count:
+		screen_options.selected = Global.screen_size_index
 
 func open():
 	visible = true
+	# Sync UI selection with Global state when opened
+	screen_options.selected = Global.screen_size_index
+	
 	position.x = get_viewport_rect().size.x + 400
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
@@ -58,13 +66,6 @@ func _on_sfx_changed(value: float):
 	Global.save_data()
 
 func _on_screen_size_changed(index: int):
-	match index:
-		0:  # 720p windowed
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			DisplayServer.window_set_size(Vector2i(1280, 720))
-		1:  # 1080p windowed
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			DisplayServer.window_set_size(Vector2i(1920, 1080))
-		2:  # Fullscreen
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	Global.screen_size_index = index
+	Global.apply_screen_size()
 	Global.save_data()

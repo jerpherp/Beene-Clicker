@@ -162,6 +162,8 @@
 [ext_resource type="Texture2D" uid="uid://biwb6mt7utcwr" path="res://hud/buttonRight.png" id="150_wm5rm"]
 [ext_resource type="Texture2D" uid="uid://3anju1wjqhx7" path="res://hud/info.png" id="151_ekl5k"]
 [ext_resource type="Texture2D" uid="uid://coswks6qft5r3" path="res://hud/mainPanel.png" id="152_fdpg8"]
+[ext_resource type="Script" uid="uid://bgxk5bhh3frdj" path="res://stats_panel.gd" id="157_hnquj"]
+[ext_resource type="Texture2D" uid="uid://xjkr88t3ap18" path="res://hud/mainPanelImageBorder.png" id="164_0h8y2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_getpj"]
 shader = ExtResource("2_82xsv")
@@ -685,6 +687,12 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nycv6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hnquj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0h8y2"]
+
 [sub_resource type="Animation" id="Animation_ekl5k"]
 length = 0.001
 tracks/0/type = "value"
@@ -1053,7 +1061,49 @@ script = ExtResource("149_rpys8")
 
 [node name="SettingsPanel" parent="CanvasLayer" unique_id=589901544 instance=ExtResource("138_bnk2o")]
 visible = false
-slide_duration = 0.4
+
+[node name="StatsPanel" type="Control" parent="CanvasLayer" unique_id=633565859]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("157_hnquj")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/StatsPanel" unique_id=1122679202]
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 725.0
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="Label" type="Label" parent="CanvasLayer/StatsPanel" unique_id=1306516208]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 29.0
+offset_right = 1216.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 36
+text = "STATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsPanel" type="PanelContainer" parent="CanvasLayer/StatsPanel" unique_id=914003883]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 66.0
+offset_right = 1216.0
+offset_bottom = 640.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nycv6")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/StatsPanel/StatsPanel" unique_id=1755575261]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hnquj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0h8y2")
+
+[node name="StatsContainer" type="VBoxContainer" parent="CanvasLayer/StatsPanel/StatsPanel/ScrollContainer" unique_id=963847197]
+layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="FightResults" parent="CanvasLayer" unique_id=1814415287 instance=ExtResource("143_pw0td")]
 visible = false
@@ -1061,7 +1111,6 @@ offset_left = 1.0
 offset_right = 1.0
 
 [node name="BossSelect" type="Control" parent="CanvasLayer" unique_id=1838325067]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1121,8 +1170,11 @@ scale = Vector2(0.6008481, 0.60084814)
 texture = ExtResource("152_fdpg8")
 
 [node name="BossImage" type="TextureRect" parent="CanvasLayer/BossSelect/BossPanel" unique_id=535361776]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -251.31146
+offset_top = -366.14908
+offset_right = 239.66125
+offset_bottom = -19.97174
+expand_mode = 1
 
 [node name="BossName" type="Label" parent="CanvasLayer/BossSelect/BossPanel" unique_id=27253122]
 offset_left = -280.10394
@@ -1144,7 +1196,13 @@ text = "desc"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="MainPanelImageBorder" type="Sprite2D" parent="CanvasLayer/BossSelect/BossPanel" unique_id=61193935]
+position = Vector2(-5.197525, -192.22278)
+scale = Vector2(0.8902531, 0.86498106)
+texture = ExtResource("164_0h8y2")
+
 [node name="TransitionOverlay" type="ColorRect" parent="CanvasLayer" unique_id=399353956]
+visible = false
 z_index = 999
 offset_right = 1281.0
 offset_bottom = 725.0

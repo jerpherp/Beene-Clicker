@@ -9,7 +9,6 @@ bg_color = Color(0, 0, 0, 0.78431374)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_qe5rj")
-slide_duration = null
 
 [node name="Background" type="Panel" parent="." unique_id=250225889]
 layout_mode = 0
@@ -75,10 +74,12 @@ offset_bottom = 276.0
 
 [node name="Label" type="Label" parent="." unique_id=879175863]
 layout_mode = 0
-offset_left = 1086.0
-offset_top = 701.0
-offset_right = 1275.0
-offset_bottom = 725.0
+offset_left = 912.0
+offset_top = 600.0
+offset_right = 1270.0
+offset_bottom = 639.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.24705882)
-theme_override_font_sizes/font_size = 12
-text = "Greene Beene Enterprises - 2026"
+theme_override_font_sizes/font_size = 18
+text = "Greene Beene Enterprises - 2026
+v0.1.0"
+horizontal_alignment = 2

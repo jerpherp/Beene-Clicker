@@ -4,8 +4,10 @@ extends Node
 const SAVE_PATH := "user://savegame.save"
 
 # --- Primary Game Stats ---
-var click_count: int = 100000
+var click_count: int = 0
 var click_multiplier: int = 1
+
+var screen_size_index: int = 0
 
 var music_volume: float = -10.0
 var sfx_volume: float = -10.0
@@ -26,10 +28,18 @@ var has_golden_click: bool = false
 var has_click_frenzy: bool = false
 var has_jackpot: bool = false
 
+var total_beenes: int = 0
+var total_clicks: int = 0
+var fights_fought: int = 0
+var fights_won: int = 0
+var fights_lost: int = 0
+
 var helper_beene_active: bool = false
 var helper_beene_count: int = 0
 
 var golden_click_level: int = 1
+
+var window_mode: int = DisplayServer.WINDOW_MODE_WINDOWED
 
 # Upgrade level dictionary used by buttons
 var upgrade_levels: Dictionary = {
@@ -100,10 +110,10 @@ var boss_data: Array = [
 		"config": {
 			"enemy_health": 100,
 			"base_damage": randf_range(8, 15),
-			"qte_speed": 1,
+			"qte_speed": 1.2,
 			"qte_count_min": 1,
 			"qte_count_max": 2,
-			"qte_time_limit": 2,
+			"qte_time_limit": 2.1,
 			"dodge_sound": "res://SFX/appleDodge.mp3",
 		}
 	},
@@ -156,6 +166,9 @@ var boss_data: Array = [
 
 # --- Lifecycle Callbacks ---
 func _ready():
+	#if FileAccess.file_exists(SAVE_PATH):
+		#DirAccess.remove_absolute(SAVE_PATH)
+	apply_screen_size()
 	load_data()
 	_calculate_offline_gains()
 
@@ -216,7 +229,13 @@ func save_data():
 			"has_click_frenzy": has_click_frenzy,
 			"has_jackpot": has_jackpot,
 			"beene_bot_rate": beene_bot_rate,
-			"last_exit_time": last_exit_time
+			"last_exit_time": last_exit_time,
+			"total_beenes": total_beenes,
+			"total_clicks": total_clicks,
+			"fights_fought": fights_fought,
+			"fights_won": fights_won,
+			"fights_lost": fights_lost,
+			"window_mode": window_mode,
 		}
 		save_file.store_var(data)
 		save_file.close()
@@ -249,6 +268,12 @@ func load_data():
 			has_jackpot = data.get("has_jackpot", false)
 			beene_bot_rate = data.get("beene_bot_rate", 10)
 			last_exit_time = data.get("last_exit_time", 0)
+			total_beenes = data.get("total_beenes", click_count)
+			total_clicks = data.get("total_clicks", 0)
+			fights_fought = data.get("fights_fought", 0)
+			fights_won = data.get("fights_won", 0)
+			fights_lost = data.get("fights_lost", 0)
+			window_mode = data.get("window_mode")
 
 func _calculate_offline_gains():
 	if has_auto_collect and beene_bot_rate > 0 and last_exit_time > 0:
@@ -259,3 +284,81 @@ func _calculate_offline_gains():
 			var offline_earned = seconds_away * beene_bot_rate
 			click_count += offline_earned
 			print("Welcome back! Beene Bot gathered ", offline_earned, " Beenes while away (", seconds_away, "s).")
+			
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_R:
+		reset_everything()
+
+func reset_everything() -> void:
+	# 1. Reset standard currencies & multipliers
+	click_count = 0
+	click_multiplier = 1
+	has_golden_click = false
+	golden_click_level = 1
+	golden_click_counter = 0
+	upgrade_levels = {
+		"x2": 1,
+		"beeneHelper1": 1,
+		"auto1": 1,
+	}
+	
+	# 2. Reset buffs & helpers
+	frenzy_active = false
+	click_frenzy_active = false
+	click_frenzy_cooldown = false
+	jackpot_chance = 0.02
+	has_auto_collect = false
+	has_click_frenzy = false
+	has_jackpot = false
+	helper_beene_active = false
+	helper_beene_count = 0
+	beene_bot_rate = 10
+	
+	# 3. Reset items & attacks
+	owned_items = {
+		"beene_armor": false,
+		"bronze_armor": false,
+		"gold_armor": false,
+		"health_potion": 0,
+		"strength_1": false,
+	}
+	equipped_attacks = ["attack1", "attack2", ""]
+	unlocked_attacks = ["attack1", "attack2"]
+	new_attacks = []
+	
+	# 4. Reset boss progression
+	current_boss = 0
+	boss1_unlocked = false
+	bosses_unlocked = [true, false, false, false, false]
+	current_background = 0
+	
+	# 5. Reset lifetime stats
+	total_beenes = 0
+	total_clicks = 0
+	fights_fought = 0
+	fights_won = 0
+	fights_lost = 0
+	
+	# 6. Delete save file on disk
+	if FileAccess.file_exists(SAVE_PATH):
+		var err = DirAccess.remove_absolute(SAVE_PATH)
+		if err == OK:
+			print("Save file successfully deleted!")
+		else:
+			print("Failed to delete save file. Error code: ", err)
+			
+	print("--- ALL PROGRESS HAS BEEN RESET ---")
+	
+	# 7. Reload current scene to refresh UI elements
+	get_tree().reload_current_scene()
+
+func apply_screen_size() -> void:
+	match screen_size_index:
+		0:  # 720p windowed
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_size(Vector2i(1280, 720))
+		1:  # 1080p windowed
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_size(Vector2i(1920, 1080))
+		2:  # Fullscreen
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

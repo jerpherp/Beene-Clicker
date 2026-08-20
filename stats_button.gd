@@ -7,6 +7,7 @@ func _ready():
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	mouse_entered.connect(_on_hover)
 	mouse_exited.connect(_on_exit)
+	pressed.connect(func(): get_parent().get_node("StatsPanel").open())
 
 func _on_hover():
 	var tween = create_tween()

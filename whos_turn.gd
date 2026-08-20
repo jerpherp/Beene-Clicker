@@ -46,6 +46,8 @@ func _ready():
 	# tint player icon based on armor
 	_apply_armor_icon()
 	
+	Global.fights_fought += 1
+	
 	# show correct enemy
 	if Global.current_boss == 1:
 		enemy_sprite = apple_sprite
@@ -376,6 +378,9 @@ func _player_death():
 	var music_tween = create_tween()
 	music_tween.tween_property(music, "volume_db", -80.0, 1.5)
 	
+	Global.fights_lost += 1
+	Global.save_data()
+	
 	var bg_layer_path = ""
 	if Global.current_boss == 1 || Global.current_boss == 2:
 		bg_layer_path = "Fight/ParallaxBackground/ParallaxLayer"
@@ -428,6 +433,94 @@ func _player_death():
 
 	var player_tween = create_tween()
 	player_tween.tween_property(player_sprite, "modulate", Color.WHITE, 1.0)
+	
+	await beach_tween.finished
+	await get_tree().create_timer(1).timeout
+	_show_death_options()
+	
+func _show_death_options() -> void:
+	var hud = get_tree().get_root().get_node("Fight/HUD")
+	
+	var options_container := HBoxContainer.new()
+	options_container.name = "DeathOptionsContainer"
+	options_container.anchor_left = 0.42
+	options_container.anchor_top = 0.75
+	options_container.anchor_right = 0.5
+	options_container.anchor_bottom = 0.35
+	options_container.offset_left = -250.0
+	options_container.offset_top = -30.0
+	options_container.offset_right = 250.0
+	options_container.offset_bottom = 30.0
+	options_container.add_theme_constant_override("separation", 240)
+	options_container.alignment = BoxContainer.ALIGNMENT_CENTER
+	options_container.modulate.a = 0.0
+	
+	var flat_style := StyleBoxEmpty.new()
+	
+	var handle_choice := func(action: Callable):
+		options_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var fade_out = create_tween()
+		fade_out.tween_property(options_container, "modulate:a", 0.0, 0.5)
+		await fade_out.finished
+		action.call()
+
+	var try_again_btn := Button.new()
+	try_again_btn.text = "Try Again?"
+	try_again_btn.pivot_offset = Vector2(100, 25)
+	try_again_btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	try_again_btn.add_theme_font_size_override("font_size", 42)
+	try_again_btn.add_theme_color_override("font_color", Color.WHITE)
+	try_again_btn.add_theme_color_override("font_hover_color", Color.WHITE)
+	try_again_btn.add_theme_color_override("font_focus_color", Color.WHITE)
+	try_again_btn.add_theme_stylebox_override("normal", flat_style)
+	try_again_btn.add_theme_stylebox_override("hover", flat_style)
+	try_again_btn.add_theme_stylebox_override("pressed", flat_style)
+	try_again_btn.add_theme_stylebox_override("focus", flat_style)
+	try_again_btn.pressed.connect(func(): 
+		handle_choice.call(func(): get_tree().reload_current_scene())
+	)
+	_apply_float_effects(try_again_btn)
+	
+	var give_up_btn := Button.new()
+	give_up_btn.text = "Give Up..."
+	give_up_btn.pivot_offset = Vector2(100, 25)
+	give_up_btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	give_up_btn.add_theme_font_size_override("font_size", 42)
+	give_up_btn.add_theme_color_override("font_color", Color.WHITE)
+	give_up_btn.add_theme_color_override("font_hover_color", Color.WHITE)
+	give_up_btn.add_theme_color_override("font_focus_color", Color.WHITE)
+	give_up_btn.add_theme_stylebox_override("normal", flat_style)
+	give_up_btn.add_theme_stylebox_override("hover", flat_style)
+	give_up_btn.add_theme_stylebox_override("pressed", flat_style)
+	give_up_btn.add_theme_stylebox_override("focus", flat_style)
+	give_up_btn.pressed.connect(func(): 
+		handle_choice.call(func(): get_tree().change_scene_to_file("res://main.tscn"))
+	)
+	_apply_float_effects(give_up_btn)
+	
+	options_container.add_child(try_again_btn)
+	options_container.add_child(give_up_btn)
+	hud.add_child(options_container)
+	
+	var fade_tween = create_tween()
+	fade_tween.tween_property(options_container, "modulate:a", 1.0, 0.8)
+	fade_tween.tween_property(player_sprite, "modulate:a", 1.0, 0.8)
+
+func _apply_float_effects(btn: Button) -> void:
+	var float_offset := -10.0
+	
+	var float_up = func():
+		var tween = btn.create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		tween.tween_property(btn, "position:y", float_offset, 0.15)
+	
+	var float_down = func():
+		var tween = btn.create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		tween.tween_property(btn, "position:y", 0.0, 0.15)
+		
+	btn.mouse_entered.connect(float_up)
+	btn.focus_entered.connect(float_up)
+	btn.mouse_exited.connect(float_down)
+	btn.focus_exited.connect(float_down)
 
 # ============================================================
 # RANK CALCULATION
@@ -498,6 +591,7 @@ func _transition_to_main():
 
 	_calculate_rank()
 	Global.current_boss += 1
+	Global.fights_won += 1
 	Global.click_count += Global.fight_beene_reward
 	Global.save_data()
 	

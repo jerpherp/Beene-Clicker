@@ -38,6 +38,7 @@ func _input_event(_viewport, event, _shape_idx):
 			click_sfx.play()
 			
 			var multiplier = Global.click_multiplier
+			Global.total_clicks += 1
 			
 			# click frenzy
 			if Global.click_frenzy_active:
@@ -58,6 +59,7 @@ func _input_event(_viewport, event, _shape_idx):
 					_show_jackpot()
 			
 			Global.click_count += multiplier
+			Global.total_beenes += multiplier
 			counter.update_display()
 			combo_sprite.trigger()
 			Global.save_data()
