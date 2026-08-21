@@ -60,13 +60,17 @@ func _update_tooltip_text():
 func _on_pressed():
 	if Global.click_count >= get_price():
 		Global.click_count -= get_price()
-		Global.has_auto_collect = true
 		level += 1
-		
-		Global.beene_bot_rate += clicks_per_second_increase
+		# apply upgrade-specific immediate side-effects
+		if name == "auto1":
+			Global.has_auto_collect = true
+			Global.beene_bot_rate += clicks_per_second_increase
 		
 		Global.upgrade_levels[name] = level
 		Global.save_data()
+		# Recompute derived upgrade effects so purchase applies immediately (x2, jackpot, beene bot, etc.)
+		if Global.has_method("update_upgrade_effects"):
+			Global.update_upgrade_effects()
 		
 		if counter and counter.has_method("update_display"):
 			counter.update_display()

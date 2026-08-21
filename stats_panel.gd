@@ -62,7 +62,7 @@ func _create_stat_row(stat_label: String, stat_val: String) -> void:
 	var row := HBoxContainer.new()
 	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	
-	row.add_theme_constant_override("separation", 36)
+	row.add_theme_constant_override("separation", 120)
 	
 	var name_lbl := Label.new()
 	name_lbl.text = stat_label

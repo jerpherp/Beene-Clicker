@@ -52,6 +52,9 @@ func _on_pressed():
 		Global.helper_beene_count += 1
 		Global.upgrade_levels[name] = level  # save level
 		Global.save_data()
+		# recompute beene bot rate after purchasing helper
+		if Global.has_method("update_upgrade_effects"):
+			Global.update_upgrade_effects()
 		c.update_display()
 		var helper_scene = load("res://helper_beene.tscn")
 		var new_helper = helper_scene.instantiate()

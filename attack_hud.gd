@@ -68,7 +68,6 @@ func update_slots():
 			slots[i].texture_normal = empty_texture
 
 func _on_slot_pressed(index: int):
-	print("slot pressed: ", index)
 	var attack_id = Global.equipped_attacks[index]
 	if attack_id != "" and cooldown_turns[index] <= 0:
 		get_tree().get_root().get_node("Fight/whosTurn").player_attack(attack_id)

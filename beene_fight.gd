@@ -24,21 +24,8 @@ func _ready():
 	animation_finished.connect(_on_animation_finished)
 	play("idle")
 
-#FOR TESTING OFFSETS
-#func _input(event):
-	#if event is InputEventKey and event.pressed:
-		#if event.keycode == KEY_1:
-			#play_animation("attack")
-		#if event.keycode == KEY_2:
-			#play_animation("dodge")
-		#if event.keycode == KEY_3:
-			#play_animation("finish")
-		#if event.keycode == KEY_4:
-			#play_animation("getHit")
-		#if event.keycode == KEY_5:
-			#play_animation("idle")
-		#if event.keycode == KEY_6:
-			#play_animation("knockout")
+
+# Cleaned: removed commented testing handlers to declutter file
 
 func _on_animation_finished():
 	if animation != "idle" and animation != "knockout":

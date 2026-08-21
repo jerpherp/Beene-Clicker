@@ -55,14 +55,35 @@ func _input_event(_viewport, event, _shape_idx):
 			# jackpot chance
 			if Global.has_jackpot:
 				if randf() < Global.jackpot_chance:
-					multiplier *= 100
+					multiplier *= Global.jackpot_multiplier
 					_show_jackpot()
 			
-			Global.click_count += multiplier
+			# update totals (persisted by Global.add_clicks)
 			Global.total_beenes += multiplier
+
+			# handle thresholds unlocking bosses (also updates click_count and saves)
+			var newly := Global.add_clicks(multiplier)
+
 			counter.update_display()
 			combo_sprite.trigger()
-			Global.save_data()
+			if newly.size() > 0:
+				# pick the highest unlocked boss and go straight to the fight scene
+				var boss_idx = newly[newly.size() - 1]
+				var beene = $BeeneMain
+				beene.play_animation("spook")
+				await beene.animation_finished
+				# set current boss info then fade and change to fight scene
+				Global.current_boss = boss_idx + 1
+				Global.fight_config = Global.boss_data[boss_idx]["config"]
+				var music = get_tree().get_root().get_node("Main/BackgroundMusic")
+				var fade_overlay = get_tree().get_root().get_node("Main/CanvasLayer/TransitionOverlay")
+				var music_tween = create_tween()
+				music_tween.tween_property(music, "volume_db", -30.0, 0.8)
+				var tween = create_tween()
+				tween.tween_property(fade_overlay, "color", Color(0, 0, 0, 1), 0.75)
+				await tween.finished
+				Global.save_data()
+				get_tree().change_scene_to_file("res://fight.tscn")
 
 func _show_golden_click():
 	# flash a golden effect on the beene
@@ -89,9 +110,21 @@ func _trigger_fight():
 	var beene = $BeeneMain
 	beene.play_animation("spook")
 	await beene.animation_finished
-	
-	# fade to black and go to fight
-	Global.boss1_unlocked = true
+
+	# fade to black and go to the appropriate fight scene
+	# set the chosen boss (default to boss 1 here)
+	Global.current_boss = 1
+	Global.fight_config = Global.boss_data[0]["config"]
+
+	# fade music and overlay like BossSelect._fade_and_go
+	var music = get_tree().get_root().get_node("Main/BackgroundMusic")
+	var fade_overlay = get_tree().get_root().get_node("Main/CanvasLayer/TransitionOverlay")
+	var music_tween = create_tween()
+	music_tween.tween_property(music, "volume_db", -30.0, 0.8)
+	var tween = create_tween()
+	tween.tween_property(fade_overlay, "color", Color(0, 0, 0, 1), 0.75)
+	await tween.finished
+
 	Global.save_data()
 	get_tree().change_scene_to_file("res://fight.tscn")
 

@@ -10,17 +10,8 @@ var animation_offsets = {
 @onready var bubbles = $Bubbles
 @onready var attack_bubbles = $AttackBubbles
 
-#FOR TESTING OFFSETS
-#func _input(event):
-	#if event is InputEventKey and event.pressed:
-		#if event.keycode == KEY_1:
-			#play_animation("attack")
-		#if event.keycode == KEY_2:
-			#play_animation("hit")
-		#if event.keycode == KEY_3:
-			#play_animation("idle")
-		#if event.keycode == KEY_4:
-			#play_animation("knockout")
+
+# Cleaned: removed commented testing handlers to declutter file
 
 var animation_linger = {
 	"attack": 0.0,

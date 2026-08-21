@@ -114,6 +114,7 @@ func _on_right():
 	update_display()
 
 func update_display():
+	Global.refresh_boss_unlocks()
 	var data = Global.boss_data[current_index]
 	var unlocked = Global.bosses_unlocked[current_index]
 	

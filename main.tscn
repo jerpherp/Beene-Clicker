@@ -855,7 +855,7 @@ offset_bottom = 284.0
 texture_normal = ExtResource("86_23xmf")
 title = "Double Click"
 description = "Multiplies every Beene you get per click by 2!"
-base_price = 2000
+exponent = 1.8
 
 [node name="beeneHelper1" parent="CanvasLayer/Panel" unique_id=1249908539 instance=ExtResource("84_23xmf")]
 layout_mode = 0
@@ -878,7 +878,7 @@ offset_right = 332.0
 offset_bottom = 284.0
 texture_normal = ExtResource("87_swlj1")
 description = "Gathers Beenes automatically while you are away from the game!"
-base_price = 5000
+base_price = 2000
 
 [node name="golden" parent="CanvasLayer/Panel" unique_id=1776587354 instance=ExtResource("84_23xmf")]
 layout_mode = 0
@@ -892,7 +892,7 @@ stretch_mode = 0
 script = ExtResource("140_aivy6")
 title = "Golden Click"
 description = "Increases Golden Click amount by +10 Beenes per level."
-base_price = 1000
+base_price = 300
 exponent = 2.0
 
 [node name="frenzy" parent="CanvasLayer/Panel" unique_id=371347977 instance=ExtResource("84_23xmf")]
@@ -924,7 +924,7 @@ stretch_mode = 0
 script = ExtResource("144_bil4k")
 title = "Lucky Jackpot"
 description = "Gives you a chance to hit a massive multiplier!"
-base_price = 3000
+base_price = 1500
 exponent = 2.5
 multiplier_increase = 1
 
@@ -1202,7 +1202,6 @@ scale = Vector2(0.8902531, 0.86498106)
 texture = ExtResource("164_0h8y2")
 
 [node name="TransitionOverlay" type="ColorRect" parent="CanvasLayer" unique_id=399353956]
-visible = false
 z_index = 999
 offset_right = 1281.0
 offset_bottom = 725.0

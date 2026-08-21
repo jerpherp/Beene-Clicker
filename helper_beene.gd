@@ -38,5 +38,13 @@ func _process(delta):
 		_auto_click()
 
 func _auto_click():
-	Global.click_count += Global.click_multiplier
+	# suppress unlock notifications while in a fight; allow otherwise
+	var notify := not Global.in_fight
+	var newly := Global.add_clicks(Global.click_multiplier, notify)
 	get_tree().get_root().get_node("Main/ClickCounter").update_display()
+	if newly.size() > 0:
+		# show spook and boss picker for newly unlocked boss
+		var boss_idx = newly[newly.size() - 1]
+		var boss_select = get_tree().get_root().get_node("Main/CanvasLayer/BossSelect")
+		boss_select.current_index = boss_idx
+		boss_select.open()

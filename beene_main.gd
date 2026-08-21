@@ -15,12 +15,12 @@ var animation_scales = {
 }
 
 #FOR TESTING OFFSETS
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_1:
-			play_animation("idle")
-		if event.keycode == KEY_2:
-			play_animation("yippie")
+#func _input(event):
+	#if event is InputEventKey and event.pressed:
+		#if event.keycode == KEY_1:
+			#play_animation("idle")
+		#if event.keycode == KEY_2:
+			#play_animation("yippie")
 
 func _ready():
 	animation_changed.connect(_on_animation_changed)

@@ -7,13 +7,14 @@ extends Node
 enum Turn { PLAYER, ENEMY }
 
 var current_turn : Turn = Turn.PLAYER
-var pause_cooldown := false
-var loop_from_frame := -1
-var enemy_turn_id := 0
-var fight_timer := 0.0
+var pause_cooldown: bool = false
+var loop_from_frame: int = -1
+var enemy_turn_id: int = 0
+var fight_timer: float = 0.0
 @onready var apple_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight")
 @onready var boss2_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight")
 @onready var boss3_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight")
+@onready var boss4_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/fezantFight")
 @onready var enemy_icon = get_tree().get_root().get_node("Fight/HUD/enemyIcon")
 @onready var enemy_health_bar = get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar")
 @onready var armorIcon = get_tree().get_root().get_node("Fight/HUD/ArmorIcon")
@@ -33,6 +34,8 @@ var fight_timer := 0.0
 @onready var close_mountain = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/CloseMountain")
 
 func _ready():
+	# mark that we are in a fight so other systems can suppress unlock notifications
+	Global.in_fight = true
 	#Global.current_boss = 3
 	Global.reset_fight_stats()
 	Global.fight_config = Global.boss_data[Global.current_boss - 1]["config"]
@@ -54,6 +57,7 @@ func _ready():
 		apple_sprite.visible = true
 		boss2_sprite.visible = false
 		boss3_sprite.visible = false
+		boss4_sprite.visible = false
 		enemy_health_bar.hurt_animation = "hurt_apple"
 		enemy_health_bar.normal_animation = "normal_apple"
 	elif Global.current_boss == 2:
@@ -61,6 +65,7 @@ func _ready():
 		apple_sprite.visible = false
 		boss2_sprite.visible = true
 		boss3_sprite.visible = false
+		boss4_sprite.visible = false
 		enemy_health_bar.hurt_animation = "hurt_scuba"
 		enemy_health_bar.normal_animation = "normal_scuba"
 	elif Global.current_boss == 3:
@@ -68,10 +73,19 @@ func _ready():
 		apple_sprite.visible = false
 		boss2_sprite.visible = false
 		boss3_sprite.visible = true
+		boss4_sprite.visible = false
 		enemy_health_bar.hurt_animation = "hurt_peeper"
 		enemy_health_bar.normal_animation = "normal_peeper"
+	elif Global.current_boss == 4:
+		enemy_sprite = boss4_sprite
+		apple_sprite.visible = false
+		boss2_sprite.visible = false
+		boss3_sprite.visible = false
+		boss4_sprite.visible = true
+		enemy_health_bar.hurt_animation = "hurt_fezant"
+		enemy_health_bar.normal_animation = "normal_fezant"
 	
-	await get_tree().process_frame
+	await get_tree().create_timer(0.0).timeout
 	enemy_health.setup(Global.fight_config["enemy_health"])
 	
 	await get_tree().create_timer(0.5).timeout
@@ -113,10 +127,10 @@ func _apply_fight_background():
 # QTE STATE
 # ============================================================
 
-var qte_queue := []
-var qte_damage_reduction := 0
-var total_qtes := 0
-var base_damage := 20
+var qte_queue: Array = []
+var qte_damage_reduction: int = 0
+var total_qtes: int = 0
+var base_damage: int = 20
 
 # ============================================================
 # NODE REFERENCES
@@ -131,6 +145,7 @@ var base_damage := 20
 @onready var enemy_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight")
 @onready var scuba_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight")
 @onready var peeper_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight")
+@onready var fezant_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/fezantFight")
 @onready var attack_hud = get_tree().get_root().get_node("Fight/HUD/EquippedAttacksHUD")
 @onready var music = get_tree().get_root().get_node("Fight/BackgroundMusic")
 @onready var transition_overlay = get_tree().get_root().get_node("Fight/HUD/TransitionOverlay")
@@ -179,8 +194,6 @@ func _input(event):
 					func(): pause_cooldown = false
 				)
 				pause_screen.pause()
-		if event.keycode == KEY_ALT:
-			switch_turn()
 
 # ============================================================
 # TURN MANAGEMENT
@@ -201,8 +214,7 @@ func start_player_turn():
 	attack_hud.update_slots()
 
 func start_enemy_turn():
-	print("enemy sprite is: ", enemy_sprite.name)
-	print("current boss: ", Global.current_boss)
+	# debug prints removed
 	var count = randi_range(
 		Global.fight_config["qte_count_min"],
 		Global.fight_config["qte_count_max"]
@@ -225,7 +237,7 @@ func start_enemy_turn():
 	enemy_sprite.animation_finished.disconnect(enemy_sprite._on_animation_finished)
 	enemy_sprite.play_animation("attack")
 	while enemy_sprite.frame < 19:
-		await get_tree().process_frame
+		await get_tree().create_timer(0.0).timeout
 	enemy_sprite.pause()
 
 	if this_turn != enemy_turn_id:
@@ -274,6 +286,8 @@ func _apply_damage():
 		scuba_sprite.trigger_attack_bubbles()
 	elif Global.current_boss == 3:
 		peeper_sprite.trigger_eye_beam(player_sprite.global_position)
+	elif Global.current_boss == 4:
+		fezant_sprite.trigger_attack_feathers()
 
 	if final_damage == 0:
 		_show_label(great_label)
@@ -281,10 +295,17 @@ func _apply_damage():
 			speed_lines.trigger()
 		dodge_sfx.pitch_scale = randf_range(0.9, 1.1)
 		dodge_sfx.play()
-		enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
+		enemy_sprite.play()
 		player_sprite.play_animation("dodge")
-		enemy_sprite.play_animation("idle")
-		await player_sprite.animation_finished
+		var wait_frames: int = 0
+		while enemy_sprite.animation == "attack" and wait_frames < 240:
+			await get_tree().create_timer(0.0).timeout
+			wait_frames += 1
+		if enemy_sprite.animation == "attack":
+			enemy_sprite.play_animation("idle")
+		enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
+		if player_sprite.is_playing():
+			await player_sprite.animation_finished
 		current_turn = Turn.PLAYER
 		start_player_turn()
 		return
@@ -292,7 +313,12 @@ func _apply_damage():
 	dodge_sfx.pitch_scale = randf_range(0.9, 1.1)
 	dodge_sfx.play()
 	enemy_sprite.play()
-	await enemy_sprite.animation_finished
+	var wait_frames: int = 0
+	while enemy_sprite.animation == "attack" and wait_frames < 240:
+		await get_tree().create_timer(0.0).timeout
+		wait_frames += 1
+	if enemy_sprite.animation == "attack":
+		enemy_sprite.play_animation("idle")
 	enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
 
 	player_health.take_damage(final_damage)
@@ -400,6 +426,7 @@ func _player_death():
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight"),
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight"),
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight"),
+		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/fezantFight"),
 	]
 	var nodes_to_fade = [
 		get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Palm"),
@@ -441,7 +468,7 @@ func _player_death():
 func _show_death_options() -> void:
 	var hud = get_tree().get_root().get_node("Fight/HUD")
 	
-	var options_container := HBoxContainer.new()
+	var options_container: HBoxContainer = HBoxContainer.new()
 	options_container.name = "DeathOptionsContainer"
 	options_container.anchor_left = 0.42
 	options_container.anchor_top = 0.75
@@ -455,16 +482,16 @@ func _show_death_options() -> void:
 	options_container.alignment = BoxContainer.ALIGNMENT_CENTER
 	options_container.modulate.a = 0.0
 	
-	var flat_style := StyleBoxEmpty.new()
+	var flat_style: StyleBoxEmpty = StyleBoxEmpty.new()
 	
-	var handle_choice := func(action: Callable):
+	var handle_choice: Callable = func(action: Callable):
 		options_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		var fade_out = create_tween()
 		fade_out.tween_property(options_container, "modulate:a", 0.0, 0.5)
 		await fade_out.finished
 		action.call()
 
-	var try_again_btn := Button.new()
+	var try_again_btn: Button = Button.new()
 	try_again_btn.text = "Try Again?"
 	try_again_btn.pivot_offset = Vector2(100, 25)
 	try_again_btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
@@ -481,7 +508,7 @@ func _show_death_options() -> void:
 	)
 	_apply_float_effects(try_again_btn)
 	
-	var give_up_btn := Button.new()
+	var give_up_btn: Button = Button.new()
 	give_up_btn.text = "Give Up..."
 	give_up_btn.pivot_offset = Vector2(100, 25)
 	give_up_btn.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
@@ -494,7 +521,11 @@ func _show_death_options() -> void:
 	give_up_btn.add_theme_stylebox_override("pressed", flat_style)
 	give_up_btn.add_theme_stylebox_override("focus", flat_style)
 	give_up_btn.pressed.connect(func(): 
-		handle_choice.call(func(): get_tree().change_scene_to_file("res://main.tscn"))
+		handle_choice.call(func():
+			# leaving fight by giving up — clear in_fight so main won't suppress notifications
+			Global.in_fight = false
+			get_tree().change_scene_to_file("res://main.tscn")
+		)
 	)
 	_apply_float_effects(give_up_btn)
 	
@@ -507,7 +538,7 @@ func _show_death_options() -> void:
 	fade_tween.tween_property(player_sprite, "modulate:a", 1.0, 0.8)
 
 func _apply_float_effects(btn: Button) -> void:
-	var float_offset := -10.0
+	var float_offset: float = -10.0
 	
 	var float_up = func():
 		var tween = btn.create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
@@ -527,7 +558,7 @@ func _apply_float_effects(btn: Button) -> void:
 # ============================================================
 
 func _calculate_rank():
-	var score := 0
+	var score: int = 0
 
 	# damage taken (0 = perfect, 40pts max)
 	if Global.fight_stats["damage_taken"] == 0:
@@ -556,7 +587,9 @@ func _calculate_rank():
 		score += 10
 
 	# base rewards scale exponentially by boss
-	var boss_multiplier = pow(9, Global.current_boss - 1)
+	# clamp the boss index used in the exponent to avoid runaway values
+	var boss_index: int = clamp(Global.current_boss - 1, 0, Global.boss_data.size() - 1)
+	var boss_multiplier = pow(9, boss_index)
 
 	if score >= 95:
 		Global.fight_rank = "S+"
@@ -582,6 +615,11 @@ func _calculate_rank():
 # ============================================================
 
 func _transition_to_main():
+	# mark the current boss as beaten before advancing
+	var beaten_index = Global.current_boss - 1
+	if beaten_index >= 0 and beaten_index < Global.bosses_beaten.size():
+		Global.bosses_beaten[beaten_index] = true
+
 	if "boss1_attack1" not in Global.unlocked_attacks:
 		Global.unlocked_attacks.append("boss1_attack1")
 		Global.new_attacks.append("boss1_attack1")
@@ -592,13 +630,18 @@ func _transition_to_main():
 	_calculate_rank()
 	Global.current_boss += 1
 	Global.fights_won += 1
-	Global.click_count += Global.fight_beene_reward
+	var newly: Array = Global.add_clicks(Global.fight_beene_reward, true)
+	# leaving fight: clear in_fight so main clicker behaves normally
+	Global.in_fight = false
 	Global.save_data()
 	
 	var next_boss = Global.current_boss  # current_boss already incremented
-	if next_boss < 5:
-		Global.bosses_unlocked[next_boss] = true
-	if Global.current_boss >= 2:
+	var unlock_index = Global.current_boss - 1
+	# current_boss is 1-based; unlock_index targets the next boss (0-based)
+	if unlock_index >= 0 and unlock_index < Global.bosses_unlocked.size():
+		Global.bosses_unlocked[unlock_index] = true
+	# Only advance to background index 1 after the player has beaten boss 2
+	if Global.current_boss >= 3:
 		Global.current_background = 1
 	Global.save_data()
 
