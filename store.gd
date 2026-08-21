@@ -32,7 +32,7 @@ var panel_hidden_x : float
 var current_item : Dictionary = {}
 
 func _ready():
-	beenes_amount.text = str(Global.click_count) + " Beenes"
+	_update_beenes_amount()
 	animation_player.play("fade_out")
 	base_bg = bg.position
 	base_floor = floor_node.position
@@ -114,7 +114,11 @@ func _on_item_purchase(item: Dictionary, category: String, grid: GridContainer):
 		item["owned"] = true
 		Global.owned_cosmetics.append(item["id"])
 		Global.save_data()
+		_update_beenes_amount()
 		_populate_grid(grid, category)
+
+func _update_beenes_amount():
+	beenes_amount.text = str(int(Global.click_count)) + " Beenes"
 
 func _on_hover(btn):
 	var tween = create_tween()
@@ -153,6 +157,7 @@ func _on_buy_pressed():
 		current_item["owned"] = true
 		Global.owned_cosmetics.append(current_item["id"])
 		Global.save_data()
+		_update_beenes_amount()
 		_show_info(current_item)
 		
 func show_item_info(name: String, desc: String, price: int, id: String):

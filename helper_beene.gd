@@ -2,7 +2,7 @@ extends Node2D
 
 @export var orbit_radius := 200.0
 @export var orbit_speed := 1.5
-@export var click_interval := 3.0  # seconds between auto clicks
+@export var click_interval := 6.0  # seconds between auto clicks
 
 var angle := 0.0
 var click_timer := 0.0

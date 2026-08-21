@@ -4,7 +4,7 @@ extends AnimatedSprite2D
 @export var fade_out_duration := 0.5  # snappy exit
 @export var appear_threshold := randf_range(5, 10)  # seconds before it shows
 @export var timeout := 1.5  # seconds after last click before fading
-var base_multiplier := 1
+var base_multiplier: float = 1.0
 
 var _timeout_timer : SceneTreeTimer = null
 var _threshold_timer : SceneTreeTimer = null
@@ -34,7 +34,7 @@ func _on_threshold_reached():
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, fade_in_duration)
 	base_multiplier = Global.click_multiplier
-	Global.click_multiplier = int(base_multiplier * 1.5)
+	Global.click_multiplier = base_multiplier + 1.5
 	_timeout_timer = get_tree().create_timer(timeout)
 	_timeout_timer.timeout.connect(_on_idle)
 

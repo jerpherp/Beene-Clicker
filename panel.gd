@@ -10,7 +10,8 @@ extends Control
 var is_open := false
 
 func _ready():
-	position.x = hidden_x  # start hidden
+	position.x = shown_x
+	is_open = true
 	tab.pressed.connect(_on_tab_pressed)
 
 func toggle():

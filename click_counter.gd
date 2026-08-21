@@ -15,7 +15,7 @@ func update_display():
 		remove_child(child)
 		child.queue_free()
 	
-	var digits = str(Global.click_count)
+	var digits = str(int(Global.click_count))
 	for i in digits.length():
 		var sprite = Sprite2D.new()
 		sprite.texture = load("res://numbers/" + digits[i] + ".png")

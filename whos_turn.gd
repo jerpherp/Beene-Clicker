@@ -591,7 +591,14 @@ func _calculate_rank():
 	var boss_index: int = clamp(Global.current_boss - 1, 0, Global.boss_data.size() - 1)
 	var boss_multiplier = pow(9, boss_index)
 
-	if score >= 95:
+	var fight_time: float = Global.fight_stats["fight_time"]
+	if fight_time < 60.0:
+		Global.fight_rank = "S+"
+		Global.fight_beene_reward = int(randi_range(1200, 1800) * boss_multiplier)
+	elif fight_time < 120.0:
+		Global.fight_rank = "S"
+		Global.fight_beene_reward = int(randi_range(1000, 1200) * boss_multiplier)
+	elif score >= 95:
 		Global.fight_rank = "S+"
 		Global.fight_beene_reward = int(randi_range(1200, 1800) * boss_multiplier)
 	elif score >= 80:
@@ -617,32 +624,27 @@ func _calculate_rank():
 func _transition_to_main():
 	# mark the current boss as beaten before advancing
 	var beaten_index = Global.current_boss - 1
+	var first_clear: bool = beaten_index >= 0 and beaten_index < Global.bosses_beaten.size() and not Global.bosses_beaten[beaten_index]
 	if beaten_index >= 0 and beaten_index < Global.bosses_beaten.size():
 		Global.bosses_beaten[beaten_index] = true
 
-	if "boss1_attack1" not in Global.unlocked_attacks:
-		Global.unlocked_attacks.append("boss1_attack1")
-		Global.new_attacks.append("boss1_attack1")
-	if "boss1_attack2" not in Global.unlocked_attacks:
-		Global.unlocked_attacks.append("boss1_attack2")
-		Global.new_attacks.append("boss1_attack2")
+	var attack_source = "boss" + str(Global.current_boss)
+	for attack_id in Global.attack_data:
+		if Global.attack_data[attack_id]["source"] == attack_source and attack_id not in Global.unlocked_attacks:
+			Global.unlocked_attacks.append(attack_id)
+			Global.new_attacks.append(attack_id)
 
 	_calculate_rank()
-	Global.current_boss += 1
+	if not first_clear:
+		Global.fight_beene_reward = int(Global.fight_beene_reward * 0.1)
+	else:
+		Global.current_boss += 1
 	Global.fights_won += 1
 	var newly: Array = Global.add_clicks(Global.fight_beene_reward, true)
 	# leaving fight: clear in_fight so main clicker behaves normally
 	Global.in_fight = false
 	Global.save_data()
 	
-	var next_boss = Global.current_boss  # current_boss already incremented
-	var unlock_index = Global.current_boss - 1
-	# current_boss is 1-based; unlock_index targets the next boss (0-based)
-	if unlock_index >= 0 and unlock_index < Global.bosses_unlocked.size():
-		Global.bosses_unlocked[unlock_index] = true
-	# Only advance to background index 1 after the player has beaten boss 2
-	if Global.current_boss >= 3:
-		Global.current_background = 1
 	Global.save_data()
 
 	await get_tree().create_timer(1.0).timeout

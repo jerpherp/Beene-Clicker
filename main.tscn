@@ -879,6 +879,7 @@ offset_bottom = 284.0
 texture_normal = ExtResource("87_swlj1")
 description = "Gathers Beenes automatically while you are away from the game!"
 base_price = 2000
+exponent = 3.0
 
 [node name="golden" parent="CanvasLayer/Panel" unique_id=1776587354 instance=ExtResource("84_23xmf")]
 layout_mode = 0
