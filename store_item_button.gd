@@ -48,5 +48,4 @@ func _on_buy():
 	Global.save_data()
 	_update_state()
 	get_parent().get_parent()._update_beenes_amount()
-	# refresh info panel to show updated state
 	get_parent().get_parent().show_item_info(item_name, item_desc, item_price, item_id)

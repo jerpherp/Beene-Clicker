@@ -17,7 +17,6 @@ func _ready():
 	slots_node = get_tree().get_root().get_node("Main/CanvasLayer/Panel/EquippedAttacks")
 	close_btn.pressed.connect(close)
 
-	# create tooltip label
 	tooltip_label = Label.new()
 	tooltip_label.add_theme_font_size_override("font_size", 20)
 	tooltip_label.visible = false
@@ -38,7 +37,6 @@ func _populate_grid():
 	for child in grid.get_children():
 		child.queue_free()
 	
-	# build buttons per source first
 	var all_buttons = []
 	for source in attack_sources:
 		var source_attacks = Global.unlocked_attacks.filter(func(id): 
@@ -69,7 +67,6 @@ func _populate_grid():
 			source_btns.append(btn)
 		all_buttons.append(source_btns)
 	
-	# add row by row so GridContainer puts each source in its own column
 	for row in attacks_per_source:
 		for source_btns in all_buttons:
 			grid.add_child(source_btns[row])

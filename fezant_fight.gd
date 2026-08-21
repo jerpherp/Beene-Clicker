@@ -23,7 +23,6 @@ func _ready():
 	play("idle")
 
 
-# Cleaned: removed commented testing handlers to declutter file
 
 func _on_animation_finished():
 	if animation == "knockout":

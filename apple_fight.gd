@@ -1,6 +1,5 @@
 extends AnimatedSprite2D
 
-# Offset for Apple animations
 var animation_offsets = {
 	"attack": Vector2(190, 0),
 	"hit": Vector2(40, 0),
@@ -8,7 +7,6 @@ var animation_offsets = {
 	"knockout": Vector2(15, 0),
 }
 
-# How long should the last frame play for when done?
 var animation_linger = {
 	"attack": 0.0,
 	"hit": 3.0,
@@ -19,9 +17,6 @@ var animation_linger = {
 func _ready():
 	animation_finished.connect(_on_animation_finished)
 	play("idle")
-
-
-# Cleaned: removed commented testing handlers to declutter file
 
 func _on_animation_finished():
 	if animation != "idle" and animation != "knockout" and animation != "attack":

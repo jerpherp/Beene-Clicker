@@ -27,8 +27,8 @@ func _process(delta):
 	if not active:
 		return
 	
-	trail_x += speed * delta  # move right
-	trail_y += speed * 0.2 * delta  # move down (adjust 0.6 for angle)
+	trail_x += speed * delta
+	trail_y += speed * 0.2 * delta
 	trail_points.append(Vector2(trail_x, trail_y))
 	
 	if trail_points.size() > trail_length:

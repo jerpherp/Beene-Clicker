@@ -19,7 +19,6 @@ func _ready():
 	sfx_slider.value_changed.connect(_on_sfx_changed)
 	screen_options.item_selected.connect(_on_screen_size_changed)
 	
-	# set slider ranges
 	music_slider.min_value = -80.0
 	music_slider.max_value = 0.0
 	music_slider.value = Global.music_volume
@@ -28,19 +27,16 @@ func _ready():
 	sfx_slider.max_value = 0.0
 	sfx_slider.value = Global.sfx_volume
 	
-	# add screen size options
 	screen_options.clear()
 	screen_options.add_item("1280x720")
 	screen_options.add_item("1920x1080")
 	screen_options.add_item("Fullscreen")
 	
-	# Select saved screen option on load
 	if Global.screen_size_index >= 0 and Global.screen_size_index < screen_options.item_count:
 		screen_options.selected = Global.screen_size_index
 
 func open():
 	visible = true
-	# Sync UI selection with Global state when opened
 	screen_options.selected = Global.screen_size_index
 	
 	position.x = get_viewport_rect().size.x + 400

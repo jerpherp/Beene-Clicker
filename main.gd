@@ -38,7 +38,6 @@ func _apply_background():
 	bg_foreground.texture = load(bg["foreground"])
 	snow.visible = Global.current_background == 1
 	
-	# change music
 	var new_music = load(bg["music"])
 	if bg_music.stream != new_music:
 		bg_music.stream = new_music
@@ -61,8 +60,6 @@ func _ready():
 		await beene_main.animation_finished
 		await get_tree().create_timer(0.5).timeout
 
-	# If a boss was unlocked while in another scene (e.g., after a fight),
-	# play the spook animation and open the boss picker for the last unlocked boss.
 	if Global.last_unlocked_bosses and Global.last_unlocked_bosses.size() > 0:
 		var boss_idx = Global.last_unlocked_bosses[Global.last_unlocked_bosses.size() - 1]
 		Global.last_unlocked_bosses = []

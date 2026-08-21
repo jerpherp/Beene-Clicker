@@ -24,14 +24,12 @@ func _ready():
 
 func _input_event(_viewport, event, _shape_idx):
 	
-#	FOR WHEN YOU HOVER OVER THE BEENE
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	if event is InputEventMouseMotion:
 		if not is_hovered:
 			is_hovered = true
 			_animate_scale(hover_scale)
 
-#	FOR WHEN YOU CLICK THE BEENE
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			click_sfx.pitch_scale = randf_range(0.6, 1.2)
@@ -40,11 +38,9 @@ func _input_event(_viewport, event, _shape_idx):
 			var multiplier = Global.click_multiplier
 			Global.total_clicks += 1
 			
-			# click frenzy
 			if Global.click_frenzy_active:
 				multiplier *= 3
 			
-			# golden click every 100 clicks
 			if Global.has_golden_click:
 				Global.golden_click_counter += 1
 				if Global.golden_click_counter >= 100:
@@ -52,27 +48,22 @@ func _input_event(_viewport, event, _shape_idx):
 					multiplier *= 10
 					_show_golden_click()
 			
-			# jackpot chance
 			if Global.has_jackpot:
 				if randf() < Global.jackpot_chance:
 					multiplier *= Global.jackpot_multiplier
 					_show_jackpot()
 			
-			# update totals (persisted by Global.add_clicks)
 			Global.total_beenes += multiplier
 
-			# handle thresholds unlocking bosses (also updates click_count and saves)
 			var newly := Global.add_clicks(multiplier)
 
 			counter.update_display()
 			combo_sprite.trigger()
 			if newly.size() > 0:
-				# pick the highest unlocked boss and go straight to the fight scene
 				var boss_idx = newly[newly.size() - 1]
 				var beene = $BeeneMain
 				beene.play_animation("spook")
 				await beene.animation_finished
-				# set current boss info then fade and change to fight scene
 				Global.current_boss = boss_idx + 1
 				Global.fight_config = Global.boss_data[boss_idx]["config"]
 				var music = get_tree().get_root().get_node("Main/BackgroundMusic")
@@ -86,13 +77,11 @@ func _input_event(_viewport, event, _shape_idx):
 				get_tree().change_scene_to_file("res://fight.tscn")
 
 func _show_golden_click():
-	# flash a golden effect on the beene
 	var tween = create_tween()
 	tween.tween_property($BeeneMain, "modulate", Color(1.5, 1.2, 0.0), 0.1)
 	tween.tween_property($BeeneMain, "modulate", Color.WHITE, 0.3)
 	
 func _show_jackpot():
-	# bigger flash for jackpot
 	var tween = create_tween()
 	tween.tween_property($BeeneMain, "modulate", Color(2.0, 1.5, 0.0), 0.1)
 	tween.tween_property($BeeneMain, "modulate", Color.WHITE, 0.5)
@@ -103,20 +92,15 @@ func _on_mouse_exited():
 	_animate_scale(original_scale)
 	
 func _trigger_fight():
-	# disable further clicking
 	input_pickable = false
 	
-	# play spook animation
 	var beene = $BeeneMain
 	beene.play_animation("spook")
 	await beene.animation_finished
 
-	# fade to black and go to the appropriate fight scene
-	# set the chosen boss (default to boss 1 here)
 	Global.current_boss = 1
 	Global.fight_config = Global.boss_data[0]["config"]
 
-	# fade music and overlay like BossSelect._fade_and_go
 	var music = get_tree().get_root().get_node("Main/BackgroundMusic")
 	var fade_overlay = get_tree().get_root().get_node("Main/CanvasLayer/TransitionOverlay")
 	var music_tween = create_tween()

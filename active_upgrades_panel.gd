@@ -33,28 +33,23 @@ var shop_item_info := {
 func _ready():
 	refresh_active_items()
 
-# Call this whenever an item is purchased in the shop or on scene load
 func refresh_active_items():
 	if not active_upgrades_hbox:
 		return
 
-	# 1. Clear existing items from the HBoxContainer
 	for child in active_upgrades_hbox.get_children():
 		child.queue_free()
 
-	# 2. Iterate through owned items in Global
 	for item_key in shop_item_info.keys():
 		if Global.owned_items.has(item_key):
 			var value = Global.owned_items[item_key]
 			
-			# Check if boolean item is true OR integer count is > 0
 			if (typeof(value) == TYPE_BOOL and value == true) or (typeof(value) == TYPE_INT and value > 0):
 				_add_item_badge(item_key, value)
 
 func _add_item_badge(item_key: String, item_value):
 	var data = shop_item_info[item_key]
 	
-	# Create a container badge for the item
 	var badge = PanelContainer.new()
 	
 	var margin = MarginContainer.new()
@@ -66,7 +61,6 @@ func _add_item_badge(item_key: String, item_value):
 	var item_hbox = HBoxContainer.new()
 	item_hbox.add_theme_constant_override("separation", 6)
 	
-	# Icon Texture (if image file exists)
 	if ResourceLoader.exists(data["icon"]):
 		var tex_rect = TextureRect.new()
 		tex_rect.texture = load(data["icon"])
@@ -74,7 +68,6 @@ func _add_item_badge(item_key: String, item_value):
 		tex_rect.custom_minimum_size = Vector2(24, 24)
 		item_hbox.add_child(tex_rect)
 
-	# Label Stack
 	var vbox = VBoxContainer.new()
 	
 	var title_label = Label.new()
@@ -97,5 +90,4 @@ func _add_item_badge(item_key: String, item_value):
 	margin.add_child(item_hbox)
 	badge.add_child(margin)
 	
-	# Add directly to ActiveUpgrades HBoxContainer
 	active_upgrades_hbox.add_child(badge)

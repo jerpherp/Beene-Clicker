@@ -1,8 +1,5 @@
 extends Node
 
-# ============================================================
-# TURN SYSTEM
-# ============================================================
 
 enum Turn { PLAYER, ENEMY }
 
@@ -19,12 +16,10 @@ var fight_timer: float = 0.0
 @onready var enemy_health_bar = get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar")
 @onready var armorIcon = get_tree().get_root().get_node("Fight/HUD/ArmorIcon")
 
-# beach layer nodes (boss 1+2)
 @onready var beach_bg = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer/beachBG")
 @onready var palm = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Palm")
 @onready var sandcastle = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Sandcastle")
 
-# mountain layer nodes (boss 3+4)
 @onready var snow = get_tree().get_root().get_node("Fight/ParallaxBackground/Snow")
 @onready var mountains_bg = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer8/mountainsBG")
 @onready var far_mountains = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer7/FarMountains")
@@ -34,9 +29,7 @@ var fight_timer: float = 0.0
 @onready var close_mountain = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/CloseMountain")
 
 func _ready():
-	# mark that we are in a fight so other systems can suppress unlock notifications
 	Global.in_fight = true
-	#Global.current_boss = 3
 	Global.reset_fight_stats()
 	Global.fight_config = Global.boss_data[Global.current_boss - 1]["config"]
 	_apply_fight_background()
@@ -46,12 +39,10 @@ func _ready():
 	var bonus_hp = 25 if Global.owned_items.get("health_potion", false) else 0
 	player_health.setup(100 + bonus_hp)
 	
-	# tint player icon based on armor
 	_apply_armor_icon()
 	
 	Global.fights_fought += 1
 	
-	# show correct enemy
 	if Global.current_boss == 1:
 		enemy_sprite = apple_sprite
 		apple_sprite.visible = true
@@ -91,17 +82,12 @@ func _ready():
 	await get_tree().create_timer(0.5).timeout
 	start_player_turn()
 	
-# ============================================================
-# BACKGROUNDS
-# ============================================================
 
 func _apply_fight_background():
 	if Global.current_boss == 1 || Global.current_boss == 2:
-		# show beach
 		beach_bg.visible = true
 		palm.visible = true
 		sandcastle.visible = true
-		# hide mountains
 		snow.visible = false
 		mountains_bg.visible = false
 		far_mountains.visible = false
@@ -110,11 +96,9 @@ func _apply_fight_background():
 		snowman.visible = false
 		close_mountain.visible = false
 	elif Global.current_boss == 3 || Global.current_boss == 4:
-		# hide beach
 		beach_bg.visible = false
 		palm.visible = false
 		sandcastle.visible = false
-		# show mountains
 		snow.visible = true
 		mountains_bg.visible = true
 		far_mountains.visible = true
@@ -123,18 +107,12 @@ func _apply_fight_background():
 		snowman.visible = true
 		close_mountain.visible = true
 
-# ============================================================
-# QTE STATE
-# ============================================================
 
 var qte_queue: Array = []
 var qte_damage_reduction: int = 0
 var total_qtes: int = 0
 var base_damage: int = 20
 
-# ============================================================
-# NODE REFERENCES
-# ============================================================
 
 @onready var camera = get_parent().get_node("Camera2D")
 @onready var player_health = get_tree().get_root().get_node("Fight/HUD/BeeneHealthBar")
@@ -157,9 +135,6 @@ var base_damage: int = 20
 @onready var hit_label = get_tree().get_root().get_node("Fight/HUD/HitLabel")
 @onready var miss_label = get_tree().get_root().get_node("Fight/HUD/MissLabel")
 
-# ============================================================
-# HELPERS
-# ============================================================
 
 func _enemy_anim(anim_name: String) -> void:
 	if enemy_sprite.animation_finished.is_connected(enemy_sprite._on_animation_finished):
@@ -177,9 +152,6 @@ func _show_label(label: Node):
 	await tween.finished
 	label.visible = false
 
-# ============================================================
-# INPUT
-# ============================================================
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -195,9 +167,6 @@ func _input(event):
 				)
 				pause_screen.pause()
 
-# ============================================================
-# TURN MANAGEMENT
-# ============================================================
 
 func switch_turn():
 	if current_turn == Turn.PLAYER:
@@ -214,7 +183,6 @@ func start_player_turn():
 	attack_hud.update_slots()
 
 func start_enemy_turn():
-	# debug prints removed
 	var count = randi_range(
 		Global.fight_config["qte_count_min"],
 		Global.fight_config["qte_count_max"]
@@ -245,9 +213,6 @@ func start_enemy_turn():
 
 	_next_qte()
 
-# ============================================================
-# QTE CHAIN
-# ============================================================
 
 func _next_qte():
 	if qte_queue.is_empty():
@@ -271,9 +236,6 @@ func _on_qte_done(success: bool):
 		return
 	_next_qte()
 
-# ============================================================
-# APPLY DAMAGE
-# ============================================================
 
 func _apply_damage():
 	var this_turn = enemy_turn_id
@@ -347,9 +309,6 @@ func _apply_damage():
 	current_turn = Turn.PLAYER
 	start_player_turn()
 
-# ============================================================
-# PLAYER ATTACK
-# ============================================================
 
 func player_attack(attack_id: String):
 	attack_hud.hide_attacks()
@@ -381,9 +340,6 @@ func player_attack(attack_id: String):
 	current_turn = Turn.ENEMY
 	start_enemy_turn()
 
-# ============================================================
-# PROCESS — fight timer + knockout loop
-# ============================================================
 
 func _process(delta):
 	fight_timer += delta
@@ -393,9 +349,6 @@ func _process(delta):
 			player_sprite.frame = loop_from_frame
 			player_sprite.play("knockout")
 
-# ============================================================
-# PLAYER DEATH
-# ============================================================
 
 func _player_death():
 	camera.pan_to_knockout()
@@ -522,7 +475,6 @@ func _show_death_options() -> void:
 	give_up_btn.add_theme_stylebox_override("focus", flat_style)
 	give_up_btn.pressed.connect(func(): 
 		handle_choice.call(func():
-			# leaving fight by giving up — clear in_fight so main won't suppress notifications
 			Global.in_fight = false
 			get_tree().change_scene_to_file("res://main.tscn")
 		)
@@ -553,14 +505,10 @@ func _apply_float_effects(btn: Button) -> void:
 	btn.mouse_exited.connect(float_down)
 	btn.focus_exited.connect(float_down)
 
-# ============================================================
-# RANK CALCULATION
-# ============================================================
 
 func _calculate_rank():
 	var score: int = 0
 
-	# damage taken (0 = perfect, 40pts max)
 	if Global.fight_stats["damage_taken"] == 0:
 		score += 40
 	elif Global.fight_stats["damage_taken"] <= 10:
@@ -570,7 +518,6 @@ func _calculate_rank():
 	elif Global.fight_stats["damage_taken"] <= 50:
 		score += 10
 
-	# hits dealt (more = better, 30pts max)
 	if Global.fight_stats["hits_dealt"] >= 15:
 		score += 30
 	elif Global.fight_stats["hits_dealt"] >= 10:
@@ -578,16 +525,13 @@ func _calculate_rank():
 	elif Global.fight_stats["hits_dealt"] >= 5:
 		score += 10
 
-	# fight time (30pts max)
-	if Global.fight_stats["fight_time"] <= 90.0:    # under 2:30
+	if Global.fight_stats["fight_time"] <= 90.0:
 		score += 30
-	elif Global.fight_stats["fight_time"] <= 150.0:  # under 3:30
+	elif Global.fight_stats["fight_time"] <= 150.0:
 		score += 20
-	elif Global.fight_stats["fight_time"] <= 240.0:  # under 5:00
+	elif Global.fight_stats["fight_time"] <= 240.0:
 		score += 10
 
-	# base rewards scale exponentially by boss
-	# clamp the boss index used in the exponent to avoid runaway values
 	var boss_index: int = clamp(Global.current_boss - 1, 0, Global.boss_data.size() - 1)
 	var boss_multiplier = pow(9, boss_index)
 
@@ -617,12 +561,8 @@ func _calculate_rank():
 		Global.fight_rank = "F"
 		Global.fight_beene_reward = int(randi_range(35, 150) * boss_multiplier)
 
-# ============================================================
-# TRANSITION
-# ============================================================
 
 func _transition_to_main():
-	# mark the current boss as beaten before advancing
 	var beaten_index = Global.current_boss - 1
 	var first_clear: bool = beaten_index >= 0 and beaten_index < Global.bosses_beaten.size() and not Global.bosses_beaten[beaten_index]
 	if beaten_index >= 0 and beaten_index < Global.bosses_beaten.size():
@@ -641,7 +581,6 @@ func _transition_to_main():
 		Global.current_boss += 1
 	Global.fights_won += 1
 	var newly: Array = Global.add_clicks(Global.fight_beene_reward, true)
-	# leaving fight: clear in_fight so main clicker behaves normally
 	Global.in_fight = false
 	Global.save_data()
 	

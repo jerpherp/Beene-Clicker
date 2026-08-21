@@ -50,9 +50,8 @@ func _on_pressed():
 		Global.click_count -= get_price()
 		level += 1
 		Global.helper_beene_count += 1
-		Global.upgrade_levels[name] = level  # save level
+		Global.upgrade_levels[name] = level
 		Global.save_data()
-		# recompute beene bot rate after purchasing helper
 		if Global.has_method("update_upgrade_effects"):
 			Global.update_upgrade_effects()
 		c.update_display()

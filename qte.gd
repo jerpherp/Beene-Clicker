@@ -16,12 +16,10 @@ var target_key := KEY_NONE
 var sweet_x_ratio := 0.5
 var timeout_timer : SceneTreeTimer = null
 
-# rapid tap
 var tap_progress := 0.0
 var tap_decay := 0.3
 var tap_required := 0.8
 
-# hold
 var hold_marker := 0.0
 var hold_zone_start := 0.3
 var hold_zone_end := 0.7
@@ -42,13 +40,11 @@ var outer_circle : ColorRect
 var inner_circle : ColorRect
 var outer_border : ColorRect
 
-# rapid tap nodes
 var tap_border : ColorRect
 var tap_bg : ColorRect
 var tap_fill : ColorRect
 var tap_label : Label
 
-# hold nodes
 var hold_border : ColorRect
 var hold_bg : ColorRect
 var hold_zone : ColorRect
@@ -64,7 +60,6 @@ func _ready():
 func _build_ui():
 	var center = get_viewport_rect().size / 2
 
-	# --- TIMING BAR ---
 	bar_border = ColorRect.new()
 	bar_border.size = Vector2(bar_width + 6, 36)
 	bar_border.position = Vector2(center.x - bar_width / 2 - 3, center.y + 97)
@@ -87,7 +82,6 @@ func _build_ui():
 	bar_marker.color = Color(1.0, 0.2, 0.2)
 	bar_bg.add_child(bar_marker)
 
-	# --- KEY PROMPT ---
 	key_label = Label.new()
 	key_label.add_theme_font_size_override("font_size", 80)
 	key_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -95,7 +89,6 @@ func _build_ui():
 	key_label.size = Vector2(200, 120)
 	add_child(key_label)
 
-	# --- TIMING CIRCLE ---
 	outer_border = ColorRect.new()
 	outer_border.size = Vector2(126, 126)
 	outer_border.position = Vector2(center.x - 63, center.y - 63)
@@ -115,7 +108,6 @@ func _build_ui():
 	inner_circle.position = Vector2(center.x - 60, center.y - 60)
 	add_child(inner_circle)
 
-	# --- RAPID TAP ---
 	tap_label = Label.new()
 	tap_label.text = "MASH SPACE!"
 	tap_label.add_theme_font_size_override("font_size", 50)
@@ -141,7 +133,6 @@ func _build_ui():
 	tap_fill.color = Color(0.2, 0.6, 1.0)
 	tap_bg.add_child(tap_fill)
 
-	# --- HOLD ---
 	hold_label = Label.new()
 	hold_label.text = "HOLD SPACE!"
 	hold_label.add_theme_font_size_override("font_size", 50)
@@ -275,7 +266,6 @@ func _process(delta):
 				_finish(false)
 
 		QTEType.RAPID_TAP:
-			# bar decays over time
 			tap_progress = max(0.0, tap_progress - tap_decay * delta)
 			tap_fill.size.x = tap_progress * bar_width
 
@@ -320,7 +310,6 @@ func _input(event):
 				if event.pressed:
 					is_holding = true
 				else:
-					# released — check if in zone
 					var in_zone = hold_marker >= hold_zone_start and hold_marker <= hold_zone_end
 					_finish(in_zone)
 

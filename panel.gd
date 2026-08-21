@@ -1,8 +1,8 @@
 extends Control
 
 @export var slide_duration := 1.5
-@export var hidden_x := -335.0  # how far off screen
-@export var shown_x := 0.0 # where it sits when open
+@export var hidden_x := -335.0
+@export var shown_x := 0.0
 
 @onready var tab = $Button
 @onready var slideSFX = $slideInWood

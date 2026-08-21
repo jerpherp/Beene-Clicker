@@ -18,9 +18,8 @@ func _ready():
 func show_results():
 	visible = true
 	shown_y = panel.position.y
-	panel.position.y = -600  # start above screen
+	panel.position.y = -600
 	
-	# fill in stats
 	rank_label.text = Global.fight_rank
 	damage_label.text = "Damage Taken: " + str(Global.fight_stats["damage_taken"])
 	hits_label.text = "Hits Dealt: " + str(Global.fight_stats["hits_dealt"])
@@ -29,7 +28,6 @@ func show_results():
 	time_label.text = "Fight Time: " + str(minutes) + ":" + "%02d" % seconds
 	reward_label.text = "+" + str(Global.fight_beene_reward) + " Beenes!"
 	
-	# slide down
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(panel, "position:y", shown_y, slide_duration)

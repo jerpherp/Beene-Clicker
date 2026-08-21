@@ -6,10 +6,8 @@ No gameplay changes intended.
 
 extends Node
 
-# --- Save File Configuration ---
 const SAVE_PATH := "user://savegame.save"
 
-# --- Primary Game Stats ---
 var click_count: float = 0.0
 var click_multiplier: float = 1.0
 
@@ -22,12 +20,11 @@ var play_yippie: bool = false
 var show_fight_results: bool = false
 var current_background: int = 0
 
-# --- Upgrade Flags & Buffs ---
 var frenzy_active: bool = false
 var click_frenzy_active: bool = false
 var click_frenzy_cooldown: bool = false
 var golden_click_counter: int = 0
-var jackpot_chance: float = 0.02  # 2% chance per click
+var jackpot_chance: float = 0.02
 var jackpot_multiplier: int = 100
 
 var has_auto_collect: bool = false
@@ -41,7 +38,6 @@ var fights_fought: int = 0
 var fights_won: int = 0
 var fights_lost: int = 0
 
-# Whether the player is currently in a fight scene
 var in_fight: bool = false
 
 var helper_beene_active: bool = false
@@ -51,18 +47,15 @@ var golden_click_level: int = 1
 
 var window_mode: int = DisplayServer.WINDOW_MODE_WINDOWED
 
-# Upgrade level dictionary used by buttons
 var upgrade_levels: Dictionary = {
 	"x2": 1,
 	"beeneHelper1": 1,
 	"auto1": 1,
 }
 
-# --- Offline / Beene Bot Systems ---
-var beene_bot_rate: int = 10      # Beenes earned per minute while game is closed
-var last_exit_time: int = 0      # Unix timestamp recorded when exiting
+var beene_bot_rate: int = 10
+var last_exit_time: int = 0
 
-# --- Items & Equipment ---
 var owned_items: Dictionary = {
 	"beene_armor": false,
 	"bronze_armor": false,
@@ -88,8 +81,7 @@ var attack_data: Dictionary = {
 	"boss4_attack2": {"name": "The Hardest Peck", "desc": "Delivers an extremely powerful and piercing peck. Watch your head! Cools down after one use.", "source": "boss4", "damage": 45, "cooldown": true},
 }
 
-# --- Boss & Combat Systems ---
-var BOSS_UNLOCK_THRESHOLDS: Array = [randi_range(500, 1000), randi_range(5000, 7500), randi_range(50000, 75000), randi_range(250000, 400000)]
+var BOSS_UNLOCK_THRESHOLDS: Array = [randi_range(700, 1200), randi_range(5000, 12500), randi_range(50000, 125000), randi_range(750000, 1400000)]
 
 var current_boss: int = 1
 var boss1_unlocked: bool = false
@@ -180,14 +172,10 @@ var boss_data: Array = [
 	},
 ]
 
-# --- Lifecycle Callbacks ---
 func _ready():
-	#if FileAccess.file_exists(SAVE_PATH):
-		#DirAccess.remove_absolute(SAVE_PATH)
 	load_data()
 	apply_screen_size()
 	_calculate_offline_gains()
-	# apply any scaling from upgrades (jackpot chance/multiplier, beene bot rate)
 	update_upgrade_effects()
 	save_data()
 
@@ -196,7 +184,6 @@ func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		save_data()
 
-# --- Helper Methods ---
 func reset_fight_stats():
 	fight_stats = {
 		"damage_taken": 0,
@@ -225,7 +212,6 @@ func get_damage_bonus() -> float:
 		bonus += 0.15
 	return bonus
 
-# --- Unified Save / Load Logic ---
 func save_data():
 	last_exit_time = int(Time.get_unix_time_from_system())
 	current_background = 1 if current_boss >= 3 else 0
@@ -266,7 +252,6 @@ func save_data():
 
 func load_data():
 	if not FileAccess.file_exists(SAVE_PATH):
-		# First run: default to beach (background index 0)
 		current_background = 0
 		return
 		
@@ -290,7 +275,6 @@ func load_data():
 			bosses_unlocked = data.get("bosses_unlocked", [true, false, false, false, false])
 			bosses_beaten = data.get("bosses_beaten", [false, false, false, false, false])
 
-			# Sanitize loaded unlocks: bosses require their click threshold, not a victory.
 			for i in range(min(bosses_unlocked.size(), BOSS_UNLOCK_THRESHOLDS.size())):
 				if bosses_unlocked[i] and click_count < BOSS_UNLOCK_THRESHOLDS[i] and not bosses_beaten[i]:
 					bosses_unlocked[i] = false
@@ -308,7 +292,6 @@ func load_data():
 			fights_lost = data.get("fights_lost", 0)
 			window_mode = data.get("window_mode", DisplayServer.WINDOW_MODE_WINDOWED)
 			screen_size_index = data.get("screen_size_index", 0)
-		# recompute derived values from upgrade levels
 		update_upgrade_effects()
 
 func refresh_boss_unlocks() -> void:
@@ -317,7 +300,6 @@ func refresh_boss_unlocks() -> void:
 		for i in range(BOSS_UNLOCK_THRESHOLDS.size()):
 			bosses_unlocked.append(false)
 
-	# Only mark bosses as unlocked once. Do not revert unlocks if click_count drops below threshold.
 	for i in range(BOSS_UNLOCK_THRESHOLDS.size()):
 		if bosses_beaten[i]:
 			bosses_unlocked[i] = true
@@ -325,7 +307,6 @@ func refresh_boss_unlocks() -> void:
 			bosses_unlocked[i] = true
 
 func add_clicks(amount: float, notify: bool = true) -> Array:
-	# increment clicks and return list of newly unlocked boss indices (0-based)
 	var previously_unlocked = bosses_unlocked.duplicate()
 	var old = click_count
 	click_count += amount
@@ -333,10 +314,8 @@ func add_clicks(amount: float, notify: bool = true) -> Array:
 	save_data()
 	var newly := []
 	for i in range(BOSS_UNLOCK_THRESHOLDS.size()):
-		# Beaten bosses can remain available for refights but must not trigger another battle.
 		if not previously_unlocked[i] and bosses_unlocked[i] and not bosses_beaten[i]:
 			newly.append(i)
-	# Only update last_unlocked_bosses when notifications are allowed
 	if notify:
 		last_unlocked_bosses = newly
 	return newly
@@ -351,103 +330,28 @@ func _calculate_offline_gains():
 			click_count += offline_earned
 			total_beenes += offline_earned
 			refresh_boss_unlocks()
-			# ensure derived upgrade effects remain consistent after offline gains
 			update_upgrade_effects()
 			
-#func _input(event: InputEvent) -> void:
-	#if event is InputEventKey and event.pressed and not event.echo:
-		#if event.keycode == KEY_R:
-			#reset_everything()
-		#elif event.keycode == KEY_F1 or event.keycode == KEY_K:
-			#unlock_all_bosses()
-#
-#func unlock_all_bosses() -> void:
-	#for i in range(bosses_unlocked.size()):
-		#bosses_unlocked[i] = true
-	## set click_count to the highest defined unlock threshold rather than a magic number
-	#click_count = BOSS_UNLOCK_THRESHOLDS[BOSS_UNLOCK_THRESHOLDS.size() - 1]
-	#
-	#for attack_id in attack_data.keys():
-		#if not attack_id in unlocked_attacks:
-			#unlocked_attacks.append(attack_id)
-		#
-	#save_data()
 
-#func reset_everything() -> void:
-	#click_count = 0
-	#click_multiplier = 1
-	#refresh_boss_unlocks()
-	#has_golden_click = false
-	#golden_click_level = 1
-	#golden_click_counter = 0
-	#upgrade_levels = {
-		#"x2": 1,
-		#"beeneHelper1": 1,
-		#"auto1": 1,
-	#}
-	#
-	#frenzy_active = false
-	#click_frenzy_active = false
-	#click_frenzy_cooldown = false
-	#jackpot_chance = 0.02
-	#has_auto_collect = false
-	#has_click_frenzy = false
-	#has_jackpot = false
-	#helper_beene_active = false
-	#helper_beene_count = 0
-	#beene_bot_rate = 10
-	#
-	#owned_items = {
-		#"beene_armor": false,
-		#"bronze_armor": false,
-		#"gold_armor": false,
-		#"health_potion": 0,
-		#"strength_1": false,
-	#}
-	#equipped_attacks = ["attack1", "attack2", ""]
-	#unlocked_attacks = ["attack1", "attack2"]
-	#new_attacks = []
-	#
-	#current_boss = 1
-	#boss1_unlocked = false
-	#bosses_unlocked = [false, false, false, false, false]
-	#current_background = 0
-	#
-	#total_beenes = 0
-	#total_clicks = 0
-	#fights_fought = 0
-	#fights_won = 0
-	#fights_lost = 0
-	#
-	#if FileAccess.file_exists(SAVE_PATH):
-		#var err = DirAccess.remove_absolute(SAVE_PATH)
-		#if err == OK:
-			#pass
-		#else:
-			#pass
-			#
-	## Progress reset complete
-	#get_tree().reload_current_scene()
 
 func apply_screen_size() -> void:
 	match screen_size_index:
-		0:  # 720p windowed
+		0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_size(Vector2i(1280, 720))
-		1:  # 1080p windowed
+		1:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_size(Vector2i(1920, 1080))
-		2:  # Fullscreen
+		2:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
-## --- Upgrade effect helpers ---
 const JACKPOT_BASE_CHANCE := 0.02
 const JACKPOT_CHANCE_PER_LEVEL := 0.01
 const JACKPOT_BASE_MULTIPLIER := 100
 const JACKPOT_MULTIPLIER_PER_LEVEL := 50
 
-const BEENEBOT_BASE_RATE_PER_HELPER := 10 # Beenes per minute per helper
+const BEENEBOT_BASE_RATE_PER_HELPER := 10
 const BEENEBOT_RATE_MULTIPLIER_PER_LEVEL := 0.5
 
 func update_upgrade_effects() -> void:
@@ -458,7 +362,6 @@ func update_upgrade_effects() -> void:
 	var helper_upgrade_lvl := int(upgrade_levels.get("beeneHelper1", 1))
 	beene_bot_rate = int(helper_beene_count * BEENEBOT_BASE_RATE_PER_HELPER * (1.0 + max(0, helper_upgrade_lvl - 1) * BEENEBOT_RATE_MULTIPLIER_PER_LEVEL))
 
-	# X2 upgrade: linear progression 1,2,4,6,8,... -> multiplier = max(1, 2*(level-1))
 	var x2_lvl := int(upgrade_levels.get("x2", 1))
 	if x2_lvl <= 1:
 		click_multiplier = 1

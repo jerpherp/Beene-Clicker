@@ -11,7 +11,6 @@ var animation_offsets = {
 @onready var attack_bubbles = $AttackBubbles
 
 
-# Cleaned: removed commented testing handlers to declutter file
 
 var animation_linger = {
 	"attack": 0.0,

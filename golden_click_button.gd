@@ -20,7 +20,6 @@ func _ready():
 	if Global.upgrade_levels.has(upgrade_name):
 		level = int(Global.upgrade_levels[upgrade_name])
 	
-	# Sync level with Global script variable
 	Global.golden_click_level = level
 	
 	original_scale = scale
@@ -49,11 +48,9 @@ func _animate_scale(target: Vector2):
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "scale", target, scale_duration)
 
-# Exponential cost formula based on current upgrade level
 func get_price() -> int:
 	return int(floor(base_price * pow(exponent, level - 1)))
 
-# Calculates current payout bonus for tooltip preview
 func get_current_payout() -> int:
 	var base_payout = level * 10
 	var mult = Global.global_multiplier if "global_multiplier" in Global else 1.0
@@ -74,12 +71,10 @@ func _on_pressed():
 		Global.click_count -= price
 		Global.has_golden_click = true
 		
-		# Upgrade Level
 		level += 1
 		Global.upgrade_levels[name] = level
 		Global.golden_click_level = level
 		
-		# Save & Refresh UI
 		Global.save_data()
 		
 		if counter and counter.has_method("update_display"):

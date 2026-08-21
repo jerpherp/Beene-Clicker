@@ -1,6 +1,5 @@
 extends AnimatedSprite2D
 
-# Offset for Beene animations
 var animation_offsets = {
 	"attack": Vector2(-140, -10),
 	"dodge": Vector2(0, -150),
@@ -10,7 +9,6 @@ var animation_offsets = {
 	"knockout": Vector2(-160, -15),
 }
 
-# How long should the last frame play for when done?
 var animation_linger = {
 	"attack": 0.0,
 	"dodge": 0.8,
@@ -23,9 +21,6 @@ var animation_linger = {
 func _ready():
 	animation_finished.connect(_on_animation_finished)
 	play("idle")
-
-
-# Cleaned: removed commented testing handlers to declutter file
 
 func _on_animation_finished():
 	if animation != "idle" and animation != "knockout":

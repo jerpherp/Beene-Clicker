@@ -65,7 +65,6 @@ func _on_pressed():
 		return
 
 	if Global.click_count >= get_price():
-		# Deduct cost and level up
 		Global.click_count -= get_price()
 		Global.has_click_frenzy = true
 		level += 1
@@ -78,21 +77,17 @@ func _on_pressed():
 		_update_tooltip_text()
 		update_price_display()
 		
-		# Start 10-second Click Frenzy
 		_start_frenzy()
 
 func _start_frenzy():
 	Global.frenzy_active = true
 	Global.click_multiplier *= frenzy_multiplier
 	
-	# Give button a frenzy active visual tint
 	modulate = Color(1, 0.85, 0.2)
 	
-	# Create 10 second timer
 	frenzy_timer = get_tree().create_timer(frenzy_duration)
 	await frenzy_timer.timeout
 	
-	# Revert frenzy effects after 10 seconds
 	Global.frenzy_active = false
 	Global.click_multiplier = max(1, int(Global.click_multiplier / frenzy_multiplier))
 	modulate = Color.WHITE

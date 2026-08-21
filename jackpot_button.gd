@@ -64,7 +64,6 @@ func _on_pressed():
 		level += 1
 		Global.upgrade_levels[name] = level
 		Global.save_data()
-		# recompute derived upgrade effects (chance & multiplier)
 		if Global.has_method("update_upgrade_effects"):
 			Global.update_upgrade_effects()
 		

@@ -10,7 +10,6 @@ var animation_offsets = {
 	"knockout": Vector2(0, 0),
 }
 
-# Cleaned: removed commented testing handlers to declutter file
 
 var animation_linger = {
 	"attack": 0.0,
