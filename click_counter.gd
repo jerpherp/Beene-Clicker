@@ -5,10 +5,8 @@ var digit_width := 45
 func _ready():
 	update_display()
 
-
 func increment():
 	update_display()
-
 
 func update_display():
 	for child in get_children():

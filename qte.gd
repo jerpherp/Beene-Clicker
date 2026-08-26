@@ -195,9 +195,6 @@ func start():
 	is_holding = false
 	_hide_all()
 
-	get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer3/beeneFight").pause()
-	get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer/beachBG").pause()
-
 	var pool = _get_qte_pool()
 	current_type = pool[randi() % pool.size()]
 
@@ -325,8 +322,4 @@ func _finish(success: bool):
 	active = false
 	visible = false
 	is_holding = false
-
-	get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer3/beeneFight").play()
-	get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer/beachBG").play()
-
 	emit_signal("qte_completed", success)

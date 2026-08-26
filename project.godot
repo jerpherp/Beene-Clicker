@@ -44,6 +44,7 @@ theme/custom="uid://b0gqh2gn8sule"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/emulate_touch_from_mouse=false
 lights_and_shadows/size/viewport_height=648
 lights_and_shadows/size/viewport_width=1152

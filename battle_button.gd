@@ -18,4 +18,3 @@ func _on_exit():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "scale", Vector2.ONE, scale_duration)
-	

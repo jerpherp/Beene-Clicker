@@ -318,7 +318,7 @@ stretch_mode = 0
 script = ExtResource("29_3nhb5")
 item_name = "Health Potion"
 item_desc = "Adds an extra 25 HP on top of what you have!"
-item_price = 6500
+item_price = 9500
 item_id = "health_potion"
 
 [node name="BeeneArmorButton" type="TextureButton" parent="Area2D" unique_id=1931513307]
@@ -333,7 +333,7 @@ stretch_mode = 0
 script = ExtResource("29_3nhb5")
 item_name = "Beene Armor"
 item_desc = "Gives your Beene an extra 10% of protection against your foes!"
-item_price = 3500
+item_price = 4500
 item_id = "beene_armor"
 
 [node name="BronzeArmorButton" type="TextureButton" parent="Area2D" unique_id=1216529926]
@@ -348,7 +348,7 @@ stretch_mode = 0
 script = ExtResource("29_3nhb5")
 item_name = "Bronze Armor"
 item_desc = "Heavy, large, and strong, this armor gives you 25% protection during battles!"
-item_price = 75000
+item_price = 95000
 item_id = "bronze_armor"
 
 [node name="GoldArmorButton" type="TextureButton" parent="Area2D" unique_id=1546803614]
@@ -363,7 +363,7 @@ stretch_mode = 0
 script = ExtResource("29_3nhb5")
 item_name = "Gold Armor"
 item_desc = "Only the best armor for a fightin' Beene. Gives you 50% protection during the toughest of battles."
-item_price = 550000
+item_price = 1550000
 item_id = "gold_armor"
 
 [node name="Strengh1Button" type="TextureButton" parent="Area2D" unique_id=559989898]
@@ -378,7 +378,7 @@ stretch_mode = 0
 script = ExtResource("29_3nhb5")
 item_name = "Beene Strength I"
 item_desc = "Give your Beene some muscles! Adds an additional 15% damage buff during your attack."
-item_price = 75000
+item_price = 100000
 item_id = "strength_1"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1179030425]

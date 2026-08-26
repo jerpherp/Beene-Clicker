@@ -14,7 +14,6 @@ func _ready():
 	modulate.a = 0.0
 	stop()
 
-
 func trigger():
 	if _timeout_timer != null:
 		_timeout_timer.time_left = timeout
@@ -22,7 +21,6 @@ func trigger():
 	if _threshold_timer == null:
 		_threshold_timer = get_tree().create_timer(appear_threshold)
 		_threshold_timer.timeout.connect(_on_threshold_reached)
-
 
 func _on_threshold_reached():
 	if _is_visible:
@@ -35,7 +33,6 @@ func _on_threshold_reached():
 	Global.click_multiplier = base_multiplier + 1.5
 	_timeout_timer = get_tree().create_timer(timeout)
 	_timeout_timer.timeout.connect(_on_idle)
-
 
 func _on_idle():
 	_threshold_timer = null

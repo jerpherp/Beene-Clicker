@@ -35,7 +35,11 @@ func _apply_background():
 	bg_ground.texture = load(bg["ground"])
 	bg_water.texture = load(bg["water"])
 	bg_sky.texture = load(bg["sky"])
-	bg_foreground.texture = load(bg["foreground"])
+	if bg["foreground"] != "":
+		bg_foreground.texture = load(bg["foreground"])
+		bg_foreground.visible = true
+	else:
+		bg_foreground.visible = false
 	snow.visible = Global.current_background == 1
 	
 	var new_music = load(bg["music"])

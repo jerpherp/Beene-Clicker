@@ -71,13 +71,13 @@ var new_attacks: Array = []
 var attack_data: Dictionary = {
 	"attack1": {"name": "Beene Bash", "desc": "A simple strike. Basic, but gets the job done", "source": "base", "damage": 4, "cooldown": false},
 	"attack2": {"name": "Beene Rage", "desc": "Hits hard but slow. Cools down after one use.", "source": "base", "damage": 8, "cooldown": true},
-	"boss1_attack1": {"name": "Seed Shrapnel", "desc": "Throws sharp seeds that do a good amount of damage.", "source": "boss1", "damage": 8, "cooldown": false},
+	"boss1_attack1": {"name": "Seed Shrapnel", "desc": "Throws sharp seeds that do a good amount of damage.", "source": "boss1", "damage": 7, "cooldown": false},
 	"boss1_attack2": {"name": "Newton's Downfall", "desc": "A high-gravity slam that does crushing damage to your opponent. Cools down after one use.", "source": "boss1", "damage": 15, "cooldown": true},
-	"boss2_attack1": {"name": "Bubble Burst", "desc": "Blows a myriad of bubbles at your opponent. Sounds harmless, but packs a punch.", "source": "boss2", "damage": 18, "cooldown": false},
+	"boss2_attack1": {"name": "Bubble Burst", "desc": "Blows a myriad of bubbles at your opponent. Sounds harmless, but packs a punch.", "source": "boss2", "damage": 14, "cooldown": false},
 	"boss2_attack2": {"name": "Tidal Wave", "desc": "Creates a massive wave that crashes on your enemy. Cools down after one use.", "source": "boss2", "damage": 25, "cooldown": true},
-	"boss3_attack1": {"name": "Laser Vision", "desc": "Creates a high-powered beam pointed at your enemy. Watch the eyes! Or anything, really...", "source": "boss3", "damage": 27, "cooldown": false},
+	"boss3_attack1": {"name": "Laser Vision", "desc": "Creates a high-powered beam pointed at your enemy. Watch the eyes! Or anything, really...", "source": "boss3", "damage": 22, "cooldown": false},
 	"boss3_attack2": {"name": "Echolocation", "desc": "Sends out powerful sound waves that does massive amounts of damage. Cools down after one use.", "source": "boss3", "damage": 36, "cooldown": true},
-	"boss4_attack1": {"name": "Feather Barrage", "desc": "Throws countless sharp feathers at your target!", "source": "boss4", "damage": 39, "cooldown": false},
+	"boss4_attack1": {"name": "Feather Barrage", "desc": "Throws countless sharp feathers at your target!", "source": "boss4", "damage": 34, "cooldown": false},
 	"boss4_attack2": {"name": "The Hardest Peck", "desc": "Delivers an extremely powerful and piercing peck. Watch your head! Cools down after one use.", "source": "boss4", "damage": 45, "cooldown": true},
 }
 
@@ -131,7 +131,7 @@ var boss_data: Array = [
 		"scene": "res://fight.tscn",
 		"image": "res://bosses/boss2.png",
 		"config": {
-			"enemy_health": 320,
+			"enemy_health": 280,
 			"base_damage": randf_range(16, 30),
 			"qte_speed": 2.1,
 			"qte_count_min": 2,
@@ -161,7 +161,7 @@ var boss_data: Array = [
 		"scene": "res://fight.tscn",
 		"image": "res://bosses/boss4.png",
 		"config": {
-			"enemy_health": 1200,
+			"enemy_health": 1400,
 			"base_damage": randf_range(50, 68),
 			"qte_speed": 2.2,
 			"qte_count_min": 3,

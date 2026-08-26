@@ -38,6 +38,7 @@ func _on_slot_exit(index: int):
 	tween.tween_property(slots[index], "scale", Vector2.ONE, scale_duration)
 
 func show_attacks():
+	await get_tree().process_frame
 	visible = true
 	for i in slots.size():
 		if cooldown_turns[i] > 0:

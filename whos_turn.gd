@@ -1,6 +1,5 @@
 extends Node
 
-
 enum Turn { PLAYER, ENEMY }
 
 var current_turn : Turn = Turn.PLAYER
@@ -8,6 +7,9 @@ var pause_cooldown: bool = false
 var loop_from_frame: int = -1
 var enemy_turn_id: int = 0
 var fight_timer: float = 0.0
+
+var is_qte_active: bool = false
+
 @onready var apple_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight")
 @onready var boss2_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight")
 @onready var boss3_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight")
@@ -27,6 +29,32 @@ var fight_timer: float = 0.0
 @onready var ground = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer5/Ground")
 @onready var snowman = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/Snowman")
 @onready var close_mountain = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer4/CloseMountain")
+
+var qte_queue: Array = []
+var qte_damage_reduction: int = 0
+var total_qtes: int = 0
+var base_damage: int = 20
+
+@onready var camera = get_parent().get_node("Camera2D")
+@onready var player_health = get_tree().get_root().get_node("Fight/HUD/BeeneHealthBar")
+@onready var enemy_health = get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar")
+@onready var pause_screen = get_tree().get_root().get_node("Fight/HUD/PauseScreen")
+@onready var qte = get_tree().get_root().get_node("Fight/HUD/QTE")
+@onready var player_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer3/beeneFight")
+@onready var enemy_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight")
+@onready var scuba_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight")
+@onready var peeper_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight")
+@onready var fezant_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/fezantFight")
+@onready var attack_hud = get_tree().get_root().get_node("Fight/HUD/EquippedAttacksHUD")
+@onready var music = get_tree().get_root().get_node("Fight/BackgroundMusic")
+@onready var transition_overlay = get_tree().get_root().get_node("Fight/HUD/TransitionOverlay")
+@onready var dodge_sfx = get_tree().get_root().get_node("Fight/HUD/DodgeSFX")
+@onready var beene_hit_sfx = get_tree().get_root().get_node("Fight/HUD/BeeneHitSFX")
+@onready var get_hit_sfx = get_tree().get_root().get_node("Fight/HUD/GetHitSFX")
+@onready var speed_lines = get_tree().get_root().get_node("Fight/HUD/SpeedLines")
+@onready var great_label = get_tree().get_root().get_node("Fight/HUD/GreatLabel")
+@onready var hit_label = get_tree().get_root().get_node("Fight/HUD/HitLabel")
+@onready var miss_label = get_tree().get_root().get_node("Fight/HUD/MissLabel")
 
 func _ready():
 	Global.in_fight = true
@@ -81,7 +109,6 @@ func _ready():
 	
 	await get_tree().create_timer(0.5).timeout
 	start_player_turn()
-	
 
 func _apply_fight_background():
 	if Global.current_boss == 1 || Global.current_boss == 2:
@@ -107,42 +134,10 @@ func _apply_fight_background():
 		snowman.visible = true
 		close_mountain.visible = true
 
-
-var qte_queue: Array = []
-var qte_damage_reduction: int = 0
-var total_qtes: int = 0
-var base_damage: int = 20
-
-
-@onready var camera = get_parent().get_node("Camera2D")
-@onready var player_health = get_tree().get_root().get_node("Fight/HUD/BeeneHealthBar")
-@onready var enemy_health = get_tree().get_root().get_node("Fight/HUD/EnemyHealthBar")
-@onready var pause_screen = get_tree().get_root().get_node("Fight/HUD/PauseScreen")
-@onready var qte = get_tree().get_root().get_node("Fight/HUD/QTE")
-@onready var player_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer3/beeneFight")
-@onready var enemy_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/appleFight")
-@onready var scuba_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/scubaFight")
-@onready var peeper_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/peeperFight")
-@onready var fezant_sprite = get_tree().get_root().get_node("Fight/ParallaxBackground/ParallaxLayer2/fezantFight")
-@onready var attack_hud = get_tree().get_root().get_node("Fight/HUD/EquippedAttacksHUD")
-@onready var music = get_tree().get_root().get_node("Fight/BackgroundMusic")
-@onready var transition_overlay = get_tree().get_root().get_node("Fight/HUD/TransitionOverlay")
-@onready var dodge_sfx = get_tree().get_root().get_node("Fight/HUD/DodgeSFX")
-@onready var beene_hit_sfx = get_tree().get_root().get_node("Fight/HUD/BeeneHitSFX")
-@onready var get_hit_sfx = get_tree().get_root().get_node("Fight/HUD/GetHitSFX")
-@onready var speed_lines = get_tree().get_root().get_node("Fight/HUD/SpeedLines")
-@onready var great_label = get_tree().get_root().get_node("Fight/HUD/GreatLabel")
-@onready var hit_label = get_tree().get_root().get_node("Fight/HUD/HitLabel")
-@onready var miss_label = get_tree().get_root().get_node("Fight/HUD/MissLabel")
-
-
 func _enemy_anim(anim_name: String) -> void:
-	if enemy_sprite.animation_finished.is_connected(enemy_sprite._on_animation_finished):
-		enemy_sprite.animation_finished.disconnect(enemy_sprite._on_animation_finished)
+	enemy_sprite.speed_scale = 1.0
 	enemy_sprite.play_animation(anim_name)
 	await enemy_sprite.animation_finished
-	if not enemy_sprite.animation_finished.is_connected(enemy_sprite._on_animation_finished):
-		enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
 
 func _show_label(label: Node):
 	label.visible = true
@@ -152,6 +147,24 @@ func _show_label(label: Node):
 	await tween.finished
 	label.visible = false
 
+func _get_max_frame(sprite: AnimatedSprite2D, anim_name: String) -> int:
+	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation(anim_name):
+		return max(0, sprite.sprite_frames.get_frame_count(anim_name) - 1)
+	return 0
+
+func _set_world_pause_state(paused: bool):
+	if paused:
+		enemy_sprite.speed_scale = 0.0
+		player_sprite.speed_scale = 0.0
+		
+		if snow and snow.has_method("pause"):
+			snow.pause()
+	else:
+		enemy_sprite.speed_scale = 1.0
+		player_sprite.speed_scale = 1.0
+		
+		if snow and snow.has_method("play"):
+			snow.play()
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -166,7 +179,6 @@ func _input(event):
 					func(): pause_cooldown = false
 				)
 				pause_screen.pause()
-
 
 func switch_turn():
 	if current_turn == Turn.PLAYER:
@@ -202,22 +214,30 @@ func start_enemy_turn():
 	for i in count:
 		qte_queue.append(i)
 
-	enemy_sprite.animation_finished.disconnect(enemy_sprite._on_animation_finished)
+	is_qte_active = true
+
+	enemy_sprite.speed_scale = 1.0
 	enemy_sprite.play_animation("attack")
-	while enemy_sprite.frame < 19:
-		await get_tree().create_timer(0.0).timeout
-	enemy_sprite.pause()
+	enemy_sprite.frame = 0
+
+	var max_frame = _get_max_frame(enemy_sprite, "attack")
+	var target_pause_frame = min(19, max_frame)
+
+	while enemy_sprite.animation == "attack" and enemy_sprite.frame < target_pause_frame and enemy_sprite.is_playing():
+		await get_tree().process_frame
+
+	_set_world_pause_state(true)
 
 	if this_turn != enemy_turn_id:
 		return
 
 	_next_qte()
 
-
 func _next_qte():
 	if qte_queue.is_empty():
 		_apply_damage()
 		return
+
 	qte_queue.pop_back()
 	qte.qte_completed.connect(_on_qte_done, CONNECT_ONE_SHOT)
 	qte.start()
@@ -227,8 +247,8 @@ func _on_qte_done(success: bool):
 	if success:
 		qte_damage_reduction += 1
 
-	if qte_queue.is_empty() and qte_damage_reduction == total_qtes:
-		_next_qte()
+	if qte_queue.is_empty():
+		_apply_damage()
 		return
 
 	await get_tree().create_timer(0.3).timeout
@@ -236,13 +256,22 @@ func _on_qte_done(success: bool):
 		return
 	_next_qte()
 
-
 func _apply_damage():
 	var this_turn = enemy_turn_id
+	
 	var reduction = float(qte_damage_reduction) / float(total_qtes)
 	var final_damage = int(base_damage * (1.0 - reduction))
-	
 	final_damage = int(final_damage * (1.0 - Global.get_damage_reduction()))
+
+	_set_world_pause_state(false)
+
+	if enemy_sprite.animation == "attack" and enemy_sprite.is_playing():
+		await enemy_sprite.animation_finished
+
+	is_qte_active = false
+	enemy_sprite.play_animation("idle")
+
+	camera.pan_to_player()
 	
 	if Global.current_boss == 2:
 		scuba_sprite.trigger_attack_bubbles()
@@ -257,31 +286,17 @@ func _apply_damage():
 			speed_lines.trigger()
 		dodge_sfx.pitch_scale = randf_range(0.9, 1.1)
 		dodge_sfx.play()
-		enemy_sprite.play()
 		player_sprite.play_animation("dodge")
-		var wait_frames: int = 0
-		while enemy_sprite.animation == "attack" and wait_frames < 240:
-			await get_tree().create_timer(0.0).timeout
-			wait_frames += 1
-		if enemy_sprite.animation == "attack":
-			enemy_sprite.play_animation("idle")
-		enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
+		
 		if player_sprite.is_playing():
 			await player_sprite.animation_finished
+			
 		current_turn = Turn.PLAYER
 		start_player_turn()
 		return
 
 	dodge_sfx.pitch_scale = randf_range(0.9, 1.1)
 	dodge_sfx.play()
-	enemy_sprite.play()
-	var wait_frames: int = 0
-	while enemy_sprite.animation == "attack" and wait_frames < 240:
-		await get_tree().create_timer(0.0).timeout
-		wait_frames += 1
-	if enemy_sprite.animation == "attack":
-		enemy_sprite.play_animation("idle")
-	enemy_sprite.animation_finished.connect(enemy_sprite._on_animation_finished)
 
 	player_health.take_damage(final_damage)
 	Global.fight_stats["damage_taken"] += final_damage
@@ -294,27 +309,27 @@ func _apply_damage():
 		player_sprite.play_animation("knockout")
 		enemy_sprite.play_animation("idle")
 		_player_death()
-		await player_sprite.animation_finished
-		player_sprite.frame = 45
-		loop_from_frame = 45
+		await get_tree().create_timer(1.0).timeout
+		var player_ko_max = _get_max_frame(player_sprite, "knockout")
+		player_sprite.frame = min(45, player_ko_max)
+		loop_from_frame = player_sprite.frame
 		return
 	elif final_damage > 0:
 		_show_label(miss_label)
 		get_hit_sfx.pitch_scale = randf_range(0.9, 1.1)
 		get_hit_sfx.play()
 		player_sprite.play_animation("getHit")
-		enemy_sprite.play_animation("idle")
 		await player_sprite.animation_finished
 
 	current_turn = Turn.PLAYER
 	start_player_turn()
-
 
 func player_attack(attack_id: String):
 	attack_hud.hide_attacks()
 	Global.fight_stats["attacks_used"] += 1
 	beene_hit_sfx.pitch_scale = randf_range(0.9, 1.1)
 	beene_hit_sfx.play()
+	player_sprite.speed_scale = 1.0
 	player_sprite.play_animation("attack")
 	await get_tree().create_timer(0.85).timeout
 	_show_label(hit_label)
@@ -340,7 +355,6 @@ func player_attack(attack_id: String):
 	current_turn = Turn.ENEMY
 	start_enemy_turn()
 
-
 func _process(delta):
 	fight_timer += delta
 	Global.fight_stats["fight_time"] = fight_timer
@@ -348,7 +362,6 @@ func _process(delta):
 		if not player_sprite.is_playing():
 			player_sprite.frame = loop_from_frame
 			player_sprite.play("knockout")
-
 
 func _player_death():
 	camera.pan_to_knockout()
@@ -417,7 +430,7 @@ func _player_death():
 	await beach_tween.finished
 	await get_tree().create_timer(1).timeout
 	_show_death_options()
-	
+
 func _show_death_options() -> void:
 	var hud = get_tree().get_root().get_node("Fight/HUD")
 	
@@ -505,7 +518,6 @@ func _apply_float_effects(btn: Button) -> void:
 	btn.mouse_exited.connect(float_down)
 	btn.focus_exited.connect(float_down)
 
-
 func _calculate_rank():
 	var score: int = 0
 
@@ -561,7 +573,6 @@ func _calculate_rank():
 		Global.fight_rank = "F"
 		Global.fight_beene_reward = int(randi_range(35, 150) * boss_multiplier)
 
-
 func _transition_to_main():
 	var beaten_index = Global.current_boss - 1
 	var first_clear: bool = beaten_index >= 0 and beaten_index < Global.bosses_beaten.size() and not Global.bosses_beaten[beaten_index]
@@ -583,8 +594,6 @@ func _transition_to_main():
 	var newly: Array = Global.add_clicks(Global.fight_beene_reward, true)
 	Global.in_fight = false
 	Global.save_data()
-	
-	Global.save_data()
 
 	await get_tree().create_timer(1.0).timeout
 	var music_tween = create_tween()
@@ -604,4 +613,4 @@ func _apply_armor_icon():
 	elif Global.owned_items.get("beene_armor", false):
 		armorIcon.frame = 0
 	else:
-		armorIcon.visible = false;
+		armorIcon.visible = false

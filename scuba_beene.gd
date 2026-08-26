@@ -10,8 +10,6 @@ var animation_offsets = {
 @onready var bubbles = $Bubbles
 @onready var attack_bubbles = $AttackBubbles
 
-
-
 var animation_linger = {
 	"attack": 0.0,
 	"hit": 3.0,
@@ -21,14 +19,16 @@ var animation_linger = {
 
 func _ready():
 	animation_finished.connect(_on_animation_finished)
-	play("idle")
 
 func _on_animation_finished():
+	var fight_node = get_node_or_null("/root/Fight/whos_turn")
+	if fight_node and fight_node.is_qte_active:
+		return
+
 	if animation != "idle" and animation != "knockout" and animation != "attack":
 		var linger = animation_linger.get(animation, 0.0)
 		if linger > 0.0:
 			await get_tree().create_timer(linger).timeout
-		play_animation("idle")
 
 func play_animation(anim_name: String):
 	play(anim_name)

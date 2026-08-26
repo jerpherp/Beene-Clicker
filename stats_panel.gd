@@ -96,5 +96,5 @@ func _on_bg_clicked(event: InputEvent) -> void:
 func _input(event: InputEvent) -> void:
 	if not visible:
 		return
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE and event is InputEventMouseButton:
 		close()
