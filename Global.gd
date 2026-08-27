@@ -148,10 +148,10 @@ var boss_data: Array = [
 		"config": {
 			"enemy_health": 700,
 			"base_damage": randf_range(32, 45),
-			"qte_speed": 1.8,
+			"qte_speed": 1.9,
 			"qte_count_min": 2,
 			"qte_count_max": 4,
-			"qte_time_limit": 1.2,
+			"qte_time_limit": 1.5,
 			"dodge_sound": "res://SFX/peeper_attack.mp3",
 		}
 	},
@@ -166,7 +166,7 @@ var boss_data: Array = [
 			"qte_speed": 2.2,
 			"qte_count_min": 3,
 			"qte_count_max": 5,
-			"qte_time_limit": 1.1,
+			"qte_time_limit": 1.3,
 			"dodge_sound": "res://SFX/fezantAttack.mp3",
 		}
 	},
