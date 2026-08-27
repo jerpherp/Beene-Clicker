@@ -1,9 +1,3 @@
-"""
-Global shared state and helpers.
-Cleaned: clarified comments; removed test-only constants elsewhere.
-No gameplay changes intended.
-"""
-
 extends Node
 
 const SAVE_PATH := "user://savegame.save"
