@@ -35,10 +35,12 @@ var bar_border : ColorRect
 var bar_bg : ColorRect
 var bar_sweet : ColorRect
 var bar_marker : ColorRect
+var bar_label : Label
 var key_label : Label
+var outer_border : ColorRect
 var outer_circle : ColorRect
 var inner_circle : ColorRect
-var outer_border : ColorRect
+var circle_label : Label
 
 var tap_border : ColorRect
 var tap_bg : ColorRect
@@ -59,6 +61,15 @@ func _ready():
 
 func _build_ui():
 	var center = get_viewport_rect().size / 2
+
+	# TIMING BAR UI
+	bar_label = Label.new()
+	bar_label.text = "PRESS SPACE!"
+	bar_label.add_theme_font_size_override("font_size", 40)
+	bar_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	bar_label.position = Vector2(center.x - 200, center.y + 35)
+	bar_label.size = Vector2(400, 50)
+	add_child(bar_label)
 
 	bar_border = ColorRect.new()
 	bar_border.size = Vector2(bar_width + 6, 36)
@@ -82,12 +93,22 @@ func _build_ui():
 	bar_marker.color = Color(1.0, 0.2, 0.2)
 	bar_bg.add_child(bar_marker)
 
+	# RANDOM KEY UI
 	key_label = Label.new()
 	key_label.add_theme_font_size_override("font_size", 80)
 	key_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	key_label.position = Vector2(center.x - 100, center.y - 60)
 	key_label.size = Vector2(200, 120)
 	add_child(key_label)
+
+	# TIMING CIRCLE UI
+	circle_label = Label.new()
+	circle_label.text = "PRESS SPACE!"
+	circle_label.add_theme_font_size_override("font_size", 40)
+	circle_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	circle_label.position = Vector2(center.x - 200, center.y + 80)
+	circle_label.size = Vector2(400, 50)
+	add_child(circle_label)
 
 	outer_border = ColorRect.new()
 	outer_border.size = Vector2(126, 126)
@@ -108,6 +129,7 @@ func _build_ui():
 	inner_circle.position = Vector2(center.x - 60, center.y - 60)
 	add_child(inner_circle)
 
+	# RAPID TAP UI
 	tap_label = Label.new()
 	tap_label.text = "MASH SPACE!"
 	tap_label.add_theme_font_size_override("font_size", 50)
@@ -133,12 +155,13 @@ func _build_ui():
 	tap_fill.color = Color(0.2, 0.6, 1.0)
 	tap_bg.add_child(tap_fill)
 
+	# HOLD UI
 	hold_label = Label.new()
-	hold_label.text = "HOLD SPACE!"
-	hold_label.add_theme_font_size_override("font_size", 50)
+	hold_label.text = "HOLD & RELEASE SPACE!"
+	hold_label.add_theme_font_size_override("font_size", 40)
 	hold_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	hold_label.position = Vector2(center.x - 200, center.y - 80)
-	hold_label.size = Vector2(400, 60)
+	hold_label.position = Vector2(center.x - 300, center.y - 80)
+	hold_label.size = Vector2(600, 60)
 	add_child(hold_label)
 
 	hold_border = ColorRect.new()
@@ -165,9 +188,11 @@ func _build_ui():
 	hold_bg.add_child(hold_marker_rect)
 
 func _hide_all():
+	bar_label.visible = false
 	bar_border.visible = false
 	bar_bg.visible = false
 	key_label.visible = false
+	circle_label.visible = false
 	outer_border.visible = false
 	outer_circle.visible = false
 	inner_circle.visible = false
@@ -205,6 +230,7 @@ func start():
 
 	match current_type:
 		QTEType.TIMING_BAR:
+			bar_label.visible = true
 			bar_border.visible = true
 			bar_bg.visible = true
 			bar_marker.visible = true
@@ -222,6 +248,7 @@ func start():
 			timeout_timer.timeout.connect(_on_timeout)
 
 		QTEType.TIMING_CIRCLE:
+			circle_label.visible = true
 			outer_border.visible = true
 			outer_circle.visible = true
 			inner_circle.visible = true

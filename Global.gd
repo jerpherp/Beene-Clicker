@@ -2,6 +2,8 @@ extends Node
 
 const SAVE_PATH := "user://savegame.save"
 
+signal frenzy_state_changed(is_active: bool)
+
 var click_count: float = 0.0
 var click_multiplier: float = 1.0
 
@@ -361,3 +363,17 @@ func update_upgrade_effects() -> void:
 		click_multiplier = 1
 	else:
 		click_multiplier = int(2 * (x2_lvl - 1))
+
+func trigger_frenzy(duration: float, multiplier: int) -> void:
+	if frenzy_active:
+		return
+		
+	frenzy_active = true
+	click_multiplier *= multiplier
+	frenzy_state_changed.emit(true)
+	
+	await get_tree().create_timer(duration).timeout
+	
+	frenzy_active = false
+	click_multiplier = max(1, int(click_multiplier / multiplier))
+	frenzy_state_changed.emit(false)

@@ -13,11 +13,10 @@ var level := 1
 @export var frenzy_duration := 10.0
 @export var frenzy_multiplier := 3
 
-@onready var counter = get_tree().get_root().get_node("Main/ClickCounter")
+@onready var counter = get_tree().get_root().get_node_or_null("Main/ClickCounter")
 @onready var tooltip = $Tooltip
 
 var original_scale: Vector2
-var frenzy_timer: SceneTreeTimer
 
 func _ready():
 	var upgrade_name = name
@@ -35,6 +34,10 @@ func _ready():
 	update_price_display()
 	
 	pressed.connect(_on_pressed)
+	
+	# Listen to Global state changes to update button visuals cleanly
+	Global.frenzy_state_changed.connect(_on_frenzy_state_changed)
+	_on_frenzy_state_changed(Global.frenzy_active)
 
 func _on_mouse_entered():
 	_animate_scale(hover_scale)
@@ -77,17 +80,11 @@ func _on_pressed():
 		_update_tooltip_text()
 		update_price_display()
 		
-		_start_frenzy()
+		# Hand off frenzy handling to Global autoload
+		Global.trigger_frenzy(frenzy_duration, frenzy_multiplier)
 
-func _start_frenzy():
-	Global.frenzy_active = true
-	Global.click_multiplier *= frenzy_multiplier
-	
-	modulate = Color(1, 0.85, 0.2)
-	
-	frenzy_timer = get_tree().create_timer(frenzy_duration)
-	await frenzy_timer.timeout
-	
-	Global.frenzy_active = false
-	Global.click_multiplier = max(1, int(Global.click_multiplier / frenzy_multiplier))
-	modulate = Color.WHITE
+func _on_frenzy_state_changed(is_active: bool):
+	if is_active:
+		modulate = Color(1, 0.85, 0.2)
+	else:
+		modulate = Color.WHITE
